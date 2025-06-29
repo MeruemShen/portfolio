@@ -135,15 +135,15 @@ export const Wireframe = (): JSX.Element => {
   const footerLinks = ["ACCUEIL", "A PROPOS", "WORK", "PROCESSUS", "CONTACT"];
 
   return (
-    <div className="bg-white flex flex-row justify-center w-full">
-      <div className="bg-white overflow-hidden w-[1440px] h-[4344px]">
-        <div className="relative w-[1504px] h-[4348px] -left-8">
+    <div className="bg-white flex flex-col items-center w-full">
+      <div className="relative w-full overflow-hidden">
+        <div className="relative w-full">
           {/* Background */}
-          <div className="absolute w-[1440px] h-[4344px] top-0 left-8 backdrop-blur-[25.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(25.3px)_brightness(100%)] bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
+          <div className="absolute inset-0 -z-10 backdrop-blur-[25.3px] backdrop-brightness-100 bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
 
           {/* Navigation */}
-          <header className="absolute w-full top-5 left-0 flex justify-center items-center px-8 z-10">
-            <div className="flex items-center justify-between w-full max-w-[1440px]">
+          <header className="sticky top-0 w-full flex justify-center items-center px-6 py-4 z-10">
+            <div className="flex items-center justify-between w-full max-w-screen-xl">
               {/* Logo */}
               <img
                 className="h-[138px] w-[158px] object-cover"
@@ -205,8 +205,9 @@ export const Wireframe = (): JSX.Element => {
           </div>
 
           {/* Hero Section */}
-          <section className="absolute w-full top-[218px] left-0 flex flex-col items-center px-8">
-            <h1 className="w-[971px] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[50px]">
+          <section className="mt-32 w-full px-6">
+            <div className="container mx-auto flex flex-col items-center">
+            <h1 className="max-w-3xl mb-12 [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center leading-[50px]">
               <span className="text-white leading-[0.1px]">
                 CONSTRUISONS ENSEMBLE VOTRE{" "}
               </span>
@@ -282,7 +283,7 @@ export const Wireframe = (): JSX.Element => {
 
                 {/* Skills */}
                 <Card className="w-[655px] h-[124px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33]">
-                  <CardContent className="p-0 h-full flex items-center justify-between px-8">
+                  <CardContent className="p-4 flex items-center justify-between">
                     <Button
                       variant="outline"
                       className="w-9 h-9 bg-white rounded-[18px] p-0"
@@ -319,11 +320,12 @@ export const Wireframe = (): JSX.Element => {
                 </Card>
               </div>
             </div>
+            </div>
           </section>
 
           {/* Process Section */}
-          <section className="absolute w-[1470px] h-[1009px] top-[1079px] left-[18px]">
-            <div className="relative w-[1440px] h-[1009px] left-3.5">
+          <section className="mt-32 w-full px-6">
+            <div className="container mx-auto relative">
               <img
                 className="h-[983px] top-[26px] left-0 absolute w-[1440px] object-cover"
                 alt="Background"
@@ -352,7 +354,7 @@ export const Wireframe = (): JSX.Element => {
                     </div>
 
                     <Card className="w-[870px] h-[204px] bg-[#221239] rounded-[40px] border border-solid border-[#ffffff33] shadow-[0px_0px_24px_#00000040]">
-                      <CardContent className="p-0 h-full relative">
+                      <CardContent className="p-4 relative h-full">
                         <div className="absolute w-6 h-[136px] top-[35px] left-[35px] rounded-[10px] border border-solid border-[#a265ff]" />
 
                         <div className="absolute w-[86px] top-[90px] left-[35px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-base text-center tracking-[0] leading-[15.9px]">
@@ -373,11 +375,13 @@ export const Wireframe = (): JSX.Element => {
                 ))}
               </div>
             </div>
+            </div>
           </section>
 
           {/* Projects Section */}
-          <section className="absolute w-full top-[2061px] left-0 px-8">
-            <h2 className="w-[971px] mx-auto [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap">
+          <section className="mt-32 w-full px-6">
+            <div className="container mx-auto">
+            <h2 className="max-w-3xl mx-auto [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center leading-[49.6px] whitespace-nowrap">
               <span className="text-white">MES </span>
               <span className="text-[#a265ff]">PROJETS</span>
             </h2>
@@ -388,13 +392,13 @@ export const Wireframe = (): JSX.Element => {
               src="/arrow-9.svg"
             />
 
-            <div className="mt-[145px] grid grid-cols-2 gap-8">
+            <div className="mt-[145px] grid grid-cols-1 md:grid-cols-2 gap-8">
               {projects.map((project, index) => (
                 <Card
                   key={index}
                   className={`${index % 2 === 0 ? "w-[470px]" : "w-[654px]"} h-[411px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33]`}
                 >
-                  <CardContent className="p-0 flex flex-col h-full">
+                  <CardContent className="p-4 flex flex-col h-full">
                     <div className="w-full h-[153px] overflow-hidden">
                       <img
                         className="w-full h-full object-cover"
@@ -444,11 +448,12 @@ export const Wireframe = (): JSX.Element => {
                 </Card>
               ))}
             </div>
+            </div>
           </section>
 
           {/* Contact Section */}
-          <section className="absolute w-full top-[3242px] left-0 px-8">
-            <div className="relative">
+          <section className="mt-32 w-full px-6">
+            <div className="container mx-auto relative">
               <img
                 className="h-[576px] w-full absolute top-[93px] left-0 object-cover"
                 alt="Background"
@@ -457,11 +462,8 @@ export const Wireframe = (): JSX.Element => {
 
               <div className="relative z-10 flex justify-between">
                 <div className="w-[527px]">
-                  <h2 className="[font-family:'Days_One',Helvetica] font-normal text-6xl tracking-[0] leading-[59.5px] mb-[120px]">
-                    <span className="text-white">
-                      ME
-                      <br />
-                    </span>
+                  <h2 className="whitespace-nowrap [font-family:'Days_One',Helvetica] font-normal text-6xl tracking-[0] leading-[59.5px] mb-[120px]">
+                    <span className="text-white">ME </span>
                     <span className="text-[#a265ff]">CONTACTER</span>
                   </h2>
 
@@ -478,7 +480,7 @@ export const Wireframe = (): JSX.Element => {
                         key={index}
                         className="w-[463px] h-[84px] bg-[#1c0e30] rounded-3xl border border-solid border-[#ffffff33]"
                       >
-                        <CardContent className="p-0 h-full flex items-center">
+                        <CardContent className="p-4 flex items-center">
                           <div className="w-[80px] flex justify-center">
                             <img
                               className="w-10 h-[30px] object-cover"
@@ -525,7 +527,8 @@ export const Wireframe = (): JSX.Element => {
           </section>
 
           {/* Footer */}
-          <footer className="absolute w-[1504px] h-[249px] top-[4099px] left-0 bg-[#170b28] border border-solid border-[#ffffff33] flex items-center justify-between px-12">
+          <footer className="mt-32 w-full bg-[#170b28] border border-solid border-[#ffffff33] flex items-center justify-between px-12 py-10">
+            <div className="container mx-auto flex items-center justify-between">
             <div className="flex flex-col">
               <img
                 className="h-[158px] w-[158px] object-cover mb-4"
@@ -589,6 +592,7 @@ export const Wireframe = (): JSX.Element => {
                   ))}
                 </div>
               </div>
+            </div>
             </div>
           </footer>
         </div>
