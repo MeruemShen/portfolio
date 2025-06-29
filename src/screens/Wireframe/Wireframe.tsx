@@ -19,10 +19,10 @@ export const Wireframe = (): JSX.Element => {
 
   // Social media links
   const socialLinks = [
-    { icon: "/2523d1-1.png", alt: "Element" },
-    { icon: "/linkedin-1.png", alt: "Linkedin" },
-    { icon: "/whatsapp-1.png", alt: "Whatsapp" },
-    { icon: "/enveloppe-de-courrier-electronique-1.png", alt: "Enveloppe de" },
+    { icon: "/wireframe/2523d1-1.png", alt: "Element" },
+    { icon: "/wireframe/linkedin-1.png", alt: "Linkedin" },
+    { icon: "/wireframe/whatsapp-1.png", alt: "Whatsapp" },
+    { icon: "/wireframe/enveloppe-de-courrier-electronique-1.png", alt: "Enveloppe de" },
   ];
 
   // Process steps
@@ -53,49 +53,49 @@ export const Wireframe = (): JSX.Element => {
   // Projects data
   const projects = [
     {
-      image: "/image-1.png",
+      image: "/wireframe/image-1.png",
       title: "LOREM IPSUM",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       type: "COACHING",
       technologies: [
         {
-          icon: "/vecteezy-wordpress-logo-vector-wordpress-icon-transparent-png-20.png",
+          icon: "/wireframe/vecteezy-wordpress-logo-vector-wordpress-icon-transparent-png-20.png",
           alt: "Wordpress",
         },
-        { icon: "/sass-logo-color-svg-2.png", alt: "Sass" },
+        { icon: "/wireframe/sass-logo-color-svg-2.png", alt: "Sass" },
       ],
     },
     {
-      image: "/image-3.png",
+      image: "/wireframe/image-3.png",
       title: "LOREM IPSUM DOLOR",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       type: "COACHING",
       technologies: [
-        { icon: "/react-icon-svg-1.png", alt: "React" },
-        { icon: "/sans-titre-1-1.png", alt: "Sans titre" },
-        { icon: "/sass-logo-color-svg-2.png", alt: "Sass" },
+        { icon: "/wireframe/react-icon-svg-1.png", alt: "React" },
+        { icon: "/wireframe/sans-titre-1-1.png", alt: "Sans titre" },
+        { icon: "/wireframe/sass-logo-color-svg-2.png", alt: "Sass" },
       ],
     },
     {
-      image: "/image-4.png",
+      image: "/wireframe/image-4.png",
       title: "LOREM IPSUM",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       type: "COACHING",
-      technologies: [{ icon: "/logo--1--1.png", alt: "Logo" }],
+      technologies: [{ icon: "/wireframe/logo--1--1.png", alt: "Logo" }],
     },
     {
-      image: "/image-2.png",
+      image: "/wireframe/image-2.png",
       title: "LOREM IPSUM",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       type: "COACHING",
       technologies: [
-        { icon: "/html-5-1.png", alt: "Html" },
-        { icon: "/css-3-1.png", alt: "Css" },
-        { icon: "/js-1.png", alt: "Js" },
+        { icon: "/wireframe/html-5-1.png", alt: "Html" },
+        { icon: "/wireframe/css-3-1.png", alt: "Css" },
+        { icon: "/wireframe/js-1.png", alt: "Js" },
       ],
     },
   ];
@@ -103,19 +103,19 @@ export const Wireframe = (): JSX.Element => {
   // Contact methods
   const contactMethods = [
     {
-      icon: "/enveloppe-de-courrier-electronique-1.png",
+      icon: "/wireframe/enveloppe-de-courrier-electronique-1.png",
       alt: "Email",
       value: "lorem.ipsumdolorsite.amet",
       isLink: true,
     },
     {
-      icon: "/whatsapp-1.png",
+      icon: "/wireframe/whatsapp-1.png",
       alt: "Phone",
       value: "07 58 48 48 48 54",
       isLink: false,
     },
     {
-      icon: "/linkedin-1.png",
+      icon: "/wireframe/linkedin-1.png",
       alt: "LinkedIn",
       value: "lorem.ipsumdolorsite.amet",
       isLink: true,
@@ -124,11 +124,11 @@ export const Wireframe = (): JSX.Element => {
 
   // Tech stack icons
   const techStack = [
-    { icon: "/html-5-1.png", alt: "HTML" },
-    { icon: "/css-3-1.png", alt: "CSS" },
-    { icon: "/react-icon-svg-1.png", alt: "React" },
-    { icon: "/js-1.png", alt: "JavaScript" },
-    { icon: "/sass-logo-color-svg-2.png", alt: "Sass" },
+    { icon: "/wireframe/html-5-1.png", alt: "HTML" },
+    { icon: "/wireframe/css-3-1.png", alt: "CSS" },
+    { icon: "/wireframe/react-icon-svg-1.png", alt: "React" },
+    { icon: "/wireframe/js-1.png", alt: "JavaScript" },
+    { icon: "/wireframe/sass-logo-color-svg-2.png", alt: "Sass" },
   ];
 
   // Footer links
@@ -148,7 +148,7 @@ export const Wireframe = (): JSX.Element => {
               <img
                 className="h-[138px] w-[158px] object-cover"
                 alt="Logo removebg"
-                src="/logo-removebg-preview-2.png"
+                src="/wireframe/logo.png"
               />
 
               {/* Main Navigation */}
@@ -178,7 +178,7 @@ export const Wireframe = (): JSX.Element => {
                 <img
                   className="w-[21px] h-[21px] object-cover"
                   alt="Telecharger"
-                  src="/telecharger--1--1.png"
+                  src="/wireframe/telecharger--1--1.png"
                 />
                 <span className="[font-family:'Poppins',Helvetica] font-medium text-white text-xl tracking-[0] leading-[normal]">
                   CV
@@ -223,7 +223,7 @@ export const Wireframe = (): JSX.Element => {
                   <img
                     className="w-full h-full object-cover"
                     alt="About"
-                    src="/aboutddd-2.png"
+                    src="/wireframe/aboutddd-2.png"
                   />
                 </CardContent>
               </Card>
@@ -291,7 +291,7 @@ export const Wireframe = (): JSX.Element => {
                       <img
                         className="w-[38px] h-[38px] object-cover"
                         alt="Previous"
-                        src="/up-arrow-2.png"
+                        src="/wireframe/up-arrow-2.png"
                       />
                     </Button>
 
@@ -313,7 +313,7 @@ export const Wireframe = (): JSX.Element => {
                       <img
                         className="w-[38px] h-[38px] object-cover rotate-180"
                         alt="Next"
-                        src="/up-arrow-2.png"
+                        src="/wireframe/up-arrow-2.png"
                       />
                     </Button>
                   </CardContent>
@@ -329,7 +329,7 @@ export const Wireframe = (): JSX.Element => {
               <img
                 className="h-[983px] top-[26px] left-0 absolute w-[1440px] object-cover"
                 alt="Background"
-                src="/calque-0-2-1.png"
+                src="/wireframe/calque-0-2-1.png"
               />
 
               <h2 className="absolute w-[971px] top-0 left-[234px] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap">
@@ -340,7 +340,7 @@ export const Wireframe = (): JSX.Element => {
               <img
                 className="w-[333px] top-[12px] left-[1139px] absolute h-[29px]"
                 alt="Arrow"
-                src="/arrow-9.svg"
+                src="/wireframe/arrow-9.svg"
               />
 
               <div className="absolute top-[142px] left-0 w-full flex flex-col gap-16">
@@ -389,7 +389,7 @@ export const Wireframe = (): JSX.Element => {
             <img
               className="w-[494px] absolute top-[13px] left-[978px] h-[29px]"
               alt="Arrow"
-              src="/arrow-9.svg"
+              src="/wireframe/arrow-9.svg"
             />
 
             <div className="mt-[145px] grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -422,7 +422,7 @@ export const Wireframe = (): JSX.Element => {
                           <img
                             className="h-[29px]"
                             alt="Arrow"
-                            src="/arrow-9.svg"
+                            src="/wireframe/arrow-9.svg"
                           />
                         </div>
 
@@ -457,7 +457,7 @@ export const Wireframe = (): JSX.Element => {
               <img
                 className="h-[576px] w-full absolute top-[93px] left-0 object-cover"
                 alt="Background"
-                src="/calque-0-2-1.png"
+                src="/wireframe/calque-0-2-1.png"
               />
 
               <div className="relative z-10 flex justify-between">
@@ -513,13 +513,13 @@ export const Wireframe = (): JSX.Element => {
                   <img
                     className="w-[764px] absolute top-[79px] left-[-77px] h-[29px]"
                     alt="Arrow"
-                    src="/arrow-9.svg"
+                    src="/wireframe/arrow-9.svg"
                   />
 
                   <img
                     className="w-[513px] h-[437px] mt-[143px] object-cover"
                     alt="About"
-                    src="/aboutddd-2.png"
+                    src="/wireframe/aboutddd-2.png"
                   />
                 </div>
               </div>
@@ -533,7 +533,7 @@ export const Wireframe = (): JSX.Element => {
               <img
                 className="h-[158px] w-[158px] object-cover mb-4"
                 alt="Logo"
-                src="/logo-removebg-preview-2.png"
+                src="/wireframe/logo-removebg-preview-2.png"
               />
 
               <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[32px] tracking-[0] leading-[31.7px] mb-4">
@@ -548,7 +548,7 @@ export const Wireframe = (): JSX.Element => {
             <img
               className="w-[734px] h-[29px] absolute top-[4150px] left-[222px]"
               alt="Arrow"
-              src="/arrow-9.svg"
+              src="/wireframe/arrow-9.svg"
             />
 
             <div className="flex gap-16">
