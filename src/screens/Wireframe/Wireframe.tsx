@@ -135,11 +135,11 @@ export const Wireframe = (): JSX.Element => {
   const footerLinks = ["ACCUEIL", "A PROPOS", "WORK", "PROCESSUS", "CONTACT"];
 
   return (
-      <div className="bg-white flex flex-row justify-center w-full">
-        <div className="bg-white overflow-hidden w-[1440px] h-[4344px]">
-          <div className="relative w-[1504px] h-[4348px] -left-8">
+      <div className="bg-white flex flex-row justify-center w-screen min-h-screen">
+        <div className="bg-white w-full min-h-screen">
+          <div className="relative w-full min-h-screen">
             {/* Background */}
-            <div className="absolute w-[1440px] h-[4344px] top-0 left-8 backdrop-blur-[25.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(25.3px)_brightness(100%)] bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
+            <div className="absolute w-full h-[4344px] top-0 left-0 backdrop-blur-[25.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(25.3px)_brightness(100%)] bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
 
             {/* Navigation */}
             <header className="absolute w-full top-5 left-0 flex justify-center items-center px-8 z-10">
