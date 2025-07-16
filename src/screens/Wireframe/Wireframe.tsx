@@ -19,10 +19,10 @@ export const Wireframe = (): JSX.Element => {
 
   // Social media links
   const socialLinks = [
-    { icon: "/2523d1-1.png", alt: "Element" },
-    { icon: "/linkedin-1.png", alt: "Linkedin" },
-    { icon: "/whatsapp-1.png", alt: "Whatsapp" },
-    { icon: "/enveloppe-de-courrier-electronique-1.png", alt: "Enveloppe de" },
+    { icon: "/wireframe/github.png", alt: "Element" },
+    { icon: "/wireframe/linkedin.png", alt: "Linkedin" },
+    { icon: "/wireframe/whatapps.png", alt: "Whatsapp" },
+    { icon: "/wireframe/mail.png", alt: "Enveloppe de" },
   ];
 
   // Process steps
@@ -63,7 +63,7 @@ export const Wireframe = (): JSX.Element => {
           icon: "/vecteezy-wordpress-logo-vector-wordpress-icon-transparent-png-20.png",
           alt: "Wordpress",
         },
-        { icon: "/sass-logo-color-svg-2.png", alt: "Sass" },
+        { icon: "/wireframe/sass.png", alt: "Sass" },
       ],
     },
     {
@@ -75,7 +75,7 @@ export const Wireframe = (): JSX.Element => {
       technologies: [
         { icon: "/react-icon-svg-1.png", alt: "React" },
         { icon: "/sans-titre-1-1.png", alt: "Sans titre" },
-        { icon: "/sass-logo-color-svg-2.png", alt: "Sass" },
+        { icon: "/wireframe/sass.png", alt: "Sass" },
       ],
     },
     {
@@ -93,9 +93,9 @@ export const Wireframe = (): JSX.Element => {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       type: "COACHING",
       technologies: [
-        { icon: "/html-5-1.png", alt: "Html" },
-        { icon: "/css-3-1.png", alt: "Css" },
-        { icon: "/js-1.png", alt: "Js" },
+        { icon: "/wireframe/html.png", alt: "Html" },
+        { icon: "/wireframe/css.png", alt: "Css" },
+        { icon: "/wireframe/js.png", alt: "Js" },
       ],
     },
   ];
@@ -103,19 +103,19 @@ export const Wireframe = (): JSX.Element => {
   // Contact methods
   const contactMethods = [
     {
-      icon: "/enveloppe-de-courrier-electronique-1.png",
+      icon: "/wireframe/mail.png",
       alt: "Email",
       value: "lorem.ipsumdolorsite.amet",
       isLink: true,
     },
     {
-      icon: "/whatsapp-1.png",
+      icon: "/wireframe/whatapps.png",
       alt: "Phone",
       value: "07 58 48 48 48 54",
       isLink: false,
     },
     {
-      icon: "/linkedin-1.png",
+      icon: "/wireframe/linkedin.png",
       alt: "LinkedIn",
       value: "lorem.ipsumdolorsite.amet",
       isLink: true,
@@ -124,11 +124,11 @@ export const Wireframe = (): JSX.Element => {
 
   // Tech stack icons
   const techStack = [
-    { icon: "/html-5-1.png", alt: "HTML" },
-    { icon: "/css-3-1.png", alt: "CSS" },
-    { icon: "/react-icon-svg-1.png", alt: "React" },
-    { icon: "/js-1.png", alt: "JavaScript" },
-    { icon: "/sass-logo-color-svg-2.png", alt: "Sass" },
+    { icon: "/wireframe/html.png", alt: "HTML" },
+    { icon: "/wireframe/css.png", alt: "CSS" },
+    { icon: "/wireframe/react.png", alt: "React" },
+    { icon: "/wireframe/js.png", alt: "JavaScript" },
+        { icon: "/wireframe/sass.png", alt: "Sass" },
   ];
 
   // Footer links
@@ -148,7 +148,7 @@ export const Wireframe = (): JSX.Element => {
                 <img
                     className="h-[138px] w-[158px] object-cover"
                     alt="Logo removebg"
-                    src="/logo-removebg-preview-2.png"
+                    src="/wireframe/logo.png"
                 />
 
                 {/* Main Navigation */}
@@ -290,7 +290,7 @@ export const Wireframe = (): JSX.Element => {
                         <img
                             className="w-[38px] h-[38px] object-cover"
                             alt="Previous"
-                            src="/up-arrow-2.png"
+                            src="/wireframe/left_arrow.png"
                         />
                       </Button>
 
@@ -312,7 +312,7 @@ export const Wireframe = (): JSX.Element => {
                         <img
                             className="w-[38px] h-[38px] object-cover rotate-180"
                             alt="Next"
-                            src="/up-arrow-2.png"
+                            src="/wireframe/right_arrow.png"
                         />
                       </Button>
                     </CardContent>
@@ -327,7 +327,7 @@ export const Wireframe = (): JSX.Element => {
                 <img
                     className="h-[983px] top-[26px] left-0 absolute w-[1440px] object-cover"
                     alt="Background"
-                    src="/calque-0-2-1.png"
+                    src="/wireframe/fond_lune.png"
                 />
 
                 <h2 className="absolute w-[971px] top-0 left-[234px] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap">
@@ -530,7 +530,7 @@ export const Wireframe = (): JSX.Element => {
                 <img
                     className="h-[158px] w-[158px] object-cover mb-4"
                     alt="Logo"
-                    src="/logo-removebg-preview-2.png"
+                    src="/wireframe/logo.png"
                 />
 
                 <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[32px] tracking-[0] leading-[31.7px] mb-4">
