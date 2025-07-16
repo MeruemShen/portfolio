@@ -135,7 +135,7 @@ export const Wireframe = (): JSX.Element => {
   const footerLinks = ["ACCUEIL", "A PROPOS", "WORK", "PROCESSUS", "CONTACT"];
 
   return (
-      <div className="bg-white flex flex-row justify-center w-screen min-h-screen">
+      <div className="bg-white flex flex-row justify-center w-full min-h-screen overflow-x-hidden">
         <div className="bg-white w-full min-h-screen">
           <div className="relative w-full min-h-screen">
             {/* Background */}
@@ -206,7 +206,7 @@ export const Wireframe = (): JSX.Element => {
 
             {/* Hero Section */}
             <section className="absolute w-full top-[218px] left-0 flex flex-col items-center px-8">
-              <h1 className="w-[971px] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[50px]">
+              <h1 className="w-full max-w-[971px] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[50px]">
               <span className="text-white leading-[0.1px]">
                 CONSTRUISONS ENSEMBLE VOTRE{" "}
               </span>
@@ -215,9 +215,9 @@ export const Wireframe = (): JSX.Element => {
               </span>
               </h1>
 
-              <div className="flex w-full mt-[207px] gap-8 justify-center">
+              <div className="flex w-full mt-[207px] gap-8 justify-center flex-col md:flex-row">
                 {/* Profile Image */}
-                <Card className="w-[504px] h-[536px] bg-[#0f0f0f26] rounded-[40px] border border-solid border-[#ffffff33] overflow-hidden">
+                <Card className="w-full md:w-[504px] md:h-[536px] bg-[#0f0f0f26] rounded-[40px] border border-solid border-[#ffffff33] overflow-hidden">
                   <CardContent className="p-0 h-full">
                     <img
                         className="w-full h-full object-cover"
@@ -228,8 +228,8 @@ export const Wireframe = (): JSX.Element => {
                 </Card>
 
                 {/* About Me */}
-                <div className="flex flex-col gap-8">
-                  <Card className="w-[655px] h-[381px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33]">
+                <div className="flex flex-col gap-8 w-full md:w-auto">
+                  <Card className="w-full md:w-[655px] md:h-[381px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33]">
                     <CardContent className="p-8">
                       <h2 className="[font-family:'Days_One',Helvetica] font-normal text-white text-2xl text-center tracking-[0] leading-[23.8px] mb-8">
                         MON PARCOURS
@@ -281,7 +281,7 @@ export const Wireframe = (): JSX.Element => {
                   </Card>
 
                   {/* Skills */}
-                  <Card className="w-[655px] h-[124px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33]">
+                  <Card className="w-full md:w-[655px] md:h-[124px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33]">
                     <CardContent className="p-0 h-full flex items-center justify-between px-8">
                       <Button
                           variant="outline"
@@ -322,10 +322,10 @@ export const Wireframe = (): JSX.Element => {
             </section>
 
             {/* Process Section */}
-            <section className="absolute w-[1470px] h-[1009px] top-[1079px] left-[18px]">
-              <div className="relative w-[1440px] h-[1009px] left-3.5">
+            <section className="absolute w-full h-[1009px] top-[1079px] left-0">
+              <div className="relative w-full h-[1009px]">
                 <img
-                    className="h-[983px] top-[26px] left-0 absolute w-[1440px] object-cover"
+                    className="h-[983px] top-[26px] left-0 absolute w-full object-cover"
                     alt="Background"
                     src="/wireframe/fond_lune.png"
                 />
@@ -388,11 +388,11 @@ export const Wireframe = (): JSX.Element => {
                   src="/arrow-9.svg"
               />
 
-              <div className="mt-[145px] grid grid-cols-2 gap-8">
+              <div className="mt-[145px] grid grid-cols-1 md:grid-cols-2 gap-8">
                 {projects.map((project, index) => (
                     <Card
                         key={index}
-                        className={`${index % 2 === 0 ? "w-[470px]" : "w-[654px]"} h-[411px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33]`}
+                        className={`w-full h-[411px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33] ${index % 2 === 0 ? "md:w-[470px]" : "md:w-[654px]"}`}
                     >
                       <CardContent className="p-0 flex flex-col h-full">
                         <div className="w-full h-[153px] overflow-hidden">
@@ -455,8 +455,8 @@ export const Wireframe = (): JSX.Element => {
                     src="/calque-0-2-1.png"
                 />
 
-                <div className="relative z-10 flex justify-between">
-                  <div className="w-[527px]">
+                <div className="relative z-10 flex flex-col md:flex-row justify-between">
+                  <div className="w-full md:w-[527px]">
                     <h2 className="[font-family:'Days_One',Helvetica] font-normal text-6xl tracking-[0] leading-[59.5px] mb-[120px]">
                     <span className="text-white">
                       ME
@@ -465,7 +465,7 @@ export const Wireframe = (): JSX.Element => {
                       <span className="text-[#a265ff]">CONTACTER</span>
                     </h2>
 
-                    <p className="w-[475px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[15px] tracking-[0] leading-[normal] mb-[60px]">
+                    <p className="w-full md:w-[475px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[15px] tracking-[0] leading-[normal] mb-[60px]">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                       do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -476,7 +476,7 @@ export const Wireframe = (): JSX.Element => {
                       {contactMethods.map((method, index) => (
                           <Card
                               key={index}
-                              className="w-[463px] h-[84px] bg-[#1c0e30] rounded-3xl border border-solid border-[#ffffff33]"
+                              className="w-full md:w-[463px] h-[84px] bg-[#1c0e30] rounded-3xl border border-solid border-[#ffffff33]"
                           >
                             <CardContent className="p-0 h-full flex items-center">
                               <div className="w-[80px] flex justify-center">
@@ -507,15 +507,15 @@ export const Wireframe = (): JSX.Element => {
                     </div>
                   </div>
 
-                  <div className="relative">
+                  <div className="relative mt-8 md:mt-0">
                     <img
-                        className="w-[764px] absolute top-[79px] left-[-77px] h-[29px]"
+                        className="w-full md:w-[764px] absolute top-[79px] left-[-77px] h-[29px]"
                         alt="Arrow"
                         src="/arrow-9.svg"
                     />
 
                     <img
-                        className="w-[513px] h-[437px] mt-[143px] object-cover"
+                        className="w-full md:w-[513px] h-[437px] mt-[143px] object-cover"
                         alt="About"
                         src="/aboutddd-2.png"
                     />
@@ -525,7 +525,7 @@ export const Wireframe = (): JSX.Element => {
             </section>
 
             {/* Footer */}
-            <footer className="absolute w-[1504px] h-[249px] top-[4099px] left-0 bg-[#170b28] border border-solid border-[#ffffff33] flex items-center justify-between px-12">
+            <footer className="absolute w-full h-[249px] top-[4099px] left-0 bg-[#170b28] border border-solid border-[#ffffff33] flex items-center justify-between px-12">
               <div className="flex flex-col">
                 <img
                     className="h-[158px] w-[158px] object-cover mb-4"
