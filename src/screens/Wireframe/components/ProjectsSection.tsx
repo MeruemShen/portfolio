@@ -27,12 +27,19 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
       </h2>
       <img className="w-full max-w-[494px] h-[29px]" alt="Arrow" src="/arrow-9.svg" />
     </div>
-    <div className="mt-[145px] grid grid-cols-1 md:grid-cols-2 gap-8">
-      {projects.map((project, index) => (
-        <Card
-          key={index}
-          className={`w-full h-[411px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33] ${index % 2 === 0 ? "md:w-[470px]" : "md:w-[654px]"}`}
-        >
+    <div className="mt-[145px] grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center max-w-[1200px] mx-auto">
+      {projects.map((project, index) => {
+        const row = Math.floor(index / 2)
+        const isEvenRow = row % 2 === 0
+        const isLeftCol = index % 2 === 0
+        const isSmall = (isEvenRow && isLeftCol) || (!isEvenRow && !isLeftCol)
+        const colSpan = isSmall ? "md:col-span-1" : "md:col-span-2"
+
+        return (
+          <Card
+            key={index}
+            className={`w-full h-[411px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33] ${colSpan}`}
+          >
           <CardContent className="p-0 flex flex-col h-full">
             <div className="w-full h-[153px] overflow-hidden">
               <img className="w-full h-full object-cover" alt="Project Image" src={project.image} />
@@ -63,7 +70,8 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
             </div>
           </CardContent>
         </Card>
-      ))}
+        )
+      })}
     </div>
   </section>
 );
