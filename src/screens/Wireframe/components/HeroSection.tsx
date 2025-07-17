@@ -20,7 +20,7 @@ export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => (
     <div className="flex w-full mt-[207px] gap-8 justify-center flex-col md:flex-row">
       <Card className="w-full md:w-[504px] md:h-[536px] bg-[#0f0f0f26] rounded-[40px] border border-solid border-[#ffffff33] overflow-hidden">
         <CardContent className="p-0 h-full">
-          <img className="w-full h-full object-cover" alt="About" src="/aboutddd-2.png" />
+          <img className="w-full h-full object-cover" alt="About" src="/wireframe/about.png" />
         </CardContent>
       </Card>
       <div className="flex flex-col gap-8 w-full md:w-auto">

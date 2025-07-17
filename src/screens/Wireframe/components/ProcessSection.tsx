@@ -25,7 +25,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => (
           <span className="text-white">ÉTAPES DE </span>
           <span className="text-[#a265ff]">PROCESSUS</span>
         </h2>
-        <img className="w-full max-w-[333px] h-[29px]" alt="Arrow" src="/arrow-9.svg" />
+        <img className="w-full max-w-[333px] h-[29px]" alt="Arrow" src="/wireframe/svg/arrow.svg" />
       </div>
       <div className="absolute top-[142px] left-0 w-full flex flex-col gap-16">
         {steps.map((step, index) => (
