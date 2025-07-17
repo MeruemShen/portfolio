@@ -25,15 +25,15 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
         <span className="text-white">MES </span>
         <span className="text-[#a265ff]">PROJETS</span>
       </h2>
-      <img className="w-full max-w-[494px] h-[29px]" alt="Arrow" src="/arrow-9.svg" />
+      <img className="w-full max-w-[494px] h-[29px]" alt="Arrow" src="/wireframe/svg/arrow.svg" />
     </div>
-    <div className="mt-[145px] grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center max-w-[1200px] mx-auto">
+    <div className="mt-[145px] grid grid-cols-1 md:grid-cols-7 gap-8 justify-items-center max-w-[1200px] mx-auto">
       {projects.map((project, index) => {
         const row = Math.floor(index / 2)
         const isEvenRow = row % 2 === 0
         const isLeftCol = index % 2 === 0
         const isSmall = (isEvenRow && isLeftCol) || (!isEvenRow && !isLeftCol)
-        const colSpan = isSmall ? "md:col-span-1" : "md:col-span-2"
+        const colSpan = isSmall ? "md:col-span-3" : "md:col-span-4"
 
         return (
           <Card
@@ -49,12 +49,17 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
               <div className="absolute w-[143px] top-[78px] left-[-34px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-base text-center tracking-[0] leading-[15.9px]">
                 {project.type}
               </div>
-              <div className="ml-12">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-2xl tracking-[0] leading-[23.8px]">
+              <div className="ml-12 relative">
+                <div className="flex items-center mb-4 relative">
+                  <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-2xl tracking-[0] leading-[23.8px] min-w-0 truncate">
                     {project.title}
                   </h3>
-                  <img className="h-[29px]" alt="Arrow" src="/arrow-9.svg" />
+                  <div className="relative ml-5 flex-grow h-[40px] flex items-center min-w-[60px]">
+                    {/* Diamond */}
+                    <div className="absolute left-0 top-[calc(50%-2px)] -translate-y-1/2 w-[20px] h-[20px] bg-[#a265ff] rotate-45 z-10"></div>
+                    {/* Line */}
+                    <div className="absolute left-[14px] right-[-24px] top-[calc(50%-2px)] -translate-y-1/2 h-[5px] bg-[#a265ff]"></div>
+                  </div>
                 </div>
                 <p className="[font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[15px] tracking-[0] leading-[normal] mb-4">
                   {project.description}

@@ -53,41 +53,41 @@ export const Wireframe = (): JSX.Element => {
   // Projects data
   const projects = [
     {
-      image: "/image-1.png",
+      image: "/wireframe/lubin_banner.png",
       title: "LOREM IPSUM",
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       type: "COACHING",
       technologies: [
         {
-          icon: "/vecteezy-wordpress-logo-vector-wordpress-icon-transparent-png-20.png",
-          alt: "Wordpress",
+          icon: "/wireframe/symfony.png",
+          alt: "Symfony",
         },
         { icon: "/wireframe/sass.png", alt: "Sass" },
       ],
     },
     {
-      image: "/image-3.png",
+      image: "/wireframe/dovana_banner.png",
       title: "LOREM IPSUM DOLOR",
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       type: "COACHING",
       technologies: [
-        { icon: "/react-icon-svg-1.png", alt: "React" },
-        { icon: "/sans-titre-1-1.png", alt: "Sans titre" },
+        { icon: "/wireframe/react.png", alt: "React" },
+        { icon: "/wireframe/js.png", alt: "JavaScript" },
         { icon: "/wireframe/sass.png", alt: "Sass" },
       ],
     },
     {
-      image: "/image-4.png",
+      image: "/wireframe/exostia_banner.png",
       title: "LOREM IPSUM",
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       type: "COACHING",
-      technologies: [{ icon: "/logo--1--1.png", alt: "Logo" }],
+      technologies: [{ icon: "/wireframe/html.png", alt: "HTML" }],
     },
     {
-      image: "/image-2.png",
+      image: "/wireframe/hangart_banner.png",
       title: "LOREM IPSUM",
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

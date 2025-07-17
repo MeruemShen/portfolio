@@ -27,7 +27,7 @@ export const NavigationHeader = ({ navItems }: NavigationHeaderProps): JSX.Eleme
               {navItems.map((item, index) => (
                 <NavigationMenuItem key={index} className="relative">
                   {item.isActive ? (
-                    <div className="absolute w-[189px] h-[46px] top-0 left-[-70px] bg-[#a265ff] rounded-[35px]" />
+                    <div className="absolute w-[189px] h-[46px] top-[-10px] left-[5px] bg-[#a265ff] rounded-[35px]" />
                   ) : null}
                   <span className={`relative z-10 [font-family:'Days_One',Helvetica] font-normal text-white text-xl tracking-[0] leading-[normal] ${item.isActive ? "px-16" : ""}`}>{item.name}</span>
                 </NavigationMenuItem>
