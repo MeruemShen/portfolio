@@ -59,7 +59,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
               <div className="absolute w-[143px] top-[105px] left-[-36.5px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-base text-center tracking-[0] leading-[15.9px]">
                 {project.type}
               </div>
-              <div className="ml-12 relative">
+              <div className="ml-12 relative w-[100%]">
                 <div className="flex items-center mb-4 relative">
                   <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-2xl tracking-[0] leading-[23.8px] min-w-0 truncate">
                     {project.title}
