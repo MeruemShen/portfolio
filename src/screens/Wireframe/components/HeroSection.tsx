@@ -12,12 +12,22 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => (
-  <section className="absolute w-full top-[218px] left-0 flex flex-col items-center px-8">
-    <h1 className="w-full max-w-[971px] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[50px]">
-      <span className="text-white leading-[0.1px]">CONSTRUISONS ENSEMBLE VOTRE </span>
-      <span className="text-[#a265ff] leading-[49.6px]">EMPREINTE NUMÉRIQUE</span>
-    </h1>
-    <div className="flex w-full mt-[207px] gap-8 justify-center flex-col md:flex-row">
+    <section className="absolute w-full top-[218px] left-0 px-8">
+      <div className="relative mb-4 h-[60px] mt-[100px]">
+        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+4px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap text-white z-10">
+          <div><span id="me-text">CONSTRUISONS ENSEMBLE</span></div>
+          <div>VOTRE <span className="text-[#a265ff]">EMPREINTE NUMÉRIQUE</span></div>
+        </h2>
+        <div className="flex justify-center items-center h-full">
+          <div className="ml-5 flex-grow h-[40px] flex items-center min-w-[60px]">
+            {/* Diamond */}
+            <div className="absolute left-1/2 translate-x-[440px] top-[calc(50%-30px)] -translate-y-1/2 w-[20px] h-[20px] bg-[#fff] rotate-45 z-0"></div>
+            {/* Line */}
+            <div className="absolute left-1/2 translate-x-[460px] right-[-24px] top-[calc(50%-30px)] -translate-y-1/2 h-[5px] bg-[#fff] z-0"></div>
+          </div>
+        </div>
+      </div>
+      <div className="flex w-full mt-[100px] gap-8 justify-center flex-col md:flex-row">
       <Card className="w-full md:w-[504px] md:h-[536px] bg-[#0f0f0f26] rounded-[40px] border border-solid border-[#ffffff33] overflow-hidden">
         <CardContent className="p-0 h-full">
           <img className="w-full h-full object-cover" alt="About" src="/wireframe/about.png" />

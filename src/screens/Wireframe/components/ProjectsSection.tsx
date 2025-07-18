@@ -20,18 +20,23 @@ interface ProjectsSectionProps {
 
 export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element => (
   <section className="absolute w-full top-[2180px] left-0 px-8">
-    <div className="relative w-full max-w-[971px] mx-auto">
-      <h2 className="[text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap">
-        <span className="text-white">MES </span>
+    <div className="relative mb-4 h-[60px] mt-[0px]">
+      {/* Texte centré en absolu */}
+      <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+4px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap text-white z-10">
+        <span>MES </span>
         <span className="text-[#a265ff]">PROJETS</span>
       </h2>
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center h-[29px] w-full max-w-[494px]">
-        {/* Diamond */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[20px] h-[20px] bg-white rotate-45 z-10"></div>
-        {/* Line */}
-        <div className="absolute left-0 right-[14px] top-1/2 -translate-y-1/2 h-[5px] bg-white"></div>
+      {/* Trait */}
+      <div className="flex justify-center items-center h-full">
+        <div className="ml-5 flex-grow h-[40px] flex items-center min-w-[60px]">
+          {/* Diamond */}
+          <div className="absolute left-1/2 translate-x-[240px] top-[calc(50%-2px)] -translate-y-1/2 w-[20px] h-[20px] bg-[#fff] rotate-45 z-0"></div>
+          {/* Line */}
+          <div className="absolute left-1/2 translate-x-[260px] right-[-24px] top-[calc(50%-2px)] -translate-y-1/2 h-[5px] bg-[#fff] z-0"></div>
+        </div>
       </div>
     </div>
+
     <div className="mt-[145px] grid grid-cols-1 md:grid-cols-7 gap-8 justify-items-center max-w-[1200px] mx-auto">
       {projects.map((project, index) => {
         const row = Math.floor(index / 2)
