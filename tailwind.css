@@ -89,3 +89,27 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #170b28;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a265ff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8b3dff;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #a265ff #170b28;
+}

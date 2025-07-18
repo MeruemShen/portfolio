@@ -47,7 +47,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                 {/* Bloc gauche (description + cartes) */}
                 <div className="flex flex-col flex-1 items-start">
                     <p className="w-full text-start [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[15px] tracking-[0] leading-[normal] mb-[30px]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Vous souhaitez donner vie à vos idées ou obtenir plus d’informations ? N’hésitez pas à me contacter pour échanger sur votre projet.
                     </p>
 
                     <div className="flex flex-col gap-[20px] items-start w-full">

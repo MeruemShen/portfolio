@@ -34,23 +34,23 @@ export const Wireframe = (): JSX.Element => {
   const processSteps = [
     {
       number: "01",
-      title: "LOREM IPSUM",
+      title: "ANALYSE DES BESOINS",
       description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "Nous d\u00e9finissons en d\u00e9tail vos attentes, vos contraintes et vos objectifs pour formaliser un cahier des charges complet. Chaque fonctionnalit\u00e9 est discut\u00e9e afin d\u2019\u00e9laborer un planning r\u00e9aliste et adapt\u00e9 \u00e0 votre budget.",
       step: "ETAPE 1",
     },
     {
       number: "02",
-      title: "LOREM IPSUM DOLOR",
+      title: "CONCEPTION ET DESIGN",
       description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "Je con\u00e7ois l\u2019architecture de votre solution et r\u00e9alise des maquettes fonctionnelles respectant votre identit\u00e9 visuelle. Une attention toute particuli\u00e8re est port\u00e9e \u00e0 l\u2019ergonomie pour offrir une exp\u00e9rience utilisateur fluide et professionnelle.",
       step: "ETAPE 2",
     },
     {
       number: "03",
-      title: "LOREM IPSUM",
+      title: "D\u00c9VELOPPEMENT ET MISE EN LIGNE",
       description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "Je d\u00e9veloppe votre application dans le respect des bonnes pratiques et proc\u00e8de \u00e0 des phases de tests r\u00e9guli\u00e8res. L\u2019accompagnement se poursuit jusqu\u2019\u00e0 la mise en production afin de garantir un d\u00e9ploiement s\u00fbr et performant.",
       step: "ETAPE 3",
     },
   ];
@@ -59,9 +59,9 @@ export const Wireframe = (): JSX.Element => {
   const projects = [
     {
       image: "/wireframe/lubin_banner.png",
-      title: "LOREM IPSUM",
+      title: "Lubin Coaching",
       description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+          "Plateforme de coaching sportif d\u00e9velopp\u00e9e avec Symfony et Sass.",
       type: "COACHING",
       technologies: [
         {
@@ -73,9 +73,9 @@ export const Wireframe = (): JSX.Element => {
     },
     {
       image: "/wireframe/dovana_banner.png",
-      title: "LOREM IPSUM DOLOR",
+      title: "Dovana",
       description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "Application de gestion de cadeaux r\u00e9alis\u00e9e en React et JavaScript.",
       type: "COACHING",
       technologies: [
         { icon: "/wireframe/react.png", alt: "React" },
@@ -85,17 +85,17 @@ export const Wireframe = (): JSX.Element => {
     },
     {
       image: "/wireframe/exostia_banner.png",
-      title: "LOREM IPSUM",
+      title: "Exostia",
       description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "Site vitrine inspir\u00e9 de la science-fiction enti\u00e8rement cod\u00e9 en HTML.",
       type: "COACHING",
       technologies: [{ icon: "/wireframe/html.png", alt: "HTML" }],
     },
     {
       image: "/wireframe/hangart_banner.png",
-      title: "LOREM IPSUM",
+      title: "Hangart",
       description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Portfolio pour un artiste digital con\u00e7u en HTML, CSS et JavaScript.",
       type: "COACHING",
       technologies: [
         { icon: "/wireframe/html.png", alt: "Html" },
@@ -110,7 +110,7 @@ export const Wireframe = (): JSX.Element => {
     {
       icon: "/wireframe/mail.png",
       alt: "Email",
-      value: "lorem.ipsumdolorsite.amet",
+      value: "contact@deepbird.com",
       isLink: true,
     },
     {
@@ -122,7 +122,7 @@ export const Wireframe = (): JSX.Element => {
     {
       icon: "/wireframe/linkedin.png",
       alt: "LinkedIn",
-      value: "lorem.ipsumdolorsite.amet",
+      value: "linkedin.com/in/deepbird",
       isLink: true,
     },
   ];
