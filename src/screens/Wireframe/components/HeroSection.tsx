@@ -12,7 +12,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => (
-    <section className="absolute w-full top-[218px] left-0 px-8">
+    <section id="apropos" className="absolute w-full top-[218px] left-0 px-8">
       <div className="relative mb-4 h-[60px] mt-[100px]">
         <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+4px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap text-white z-10">
           <div><span id="me-text">CONSTRUISONS ENSEMBLE</span></div>

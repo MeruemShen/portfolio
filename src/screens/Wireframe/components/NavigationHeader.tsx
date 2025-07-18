@@ -10,13 +10,15 @@ import {
 interface NavItem {
   name: string;
   isActive: boolean;
+  targetId: string;
 }
 
 interface NavigationHeaderProps {
   navItems: NavItem[];
+  onNavItemClick?: (index: number) => void;
 }
 
-export const NavigationHeader = ({ navItems }: NavigationHeaderProps): JSX.Element => (
+export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderProps): JSX.Element => (
   <header className="absolute w-full top-5 left-0 flex justify-center items-center px-8 z-10">
     <div className="flex items-center justify-between w-full max-w-[1440px]">
       <img className="h-[138px] w-[158px] object-cover" alt="Logo removebg" src="/wireframe/logo.png" />
@@ -26,10 +28,26 @@ export const NavigationHeader = ({ navItems }: NavigationHeaderProps): JSX.Eleme
             <NavigationMenuList className="h-full flex items-center justify-around px-10 gap-8">
               {navItems.map((item, index) => (
                 <NavigationMenuItem key={index} className="relative">
-                  {item.isActive ? (
-                    <div className="absolute w-[189px] h-[46px] top-[-10px] left-[5px] bg-[#a265ff] rounded-[35px]" />
-                  ) : null}
-                  <span className={`relative z-10 [font-family:'Days_One',Helvetica] font-normal text-white text-xl tracking-[0] leading-[normal] ${item.isActive ? "px-16" : ""}`}>{item.name}</span>
+                  <a
+                    href={`#${item.targetId}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document
+                        .getElementById(item.targetId)
+                        ?.scrollIntoView({ behavior: "smooth" });
+                      onNavItemClick?.(index);
+                    }}
+                    className="flex items-center"
+                  >
+                    {item.isActive ? (
+                      <div className="absolute w-[189px] h-[46px] top-[-10px] left-[5px] bg-[#a265ff] rounded-[35px]" />
+                    ) : null}
+                    <span
+                      className={`relative z-10 [font-family:'Days_One',Helvetica] font-normal text-white text-xl tracking-[0] leading-[normal] ${item.isActive ? "px-16" : ""}`}
+                    >
+                      {item.name}
+                    </span>
+                  </a>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>

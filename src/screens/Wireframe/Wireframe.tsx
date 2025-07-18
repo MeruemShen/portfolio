@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ProcessSection } from "./components/ProcessSection";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { NavigationHeader } from "./components/NavigationHeader";
@@ -9,13 +9,18 @@ import { FooterSection } from "./components/FooterSection";
 
 export const Wireframe = (): JSX.Element => {
   // Navigation items
-  const navItems = [
-    { name: "ACCUEIL", isActive: false },
-    { name: "A PROPOS", isActive: false },
-    { name: "WORK", isActive: true },
-    { name: "PROCESSUS", isActive: false },
-    { name: "CONTACT", isActive: false },
+  const [activeIndex, setActiveIndex] = useState(2);
+  const navData = [
+    { name: "ACCUEIL", targetId: "accueil" },
+    { name: "A PROPOS", targetId: "apropos" },
+    { name: "WORK", targetId: "work" },
+    { name: "PROCESSUS", targetId: "processus" },
+    { name: "CONTACT", targetId: "contact" },
   ];
+  const navItems = navData.map((item, index) => ({
+    ...item,
+    isActive: index === activeIndex,
+  }));
 
   // Social media links
   const socialLinks = [
@@ -141,8 +146,11 @@ export const Wireframe = (): JSX.Element => {
             {/* Background */}
             <div className="absolute w-full h-[4344px] top-0 left-0 backdrop-blur-[25.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(25.3px)_brightness(100%)] bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
 
+            {/* Anchor for top of the page */}
+            <div id="accueil" />
+
             {/* Navigation */}
-            <NavigationHeader navItems={navItems} />
+            <NavigationHeader navItems={navItems} onNavItemClick={setActiveIndex} />
 
             {/* Social Media Sidebar */}
             <SocialSidebar links={socialLinks} />

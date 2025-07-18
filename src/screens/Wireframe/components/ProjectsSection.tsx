@@ -19,7 +19,7 @@ interface ProjectsSectionProps {
 }
 
 export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element => (
-  <section className="absolute w-full top-[2180px] left-0 px-8">
+  <section id="work" className="absolute w-full top-[2180px] left-0 px-8">
     <div className="relative mb-4 h-[60px] mt-[0px]">
       {/* Texte centré en absolu */}
       <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+4px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap text-white z-10">
@@ -46,17 +46,17 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
         const colSpan = isSmall ? "md:col-span-3" : "md:col-span-4"
 
         return (
-          <Card
-            key={index}
-            className={`w-full h-[411px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33] ${colSpan}`}
-          >
-          <CardContent className="p-0 flex flex-col h-full">
-            <div className="w-full h-[153px] overflow-hidden">
-              <img className="w-full h-full object-cover" alt="Project Image" src={project.image} />
-            </div>
+            <Card
+              key={index}
+              className={`w-full h-[411px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33] overflow-hidden ${colSpan}`}
+            >
+            <CardContent className="p-0 flex flex-col h-full">
+              <div className="w-full h-[153px] overflow-hidden p-3">
+                <img className="w-full h-full object-cover rounded-[30px]" alt="Project Image" src={project.image} />
+              </div>
             <div className="flex flex-1 p-6 relative">
               <div className="w-[22px] h-[181px] absolute left-[23px] rounded-[10px] border border-solid border-[#a265ff]" />
-              <div className="absolute w-[143px] top-[78px] left-[-34px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-base text-center tracking-[0] leading-[15.9px]">
+              <div className="absolute w-[143px] top-[105px] left-[-36.5px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-base text-center tracking-[0] leading-[15.9px]">
                 {project.type}
               </div>
               <div className="ml-12 relative">
