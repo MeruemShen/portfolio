@@ -19,13 +19,18 @@ interface ProjectsSectionProps {
 }
 
 export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element => (
-  <section className="absolute w-full top-[2061px] left-0 px-8">
-    <div className="flex flex-col items-center">
-      <h2 className="w-full max-w-[971px] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap">
+  <section className="absolute w-full top-[2180px] left-0 px-8">
+    <div className="relative w-full max-w-[971px] mx-auto">
+      <h2 className="[text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap">
         <span className="text-white">MES </span>
         <span className="text-[#a265ff]">PROJETS</span>
       </h2>
-      <img className="w-full max-w-[494px] h-[29px]" alt="Arrow" src="/wireframe/svg/arrow.svg" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center h-[29px] w-full max-w-[494px]">
+        {/* Diamond */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[20px] h-[20px] bg-white rotate-45 z-10"></div>
+        {/* Line */}
+        <div className="absolute left-0 right-[14px] top-1/2 -translate-y-1/2 h-[5px] bg-white"></div>
+      </div>
     </div>
     <div className="mt-[145px] grid grid-cols-1 md:grid-cols-7 gap-8 justify-items-center max-w-[1200px] mx-auto">
       {projects.map((project, index) => {
