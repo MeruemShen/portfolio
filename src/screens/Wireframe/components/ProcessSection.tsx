@@ -35,7 +35,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
   }, []);
 
   return (
-      <section className="absolute w-full h-[1009px] top-[1200px] left-0">
+      <section id="processus" className="absolute w-full h-[1009px] top-[1200px] left-0">
         <div className="relative w-full h-full">
           <img
               className="h-[983px] w-full absolute top-[26px] left-0 object-cover"
