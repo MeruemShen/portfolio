@@ -13,10 +13,10 @@ interface ContactSectionProps {
 }
 
 export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element => (
-  <section className="absolute w-full top-[3242px] left-0 px-8">
+  <section className="absolute w-full top-[3242px] left-0">
     <div className="relative">
       <img className="h-[576px] w-full absolute top-[93px] left-0 object-cover" alt="Background" src="/wireframe/fond_lune_2.png" />
-      <div className="relative z-10 flex flex-col md:flex-row justify-center items-start gap-12">
+      <div className="relative z-10 flex flex-col md:flex-row justify-center items-start gap-12 px-8">
         <div className="w-full md:w-[527px] flex flex-col items-start">
           <div className="flex flex-col items-start">
             <h2 className="w-full max-w-[527px] text-start [font-family:'Days_One',Helvetica] font-normal text-6xl tracking-[0] leading-[59.5px] mb-[120px]">
@@ -47,7 +47,12 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
           </div>
         </div>
         <div className="relative mt-8 md:mt-0">
-          <img className="w-full max-w-[764px] absolute top-[79px] left-1/2 -translate-x-1/2 h-[29px]" alt="Arrow" src="/wireframe/svg/arrow.svg" />
+          <div className="absolute w-full max-w-[764px] h-[29px] top-[79px] left-0">
+            {/* Diamond */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[20px] h-[20px] bg-white rotate-45 z-10"></div>
+            {/* Line */}
+            <div className="absolute left-0 right-[14px] top-1/2 -translate-y-1/2 h-[5px] bg-white"></div>
+          </div>
           <img className="w-full md:w-[513px] h-[437px] mt-[143px] object-cover" alt="About" src="/wireframe/about.png" />
         </div>
       </div>
