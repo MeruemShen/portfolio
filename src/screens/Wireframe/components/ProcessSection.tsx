@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React from "react";
 import { Card, CardContent } from "../../../components/ui/card";
 
 interface ProcessStep {
@@ -13,26 +13,6 @@ interface ProcessSectionProps {
 }
 
 export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
-  const titleWrapperRef = useRef<HTMLDivElement>(null);
-  const [lineWidth, setLineWidth] = useState("0px");
-  const [leftOffset, setLeftOffset] = useState("0px");
-
-  useLayoutEffect(() => {
-    const update = () => {
-      if (!titleWrapperRef.current) return;
-      const titleRight = titleWrapperRef.current.getBoundingClientRect().right;
-      const containerRight = titleWrapperRef.current.offsetParent?.getBoundingClientRect().right || window.innerWidth;
-
-      const spacing = 5 + 20; // padding + diamond
-      const calculated = containerRight - titleRight - spacing;
-      setLineWidth(`${Math.max(0, calculated)}px`);
-      setLeftOffset(`${titleRight + 5}px`); // 5px = spacing entre titre et losange
-    };
-
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
 
   return (
       <section id="processus" className="absolute w-full h-[807px] top-[960px] left-0">
@@ -52,9 +32,9 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
             <div className="flex justify-center items-center h-full">
               <div className="ml-4 flex-grow h-[32px] flex items-center min-w-[48px]">
                 {/* Diamond */}
-                <div className="absolute left-1/2 translate-x-[309px] top-[calc(50%-1.6px)] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
+                <div className="absolute left-1/2 translate-x-[380px] top-[calc(50%-1.6px)] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
                 {/* Line */}
-                <div className="absolute left-1/2 translate-x-[320px] right-[-19px] top-[calc(50%-1.6px)] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
+                <div className="absolute left-1/2 translate-x-[390px] right-[-19px] top-[calc(50%-1.6px)] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
               </div>
             </div>
           </div>
