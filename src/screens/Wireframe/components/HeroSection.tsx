@@ -12,32 +12,32 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => (
-    <section id="apropos" className="absolute w-full top-[218px] left-0 px-8">
-      <div className="relative mb-4 h-[60px] mt-[100px]">
-        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+4px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap text-white z-10">
+    <section id="apropos" className="absolute w-full top-[174px] left-0 px-8">
+      <div className="relative mb-4 h-[48px] mt-[80px]">
+        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10">
           <div><span id="me-text">CONSTRUISONS ENSEMBLE</span></div>
           <div>VOTRE <span className="text-[#a265ff]">EMPREINTE NUMÉRIQUE</span></div>
         </h2>
         <div className="flex justify-center items-center h-full">
-          <div className="ml-5 flex-grow h-[40px] flex items-center min-w-[60px]">
+        <div className="ml-4 flex-grow h-[32px] flex items-center min-w-[48px]">
             {/* Diamond */}
-            <div className="absolute left-1/2 translate-x-[440px] top-[calc(50%-30px)] -translate-y-1/2 w-[20px] h-[20px] bg-[#fff] rotate-45 z-0"></div>
+            <div className="absolute left-1/2 translate-x-[352px] top-[calc(50%-24px)] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
             {/* Line */}
-            <div className="absolute left-1/2 translate-x-[460px] right-[-24px] top-[calc(50%-30px)] -translate-y-1/2 h-[5px] bg-[#fff] z-0"></div>
+            <div className="absolute left-1/2 translate-x-[368px] right-[-19px] top-[calc(50%-24px)] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
           </div>
         </div>
       </div>
-      <div className="flex w-full mt-[100px] gap-8 justify-center flex-col md:flex-row">
-      <Card className="w-full md:w-[504px] md:h-[536px] bg-[#0f0f0f26] rounded-[40px] border border-solid border-[#ffffff33] overflow-hidden">
+      <div className="flex w-full mt-[80px] gap-6 justify-center flex-col md:flex-row">
+      <Card className="w-full md:w-[403px] md:h-[429px] bg-[#0f0f0f26] rounded-[32px] border border-solid border-[#ffffff33] overflow-hidden">
         <CardContent className="p-0 h-full">
           <img className="w-full h-full object-cover" alt="About" src="/wireframe/about.png" />
         </CardContent>
       </Card>
-      <div className="flex flex-col gap-8 w-full md:w-auto">
-        <Card className="w-full md:w-[655px] md:h-[381px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33]">
-          <CardContent className="p-8">
-            <h2 className="[font-family:'Days_One',Helvetica] font-normal text-white text-2xl text-center tracking-[0] leading-[23.8px] mb-8">MON PARCOURS</h2>
-            <p className="[font-family:'Roboto',Helvetica] font-normal text-xl tracking-[0] leading-[19.8px]">
+      <div className="flex flex-col gap-6 w-full md:w-auto">
+        <Card className="w-full md:w-[524px] md:h-[305px] bg-[#a265ff0d] rounded-[32px] border border-solid border-[#ffffff33]">
+          <CardContent className="p-6">
+            <h2 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] text-center tracking-[0] leading-[19px] mb-6">MON PARCOURS</h2>
+            <p className="[font-family:'Roboto',Helvetica] font-normal text-base tracking-[0] leading-[15.8px]">
               <span className="text-white">Étudiant en </span>
               <span className="text-[#a265ff]">Master Data &amp; Intelligence Artificielle</span>
               <span className="text-white"> et diplômé d&apos;un </span>
@@ -62,18 +62,18 @@ export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => (
             </p>
           </CardContent>
         </Card>
-        <Card className="w-full md:w-[655px] md:h-[124px] bg-[#a265ff0d] rounded-[40px] border border-solid border-[#ffffff33]">
-          <CardContent className="p-0 h-full flex items-center justify-between px-8">
-            <Button variant="outline" className="w-9 h-9 bg-white rounded-[18px] p-0">
-              <img className="w-[38px] h-[38px] object-cover" alt="Previous" src="/wireframe/left_arrow.png" />
+        <Card className="w-full md:w-[524px] md:h-[100px] bg-[#a265ff0d] rounded-[32px] border border-solid border-[#ffffff33]">
+          <CardContent className="p-0 h-full flex items-center justify-between px-6">
+            <Button variant="outline" className="w-7 h-7 bg-white rounded-[14px] p-0">
+              <img className="w-[30px] h-[30px] object-cover" alt="Previous" src="/wireframe/left_arrow.png" />
             </Button>
-            <div className="flex items-center justify-center gap-8">
+            <div className="flex items-center justify-center gap-6">
               {techStack.map((tech, index) => (
-                <img key={index} className="w-[46px] h-[46px] object-cover" alt={tech.alt} src={tech.icon} />
+                <img key={index} className="w-[37px] h-[37px] object-cover" alt={tech.alt} src={tech.icon} />
               ))}
             </div>
-            <Button variant="outline" className="w-9 h-9 bg-white rounded-[18px] p-0 rotate-180">
-              <img className="w-[38px] h-[38px] object-cover rotate-180" alt="Next" src="/wireframe/right_arrow.png" />
+            <Button variant="outline" className="w-7 h-7 bg-white rounded-[14px] p-0 rotate-180">
+              <img className="w-[30px] h-[30px] object-cover rotate-180" alt="Next" src="/wireframe/right_arrow.png" />
             </Button>
           </CardContent>
         </Card>
