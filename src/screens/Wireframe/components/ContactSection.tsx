@@ -21,29 +21,29 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                 alt="Background"
                 src="/wireframe/fond_lune_2.png"
             />
-            {/* Titre + trait */}
-            <div className="relative mb-4 h-[30px] mt-0 w-full ml-[300px]">
-                {/* Titre aligné à gauche */}
-                <h2 className="absolute left-0 top-1/2 -translate-y-[calc(50%+10px)] z-10 text-left [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] leading-[40px] tracking-[0] text-white whitespace-nowrap">
-                    <div><span id="me-text">ME</span></div>
-                    <div><span className="text-[#a265ff]">CONTACTER</span></div>
-                </h2>
 
-                {/* Trait (à droite du "ME") */}
-                <div className="flex justify-start items-center h-full ml-[41px]">
-                    <div className="ml-[10px] flex-grow h-[21px] flex items-center min-w-[30px]">
-                        {/* Diamond */}
-                        <div className="absolute left-[310px] bottom-[0px] w-[10px] h-[10px] bg-[#fff] rotate-45 z-0"></div>
-                        {/* Line */}
-                        <div className="absolute left-[320px] right-[-12px] bottom-[3px] h-[2px] bg-[#fff] z-0"></div>
+            <div className="relative mb-4 mt-[80px] w-full max-w-[1000px] mx-auto px-8 h-[48px] flex items-center">
+                {/* Titre + flèche alignés dans une ligne flex */}
+                <div className="flex items-center relative">
+                    <h2 className="relative -top-[18px] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] tracking-[0] leading-[39.6px] text-white z-10 text-left whitespace-nowrap mr-4">
+                        <div><span id="me-text">ME</span></div>
+                        <div><span className="text-[#a265ff]">CONTACTER</span></div>
+                    </h2>
+
+                    {/* Trait + losange (fleche) */}
+                    <div className="flex-grow h-[32px] flex items-center min-w-[20000px] relative">
+                        <div className="absolute left-0 top-[calc(50%+2px)] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
+                        <div className="absolute left-[15px] right-0 top-[calc(50%+2px)] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
                     </div>
                 </div>
-
             </div>
-            <div className="relative w-full h-full flex flex-col items-center pl-[128px] max-w-[1180px] mx-auto">
+
+
+
+            <div className="relative w-full h-full flex flex-col items-center px-8 max-w-[1000px] mx-auto">
 
                 {/* Content section split 50/50 */}
-                <div className="flex w-full gap-[51px] mt-[26px] pr-[102px]">
+                <div className="flex w-full gap-[51px] mt-[26px]">
                     {/* Bloc gauche (description + cartes) */}
                     <div className="flex flex-col flex-1 items-start">
                         <p className="w-full text-start [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] mb-[19px]">
