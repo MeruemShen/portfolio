@@ -30,9 +30,9 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
       <div className="flex justify-center items-center h-full">
         <div className="ml-[13px] flex-grow h-[26px] flex items-center min-w-[38px]">
           {/* Diamond */}
-          <div className="absolute left-1/2 translate-x-[154px] top-[calc(50%-1.3px)] -translate-y-1/2 w-[13px] h-[13px] bg-[#fff] rotate-45 z-0"></div>
+          <div className="absolute left-1/2 translate-x-[190px] top-[calc(50%-1.3px)] -translate-y-1/2 w-[13px] h-[13px] bg-[#fff] rotate-45 z-0"></div>
           {/* Line */}
-          <div className="absolute left-1/2 translate-x-[166px] right-[-15px] top-[calc(50%-1.3px)] -translate-y-1/2 h-[3px] bg-[#fff] z-0"></div>
+          <div className="absolute left-1/2 translate-x-[200px] right-[-15px] top-[calc(50%-1.3px)] -translate-y-1/2 h-[3px] bg-[#fff] z-0"></div>
         </div>
       </div>
     </div>
