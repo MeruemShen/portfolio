@@ -22,7 +22,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
   <section id="work" className="absolute w-full top-[1744px] left-0 px-[26px]">
     <div className="relative mb-4 h-[38px] mt-[0px]">
       {/* Texte centré en absolu */}
-      <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+2.6px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[32px] text-center tracking-[0] leading-[31.7px] whitespace-nowrap text-white z-10">
+      <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10">
         <span>MES </span>
         <span className="text-[#a265ff]">PROJETS</span>
       </h2>
@@ -56,12 +56,12 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
               </div>
             <div className="flex flex-1 p-4 relative">
               <div className="w-[14px] h-[116px] absolute left-[14px] rounded-[8px] border border-solid border-[#a265ff]" />
-              <div className="absolute w-[91px] top-[67px] left-[-23px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[10px] text-center tracking-[0] leading-[10px]">
+              <div className="absolute w-[91px] top-[67px] left-[-23px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
                 {project.type}
               </div>
               <div className="ml-8 relative w-[100%]">
                 <div className="flex items-center mb-[10px] relative">
-                  <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[15px] tracking-[0] leading-[15px] min-w-0 truncate">
+                  <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] min-w-0 truncate">
                     {project.title}
                   </h3>
                   <div className="relative ml-[13px] flex-grow h-[26px] flex items-center min-w-[38px]">
@@ -71,7 +71,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
                     <div className="absolute left-[9px] right-[-15px] top-[calc(50%-1.3px)] -translate-y-1/2 h-[3px] bg-[#a265ff]"></div>
                   </div>
                 </div>
-                <p className="[font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[10px] tracking-[0] leading-[normal] mb-[10px]">
+                <p className="[font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] mb-[10px]">
                   {project.description}
                 </p>
                 {project.technologies.length > 0 && (
