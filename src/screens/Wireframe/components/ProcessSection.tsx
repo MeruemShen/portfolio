@@ -76,7 +76,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
                         <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] mb-3">
                           {step.title}
                         </h3>
-                        <p className="w-[559px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[12px] tracking-[0] leading-[normal]">
+                        <p className="w-[580px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal]">
                           {step.description}
                         </p>
                       </div>
