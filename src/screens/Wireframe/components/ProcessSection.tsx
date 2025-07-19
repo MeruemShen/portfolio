@@ -35,48 +35,48 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
   }, []);
 
   return (
-      <section id="processus" className="absolute w-full h-[1009px] top-[1200px] left-0">
+      <section id="processus" className="absolute w-full h-[807px] top-[960px] left-0">
         <div className="relative w-full h-full">
           <img
-              className="h-[983px] w-full absolute top-[26px] left-0 object-cover"
+              className="h-[786px] w-full absolute top-[26px] left-0 object-cover"
               alt="Background"
               src="/wireframe/fond_lune.png"
           />
-          <div className="relative mb-4 h-[60px] mt-[-2px]">
+          <div className="relative mb-4 h-[48px] mt-[-2px]">
             {/* Texte centré en absolu */}
-            <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+4px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[50px] text-center tracking-[0] leading-[49.6px] whitespace-nowrap text-white z-10">
+            <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10">
               <span>ÉTAPES DE </span>
               <span className="text-[#a265ff]">PROCESSUS</span>
             </h2>
             {/* Trait */}
             <div className="flex justify-center items-center h-full">
-              <div className="ml-5 flex-grow h-[40px] flex items-center min-w-[60px]">
+              <div className="ml-4 flex-grow h-[32px] flex items-center min-w-[48px]">
                 {/* Diamond */}
-                <div className="absolute left-1/2 translate-x-[386px] top-[calc(50%-2px)] -translate-y-1/2 w-[20px] h-[20px] bg-[#fff] rotate-45 z-0"></div>
+                <div className="absolute left-1/2 translate-x-[309px] top-[calc(50%-1.6px)] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
                 {/* Line */}
-                <div className="absolute left-1/2 translate-x-[400px] right-[-24px] top-[calc(50%-2px)] -translate-y-1/2 h-[5px] bg-[#fff] z-0"></div>
+                <div className="absolute left-1/2 translate-x-[320px] right-[-19px] top-[calc(50%-1.6px)] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
               </div>
             </div>
           </div>
 
 
-          <div className="absolute top-[142px] left-0 w-full flex flex-col gap-16">
+          <div className="absolute top-[114px] left-0 w-full flex flex-col gap-12">
             {steps.map((step, index) => (
-                <div key={index} className="flex items-center gap-8 px-8 justify-center">
-                  <div className="[text-shadow:0px_0px_24px_#a265ff] [font-family:'Days_One',Helvetica] font-normal text-white text-[90px] tracking-[0] leading-[normal] w-[146px] text-center">
+                <div key={index} className="flex items-center gap-6 px-6 justify-center">
+                  <div className="[text-shadow:0px_0px_24px_#a265ff] [font-family:'Days_One',Helvetica] font-normal text-white text-[72px] tracking-[0] leading-[normal] w-[117px] text-center">
                     {step.number}
                   </div>
-                  <Card className="w-[870px] h-[204px] bg-[#221239] rounded-[40px] border border-solid border-[#ffffff33] shadow-[0px_0px_24px_#00000040]">
+                  <Card className="w-[696px] h-[163px] bg-[#221239] rounded-[32px] border border-solid border-[#ffffff33] shadow-[0px_0px_24px_#00000040]">
                     <CardContent className="p-0 h-full relative">
-                      <div className="absolute w-6 h-[136px] top-[35px] left-[35px] rounded-[10px] border border-solid border-[#a265ff]" />
-                      <div className="absolute w-[86px] top-[95px] left-[5px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-base text-center tracking-[0] leading-[15.9px]">
+                      <div className="absolute w-5 h-[109px] top-[28px] left-[28px] rounded-[8px] border border-solid border-[#a265ff]" />
+                      <div className="absolute w-[69px] top-[76px] left-[4px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
                         {step.step}
                       </div>
-                      <div className="absolute top-[37px] left-[79px]">
-                        <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-2xl tracking-[0] leading-[23.8px] mb-4">
+                      <div className="absolute top-[30px] left-[63px]">
+                        <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] mb-3">
                           {step.title}
                         </h3>
-                        <p className="w-[699px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[15px] tracking-[0] leading-[normal]">
+                        <p className="w-[559px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[12px] tracking-[0] leading-[normal]">
                           {step.description}
                         </p>
                       </div>
