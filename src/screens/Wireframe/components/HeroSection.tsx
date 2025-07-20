@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../../components/ui/button";
 import { Card, CardContent } from "../../../components/ui/card";
 
@@ -11,7 +11,25 @@ interface HeroSectionProps {
   techStack: TechItem[];
 }
 
-export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => (
+export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleCount = 5;
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + techStack.length) % techStack.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % techStack.length);
+  };
+
+  const extendedStack = [...techStack, ...techStack];
+  const visibleTech =
+    techStack.length <= visibleCount
+      ? techStack
+      : extendedStack.slice(currentIndex, currentIndex + visibleCount);
+
+  return (
     <section id="apropos" className="absolute w-full top-[174px] left-0 px-8">
       <div className="relative mb-4 h-[48px] mt-[80px]">
         <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10">
@@ -62,17 +80,23 @@ export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => (
             </p>
           </CardContent>
         </Card>
+
         <Card className="w-full md:w-[524px] md:h-[100px] bg-[#a265ff0d] rounded-[32px] border border-solid border-[#ffffff33]">
-          <CardContent className="p-0 h-full flex items-center justify-between px-6">
-            <Button variant="outline" className="w-7 h-7 bg-white rounded-[14px] p-0">
+          <CardContent className="p-0 h-full flex items-center justify-center gap-10 px-8">
+            <Button onClick={handlePrev} variant="link" className="w-[30px] h-[30px] bg-none rounded-[14px] p-0">
               <img className="w-[30px] h-[30px] object-cover" alt="Previous" src="/wireframe/left_arrow.png" />
             </Button>
-            <div className="flex items-center justify-center gap-6">
-              {techStack.map((tech, index) => (
-                <img key={index} className="w-[37px] h-[37px] object-cover" alt={tech.alt} src={tech.icon} />
+            <div className="flex items-center justify-center gap-8">
+              {visibleTech.map((tech, index) => (
+                <img
+                  key={index}
+                  className="w-[37px] h-[37px] object-cover"
+                  alt={tech.alt}
+                  src={tech.icon}
+                />
               ))}
             </div>
-            <Button variant="outline" className="w-7 h-7 bg-white rounded-[14px] p-0 rotate-180">
+            <Button onClick={handleNext} variant="link" className="w-[30xp] h-[30xp] rounded-[14px] p-0 rotate-180">
               <img className="w-[30px] h-[30px] object-cover rotate-180" alt="Next" src="/wireframe/right_arrow.png" />
             </Button>
           </CardContent>
@@ -80,6 +104,7 @@ export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default HeroSection;
