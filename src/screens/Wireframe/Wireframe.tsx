@@ -63,6 +63,7 @@ export const Wireframe = (): JSX.Element => {
       description:
           "Plateforme de coaching sportif d\u00e9velopp\u00e9e avec Symfony et Sass.",
       type: "COACHING",
+      url: "https://www.lubincoaching.fr/",
       technologies: [
         {
           icon: "/wireframe/symfony.png",
@@ -89,6 +90,7 @@ export const Wireframe = (): JSX.Element => {
       description:
           "Site vitrine inspir\u00e9 de la science-fiction enti\u00e8rement cod\u00e9 en HTML.",
       type: "COACHING",
+      url: "https://www.exostia.com/",
       technologies: [{ icon: "/wireframe/html.png", alt: "HTML" }],
     },
     {
@@ -131,9 +133,11 @@ export const Wireframe = (): JSX.Element => {
   const techStack = [
     { icon: "/wireframe/html.png", alt: "HTML" },
     { icon: "/wireframe/css.png", alt: "CSS" },
-    { icon: "/wireframe/react.png", alt: "React" },
     { icon: "/wireframe/js.png", alt: "JavaScript" },
-        { icon: "/wireframe/sass.png", alt: "Sass" },
+    { icon: "/wireframe/react.png", alt: "React" },
+    { icon: "/wireframe/symfony.png", alt: "Symfony" },
+    { icon: "/wireframe/wordpress.png", alt: "WordPress" },
+    { icon: "/wireframe/sass.png", alt: "Sass" },
   ];
 
   // Footer links
