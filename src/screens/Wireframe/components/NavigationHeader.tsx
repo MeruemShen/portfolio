@@ -19,15 +19,15 @@ interface NavigationHeaderProps {
 }
 
 export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderProps): JSX.Element => (
-  <header className="absolute w-full top-5 left-0 flex justify-center items-center px-8 z-10">
-    <div className="flex items-center justify-between w-full max-w-[1440px]">
-      <img className="h-[138px] w-[158px] object-cover" alt="Logo removebg" src="/wireframe/logo.png" />
-      <Card className="w-[861px] h-[67px] bg-[#0f0f0f] rounded-[35px] border border-solid border-[#ffffff33]">
-        <CardContent className="p-0 h-full flex items-center justify-center">
-          <NavigationMenu className="h-full">
-            <NavigationMenuList className="h-full flex items-center justify-around px-10 gap-8">
+  <header className="fixed top-[15px] left-0 w-full z-20">
+    <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between">
+      <img className="h-[64px] w-[90px] object-cover" alt="Logo removebg" src="/wireframe/logo.png" />
+      <Card className="w-[780px] h-[56px] bg-[#0f0f0f] rounded-[35px] border border-solid border-[#ffffff33]">
+        <CardContent className="p-0 h-full w-full flex items-center justify-center">
+          <NavigationMenu className="w-full">
+            <NavigationMenuList className="w-full h-full flex items-center justify-around gap-4">
               {navItems.map((item, index) => (
-                <NavigationMenuItem key={index} className="relative">
+                <NavigationMenuItem key={index} className="relative h-full">
                   <a
                     href={`#${item.targetId}`}
                     onClick={(e) => {
@@ -37,13 +37,13 @@ export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderP
                         ?.scrollIntoView({ behavior: "smooth" });
                       onNavItemClick?.(index);
                     }}
-                    className="flex items-center"
+                    className="relative flex h-full items-center justify-center px-5 py-2 transition-all duration-200 hover:text-[#a265ff] hover:scale-105"
                   >
                     {item.isActive ? (
-                      <div className="absolute w-[189px] h-[46px] top-[-10px] left-[5px] bg-[#a265ff] rounded-[35px]" />
+                      <div className="absolute inset-0 rounded-[35px] bg-[#a265ff] transition-all duration-200" />
                     ) : null}
                     <span
-                      className={`relative z-10 [font-family:'Days_One',Helvetica] font-normal text-white text-xl tracking-[0] leading-[normal] ${item.isActive ? "px-16" : ""}`}
+                      className={`relative z-10 [font-family:'Days_One',Helvetica] font-normal text-white text-sm tracking-[0] leading-[normal]`}
                     >
                       {item.name}
                     </span>
@@ -54,9 +54,9 @@ export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderP
           </NavigationMenu>
         </CardContent>
       </Card>
-      <Button className="w-[141px] h-[67px] bg-[#0f0f0f] rounded-[35px] border border-solid border-[#ffffff33] flex items-center justify-center gap-2">
+      <Button className="w-[120px] h-[50px] mr-6 bg-[#0f0f0f] rounded-[35px] border border-solid border-[#ffffff33] flex items-center justify-center gap-2 hover:bg-[#a265ff] transition-colors duration-200">
         <img className="w-[21px] h-[21px] object-cover" alt="Telecharger" src="/telecharger--1--1.png" />
-        <span className="[font-family:'Poppins',Helvetica] font-medium text-white text-xl tracking-[0] leading-[normal]">CV</span>
+        <span className="[font-family:'Poppins',Helvetica] font-medium text-white text-lg tracking-[0] leading-[normal]">CV</span>
       </Button>
     </div>
   </header>
