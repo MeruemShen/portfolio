@@ -12,6 +12,7 @@ interface Project {
   description: string;
   type: string;
   technologies: Technology[];
+  url?: string;
 }
 
 interface ProjectsSectionProps {
@@ -45,46 +46,59 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
         const isSmall = (isEvenRow && isLeftCol) || (!isEvenRow && !isLeftCol)
         const colSpan = isSmall ? "md:col-span-3" : "md:col-span-4"
 
-        return (
-            <Card
-              key={index}
-              className={`w-full h-[263px] bg-[#a265ff0d] rounded-[26px] border border-solid border-[#ffffff33] overflow-hidden ${colSpan}`}
-            >
+        const content = (
+          <Card
+            className={`w-full h-[263px] bg-[#a265ff0d] rounded-[26px] border border-solid border-[#ffffff33] overflow-hidden transition-all duration-200 hover:scale-[1.01] hover:shadow-[0_0_8px_#a265ff]`}
+          >
             <CardContent className="p-0 flex flex-col h-full">
               <div className="w-full h-[98px] overflow-hidden p-[0.48rem]">
                 <img className="w-full h-full object-cover rounded-[24px]" alt="Project Image" src={project.image} />
               </div>
-            <div className="flex flex-1 p-4 relative">
-              <div className="w-[14px] h-[116px] absolute left-[14px] rounded-[8px] border border-solid border-[#a265ff]" />
-              <div className="absolute w-[91px] top-[67px] left-[-24px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
-                {project.type}
-              </div>
-              <div className="ml-8 relative w-[100%]">
-                <div className="flex items-center mb-[10px] relative">
-                  <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] min-w-0 truncate">
-                    {project.title}
-                  </h3>
-                  <div className="relative ml-[13px] flex-grow h-[26px] flex items-center min-w-[38px]">
-                    {/* Diamond */}
-                    <div className="absolute left-0 top-[calc(50%-1.3px)] -translate-y-1/2 w-[13px] h-[13px] bg-[#a265ff] rotate-45 z-10"></div>
-                    {/* Line */}
-                    <div className="absolute left-[9px] right-[-15px] top-[calc(50%-1.3px)] -translate-y-1/2 h-[3px] bg-[#a265ff]"></div>
-                  </div>
+              <div className="flex flex-1 p-4 relative">
+                <div className="w-[14px] h-[116px] absolute left-[14px] rounded-[8px] border border-solid border-[#a265ff]" />
+                <div className="absolute w-[91px] top-[67px] left-[-24px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
+                  {project.type}
                 </div>
-                <p className="[font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] mb-[10px]">
-                  {project.description}
-                </p>
-                {project.technologies.length > 0 && (
-                  <div className="flex gap-[10px] mt-auto">
-                    {project.technologies.map((tech, techIndex) => (
-                      <img key={techIndex} className="w-5 h-5 object-cover" alt={tech.alt} src={tech.icon} />
-                    ))}
+                <div className="ml-8 relative w-[100%]">
+                  <div className="flex items-center mb-[10px] relative">
+                    <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] min-w-0 truncate">
+                      {project.title}
+                    </h3>
+                    <div className="relative ml-[13px] flex-grow h-[26px] flex items-center min-w-[38px]">
+                      {/* Diamond */}
+                      <div className="absolute left-0 top-[calc(50%-1.3px)] -translate-y-1/2 w-[13px] h-[13px] bg-[#a265ff] rotate-45 z-10"></div>
+                      {/* Line */}
+                      <div className="absolute left-[9px] right-[-15px] top-[calc(50%-1.3px)] -translate-y-1/2 h-[3px] bg-[#a265ff]"></div>
+                    </div>
                   </div>
-                )}
+                  <p className="[font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] mb-[10px]">
+                    {project.description}
+                  </p>
+                  {project.technologies.length > 0 && (
+                    <div className="flex gap-[10px] mt-auto">
+                      {project.technologies.map((tech, techIndex) => (
+                        <img key={techIndex} className="w-5 h-5 object-cover" alt={tech.alt} src={tech.icon} />
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        )
+
+        return project.url ? (
+          <a
+            key={index}
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`block ${colSpan} w-full`}
+          >
+            {content}
+          </a>
+        ) : (
+          <div key={index} className={`${colSpan} w-full`}>{content}</div>
         )
       })}
     </div>
