@@ -12,7 +12,7 @@ interface FooterSectionProps {
 }
 
 export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps): JSX.Element => (
-  <footer className="absolute w-full h-[249px] top-[4099px] left-0 bg-[#170b28] border border-solid border-[#ffffff33] flex items-center justify-between px-12">
+  <footer className="absolute w-full h-[249px] top-[3100px] left-0 bg-[#170b28] border border-solid border-[#ffffff33] flex items-center justify-between px-12">
     <div className="flex flex-col">
       <img className="h-[158px] w-[158px] object-cover mb-4" alt="Logo" src="/wireframe/logo.png" />
       <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[32px] tracking-[0] leading-[31.7px] mb-4">DeepBird</h3>

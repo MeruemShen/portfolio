@@ -110,19 +110,19 @@ export const Wireframe = (): JSX.Element => {
     {
       icon: "/wireframe/mail.png",
       alt: "Email",
-      value: "contact@deepbird.com",
+      value: "dorian.bidault11@gmail.com",
       isLink: true,
     },
     {
       icon: "/wireframe/whatapps.png",
       alt: "Phone",
-      value: "07 58 48 48 48 54",
+      value: "07 50 01 07 85",
       isLink: false,
     },
     {
       icon: "/wireframe/linkedin.png",
       alt: "LinkedIn",
-      value: "linkedin.com/in/deepbird",
+      value: "https://www.linkedin.com/in/dorian-bidault-589850240/",
       isLink: true,
     },
   ];
@@ -144,7 +144,7 @@ export const Wireframe = (): JSX.Element => {
         <div className="bg-white w-full min-h-screen">
           <div className="relative w-full min-h-screen">
             {/* Background */}
-            <div className="absolute w-full h-[4344px] top-0 left-0 backdrop-blur-[25.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(25.3px)_brightness(100%)] bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
+            <div className="absolute w-full h-[3100px] top-0 left-0 backdrop-blur-[25.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(25.3px)_brightness(100%)] bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
 
             {/* Anchor for top of the page */}
             <div id="accueil" />
