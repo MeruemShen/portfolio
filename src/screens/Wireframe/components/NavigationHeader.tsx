@@ -19,10 +19,10 @@ interface NavigationHeaderProps {
 }
 
 export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderProps): JSX.Element => (
-  <header className="fixed top-[15px] left-0 w-full z-20">
+  <header className="sticky top-0 left-0 w-full z-20 bg-[#0f0f0f66] backdrop-blur-md py-[15px]">
     <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between">
       <img className="h-[64px] w-[90px] object-cover" alt="Logo removebg" src="/wireframe/logo.png" />
-      <Card className="w-[780px] h-[56px] bg-[#0f0f0f] rounded-[35px] border border-solid border-[#ffffff33]">
+      <Card className="w-[780px] h-[56px] bg-[#0f0f0f99] backdrop-blur-md rounded-[35px] border border-solid border-[#ffffff33]">
         <CardContent className="p-0 h-full w-full flex items-center justify-center">
           <NavigationMenu className="w-full">
             <NavigationMenuList className="w-full h-full flex items-center justify-around gap-4">
@@ -54,7 +54,7 @@ export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderP
           </NavigationMenu>
         </CardContent>
       </Card>
-      <Button className="w-[120px] h-[50px] mr-6 bg-[#0f0f0f] rounded-[35px] border border-solid border-[#ffffff33] flex items-center justify-center gap-2 hover:bg-[#a265ff] transition-colors duration-200">
+      <Button className="w-[120px] h-[50px] mr-6 bg-[#0f0f0f99] backdrop-blur-md rounded-[35px] border border-solid border-[#ffffff33] flex items-center justify-center gap-2 hover:bg-[#a265ff] transition-colors duration-200">
         <img className="w-[21px] h-[21px] object-cover" alt="Telecharger" src="/telecharger--1--1.png" />
         <span className="[font-family:'Poppins',Helvetica] font-medium text-white text-lg tracking-[0] leading-[normal]">CV</span>
       </Button>

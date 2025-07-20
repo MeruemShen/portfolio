@@ -94,6 +94,7 @@
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
+  z-index: 19;
 }
 
 ::-webkit-scrollbar-track {
