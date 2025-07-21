@@ -1,0 +1,30 @@
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-section.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+}
+.btn-neon {
+  position: relative;
+  overflow: hidden;
+}
+.btn-neon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #a265ff;
+  border-radius: inherit;
+  animation: neonPulse 2s infinite ease-in-out;
+}
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 0 rgba(162, 101, 255, 0.7); }
+  50% { box-shadow: 0 0 16px rgba(162, 101, 255, 0.7); }
+  100% { box-shadow: 0 0 0 rgba(162, 101, 255, 0.7); }
+}

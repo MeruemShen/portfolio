@@ -15,7 +15,7 @@ interface ProcessSectionProps {
 export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
 
   return (
-      <section id="processus" className="absolute w-full h-[807px] top-[960px] left-0">
+      <section id="processus" className="fade-section absolute w-full h-[807px] top-[960px] left-0">
         <div className="relative w-full h-full">
           <img
               className="h-[786px] w-full absolute top-[26px] left-0 object-cover"
@@ -46,7 +46,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
                   <div className="[text-shadow:0px_0px_24px_#a265ff] [font-family:'Days_One',Helvetica] font-normal text-white text-[72px] tracking-[0] leading-[normal] w-[117px] text-center">
                     {step.number}
                   </div>
-                  <Card className="w-[696px] h-[163px] bg-[#221239] rounded-[32px] border border-solid border-[#ffffff33] shadow-[0px_0px_24px_#00000040]">
+                  <Card className="w-[696px] h-[163px] bg-[#221239] rounded-[32px] backdrop-blur-md shadow-[0px_0px_24px_#00000040]">
                     <CardContent className="p-0 h-full relative">
                       <div className="absolute w-5 h-[109px] top-[28px] left-[28px] rounded-[8px] border border-solid border-[#a265ff]" />
                       <div className="absolute w-[69px] top-[76px] left-[4px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">

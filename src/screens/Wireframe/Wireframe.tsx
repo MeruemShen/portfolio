@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 import { ProcessSection } from "./components/ProcessSection";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { NavigationHeader } from "./components/NavigationHeader";
@@ -10,6 +11,7 @@ import { FooterSection } from "./components/FooterSection";
 export const Wireframe = (): JSX.Element => {
   // Navigation items
   const [activeIndex, setActiveIndex] = useState(2);
+  useScrollReveal();
   const navData = [
     { name: "ACCUEIL", targetId: "accueil" },
     { name: "A PROPOS", targetId: "apropos" },
