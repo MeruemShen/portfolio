@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../../../components/ui/button";
 import { Card, CardContent } from "../../../components/ui/card";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface TechItem {
   icon: string;
@@ -12,22 +13,62 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleCount = 5;
+  const visibleCount = 6;
+  const itemWidth = 61; // icon width + gap for slide calculations
+  const [index, setIndex] = useState(visibleCount);
+  const [transition, setTransition] = useState(true);
+  const [animating, setAnimating] = useState(false);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + techStack.length) % techStack.length);
+    if (animating) return;
+    setAnimating(true);
+    setTransition(true);
+    setIndex((prev) => prev - 1);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % techStack.length);
+    if (animating) return;
+    setAnimating(true);
+    setTransition(true);
+    setIndex((prev) => prev + 1);
   };
 
-  const extendedStack = [...techStack, ...techStack];
-  const visibleTech =
-    techStack.length <= visibleCount
-      ? techStack
-      : extendedStack.slice(currentIndex, currentIndex + visibleCount);
+  const extendedStack = [
+    ...techStack.slice(-visibleCount),
+    ...techStack,
+    ...techStack.slice(0, visibleCount),
+  ];
+
+  useEffect(() => {
+    if (animating) {
+      const t = setTimeout(() => setAnimating(false), 400);
+      return () => clearTimeout(t);
+    }
+  }, [animating]);
+
+  useEffect(() => {
+    if (index >= techStack.length + visibleCount) {
+      const t = setTimeout(() => {
+        setTransition(false);
+        setIndex(visibleCount);
+      }, 500);
+      return () => clearTimeout(t);
+    }
+    if (index < visibleCount) {
+      const t = setTimeout(() => {
+        setTransition(false);
+        setIndex(techStack.length + visibleCount - 1);
+      }, 500);
+      return () => clearTimeout(t);
+    }
+  }, [index, techStack.length]);
+
+  useEffect(() => {
+    if (!transition) {
+      const id = requestAnimationFrame(() => setTransition(true));
+      return () => cancelAnimationFrame(id);
+    }
+  }, [transition]);
 
   return (
     <section id="apropos" className="fade-section absolute w-full top-[174px] left-0 px-8">
@@ -82,22 +123,37 @@ export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => {
         </Card>
 
         <Card className="w-full md:w-[524px] md:h-[100px] bg-[#a265ff0d] rounded-[32px] backdrop-blur-md">
-          <CardContent className="p-0 h-full flex items-center justify-center gap-10 px-8">
-            <Button onClick={handlePrev} variant="link" className="w-[30px] h-[30px] bg-none rounded-[14px] p-0">
-              <img className="w-[30px] h-[30px] object-cover" alt="Previous" src="/wireframe/left_arrow.png" />
+          <CardContent className="p-0 h-full flex items-center justify-center gap-6 px-4">
+            <Button
+              onClick={handlePrev}
+              disabled={animating}
+              variant="link"
+              className="w-[40px] h-[40px] rounded-[14px] p-0 text-[#a265ff] hover:text-white drop-shadow-[0_0_6px_#a265ff] hover:drop-shadow-[0_0_12px_#a265ff] transition-transform hover:scale-110"
+            >
+              <ChevronLeft className="w-8 h-8" />
             </Button>
-            <div className="flex items-center justify-center gap-8">
-              {visibleTech.map((tech, index) => (
-                <img
-                  key={index}
-                  className="w-[37px] h-[37px] object-cover"
-                  alt={tech.alt}
-                  src={tech.icon}
-                />
-              ))}
+            <div className="relative overflow-hidden" style={{ width: visibleCount * itemWidth }}>
+              <div
+                className={`flex w-max gap-6 ${transition ? "transition-transform duration-500 ease-out" : ""}`}
+                style={{ transform: `translateX(-${index * itemWidth}px)` }}
+              >
+                {extendedStack.map((tech, idx) => (
+                  <img
+                    key={`${tech.alt}-${idx}`}
+                    className="w-[37px] h-[37px] object-contain flex-none"
+                    alt={tech.alt}
+                    src={tech.icon}
+                  />
+                ))}
+              </div>
             </div>
-            <Button onClick={handleNext} variant="link" className="w-[30xp] h-[30xp] rounded-[14px] p-0 rotate-180">
-              <img className="w-[30px] h-[30px] object-cover rotate-180" alt="Next" src="/wireframe/right_arrow.png" />
+            <Button
+              onClick={handleNext}
+              disabled={animating}
+              variant="link"
+              className="w-[40px] h-[40px] rounded-[14px] p-0 text-[#a265ff] hover:text-white drop-shadow-[0_0_6px_#a265ff] hover:drop-shadow-[0_0_12px_#a265ff] transition-transform hover:scale-110"
+            >
+              <ChevronRight className="w-8 h-8" />
             </Button>
           </CardContent>
         </Card>
