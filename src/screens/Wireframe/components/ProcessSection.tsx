@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "../../../components/ui/card";
 
 interface ProcessStep {
@@ -13,10 +13,35 @@ interface ProcessSectionProps {
 }
 
 export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setCurrentStepIndex(index);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-50% 0px -50% 0px",
+        threshold: 0,
+      }
+    );
+    stepRefs.current.forEach((ref) => ref && observer.observe(ref));
+    return () => observer.disconnect();
+  }, []);
+
+  const segmentProgress = (index: number) =>
+    currentStepIndex > index ? 100 : 0;
 
   return (
-      <section id="processus" className="fade-section absolute w-full h-[807px] top-[960px] left-0">
-        <div className="relative w-full h-full">
+    <section id="processus" className="fade-section absolute w-full h-[807px] top-[960px] left-0">
+      <div className="relative w-full h-full">
           <img
               className="h-[786px] w-full absolute top-[26px] left-0 object-cover"
               alt="Background"
@@ -40,29 +65,58 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
           </div>
 
 
-          <div className="absolute top-[114px] left-0 w-full flex flex-col gap-12">
+          <div className="absolute top-[55px] left-0 w-full flex flex-col gap-12 items-center relative">
             {steps.map((step, index) => (
-                <div key={index} className="flex items-center gap-6 px-6 justify-center">
-                  <div className="[text-shadow:0px_0px_24px_#a265ff] [font-family:'Days_One',Helvetica] font-normal text-white text-[72px] tracking-[0] leading-[normal] w-[117px] text-center">
+              <div
+                key={index}
+                ref={el => (stepRefs.current[index] = el)}
+                data-index={index}
+                className="relative z-10 flex items-center gap-6 px-6 justify-center"
+              >
+                <div className="relative flex flex-col items-center">
+                  <div
+                    className={`flex items-center justify-center w-[117px] h-[72px] rounded-full [text-shadow:0_0_24px_#a265ff] [font-family:'Days_One',Helvetica] text-[72px] tracking-[0] leading-none transition-all duration-300 ${
+                      index === currentStepIndex
+                        ? 'text-white'
+                        : 'text-[#221239]'
+                    }`}
+                    style={
+                      index === currentStepIndex
+                        ? undefined
+                        : { WebkitTextStroke: '2px #a265ff' }
+                    }
+                  >
                     {step.number}
                   </div>
-                  <Card className="w-[696px] h-[163px] bg-[#221239] rounded-[32px] backdrop-blur-md shadow-[0px_0px_24px_#00000040]">
-                    <CardContent className="p-0 h-full relative">
-                      <div className="absolute w-5 h-[109px] top-[28px] left-[28px] rounded-[8px] border border-solid border-[#a265ff]" />
-                      <div className="absolute w-[69px] top-[76px] left-[4px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
-                        {step.step}
+                  {index < steps.length - 1 && (
+                    <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-3 flex flex-col items-center">
+                      <div className="w-3 h-[104px] border-2 border-[#a265ff] rounded opacity-40" />
+                      <div
+                        className="absolute top-0 w-3 border-2 border-[#a265ff] rounded shadow-[0_0_12px_#a265ff] overflow-hidden transition-all duration-500"
+                        style={{ height: `${segmentProgress(index)}%` }}
+                      >
+                        <div className="bg-[#a265ff] w-full h-full" />
                       </div>
-                      <div className="absolute top-[30px] left-[63px]">
-                        <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] mb-3">
-                          {step.title}
-                        </h3>
-                        <p className="w-[580px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal]">
-                          {step.description}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  )}
                 </div>
+                <Card className="w-[696px] h-[163px] bg-[#221239] rounded-[32px] backdrop-blur-md shadow-[0px_0px_24px_#00000040]">
+                  <CardContent className="p-0 h-full relative">
+                    <div className="absolute w-5 h-[109px] top-[28px] left-[28px] rounded-[8px] border border-solid border-[#a265ff]" />
+                    <div className="absolute w-[69px] top-[76px] left-[4px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
+                      {step.step}
+                    </div>
+                    <div className="absolute top-[30px] left-[63px]">
+                      <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] mb-3">
+                        {step.title}
+                      </h3>
+                      <p className="w-[580px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal]">
+                        {step.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
