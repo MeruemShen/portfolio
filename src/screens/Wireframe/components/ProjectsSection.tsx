@@ -19,8 +19,24 @@ interface ProjectsSectionProps {
   projects: Project[];
 }
 
-export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element => (
-  <section id="work" className="absolute w-full top-[1744px] left-0 px-[26px]">
+export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.currentTarget as HTMLDivElement
+    const rect = target.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const rotateX = -((y - rect.height / 2) / (rect.height / 2)) * 8
+    const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 8
+    target.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.98)`
+  }
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.currentTarget as HTMLDivElement
+    target.style.transform = ""
+  }
+
+  return (
+  <section id="work" className="fade-section absolute w-full top-[1744px] left-0 px-[26px]">
     <div className="relative mb-4 h-[38px] mt-[0px]">
       {/* Texte centré en absolu */}
       <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10">
@@ -48,7 +64,9 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
 
         const content = (
           <Card
-            className={`w-full h-[263px] bg-[#a265ff0d] rounded-[26px] border border-solid border-[#ffffff33] overflow-hidden transition-all duration-200 hover:scale-[1.01] hover:shadow-[0_0_8px_#a265ff]`}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className={`card-tilt w-full h-[263px] bg-[#a265ff0d] rounded-[26px] backdrop-blur-md overflow-hidden transition-transform duration-150 hover:shadow-[0_0_8px_#a265ff]`}
           >
             <CardContent className="p-0 flex flex-col h-full">
               <div className="w-full h-[98px] overflow-hidden p-[0.48rem]">
@@ -103,6 +121,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
       })}
     </div>
   </section>
-);
+  )
+}
 
 export default ProjectsSection;

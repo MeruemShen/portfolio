@@ -13,7 +13,7 @@ interface ContactSectionProps {
 }
 
 export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element => (
-    <section id="contact" className="absolute w-full h-auto top-[2500px] left-0">
+    <section id="contact" className="fade-section absolute w-full h-auto top-[2500px] left-0">
         <div className="relative w-full h-full">
             {/* Background image */}
             <img
@@ -54,7 +54,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                             {methods.map((method, index) => (
                                 <Card
                                     key={index}
-                                    className="w-full h-[60px] bg-[#1c0e30] rounded-[12px] border border-solid border-[#ffffff33]"
+                                    className="w-full h-[60px] bg-[#1c0e30] rounded-[12px] backdrop-blur-md"
                                 >
                                     <CardContent className="p-0 pl-2 h-full flex items-center">
                                         <div className="w-[41px] flex justify-center">
@@ -81,7 +81,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                     </div>
 
                     {/* Bloc droit (image) */}
-                    <div className="flex-1 text-card-foreground h-[245px] shadow aspect-square bg-[#0f0f0f26] rounded-[15px] border border-solid border-[#ffffff33] overflow-hidden">
+                    <div className="flex-1 text-card-foreground h-[245px] shadow aspect-square bg-[#0f0f0f26] rounded-[15px] backdrop-blur-md overflow-hidden">
                         <img className="w-full h-full object-cover" alt="About" src="/wireframe/about.png" />
                     </div>
                 </div>
