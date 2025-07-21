@@ -144,9 +144,9 @@ export const Wireframe = (): JSX.Element => {
   const footerLinks = ["ACCUEIL", "A PROPOS", "WORK", "PROCESSUS", "CONTACT"];
 
   return (
-      <div className="bg-white flex flex-row justify-center w-full min-h-screen overflow-x-hidden">
-        <div className="bg-white w-full min-h-screen">
-          <div className="relative w-full min-h-screen">
+      <div className="bg-white flex flex-row justify-center w-full min-h-[3430px] overflow-x-hidden">
+        <div className="bg-white w-full min-h-[3430px]">
+          <div className="relative w-full min-h-[3430px]">
             {/* Background */}
             <div className="absolute w-full h-[3100px] top-0 left-0 backdrop-blur-[25.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(25.3px)_brightness(100%)] bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
 

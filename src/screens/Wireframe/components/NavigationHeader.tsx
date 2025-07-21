@@ -19,7 +19,7 @@ interface NavigationHeaderProps {
 }
 
 export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderProps): JSX.Element => (
-  <header className="sticky top-0 left-0 w-full z-20 bg-[#0f0f0f66] backdrop-blur-md py-[15px]">
+  <header className="fixed top-0 left-0 w-full z-20 bg-[#0f0f0f66] backdrop-blur-md py-[15px]">
     <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between">
       <img className="h-[64px] w-[90px] object-cover" alt="Logo removebg" src="/wireframe/logo.png" />
       <Card className="w-[780px] h-[56px] bg-[#0f0f0f99] backdrop-blur-md rounded-[35px] border border-solid border-[#ffffff33]">
