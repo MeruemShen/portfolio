@@ -43,7 +43,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
             <div className="relative w-full h-full flex flex-col items-center px-8 max-w-[1000px] mx-auto">
 
                 {/* Content section split 50/50 */}
-                <div className="flex w-full gap-[51px] mt-[26px]">
+                <div className="flex w-full gap-[51px] mt-[26px] mobile:flex-col">
                     {/* Bloc gauche (description + cartes) */}
                     <div className="flex flex-col flex-1 items-start">
                         <p className="w-full text-start [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] mb-[19px]">
@@ -81,7 +81,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                     </div>
 
                     {/* Bloc droit (image) */}
-                    <div className="flex-1 text-card-foreground h-[245px] shadow aspect-square bg-[#0f0f0f26] rounded-[15px] backdrop-blur-md overflow-hidden">
+                    <div className="flex-1 text-card-foreground h-[245px] shadow aspect-square bg-[#0f0f0f26] rounded-[15px] backdrop-blur-md overflow-hidden tablet:hidden">
                         <img className="w-full h-full object-cover" alt="About" src="/wireframe/about.png" />
                     </div>
                 </div>
