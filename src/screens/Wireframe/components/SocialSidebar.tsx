@@ -11,7 +11,7 @@ interface SocialSidebarProps {
 }
 
 export const SocialSidebar = ({ links }: SocialSidebarProps): JSX.Element => (
-  <div className="fixed top-1/2 -translate-y-1/2 left-4 flex flex-col items-center gap-4 z-10">
+  <div className="fixed top-1/2 -translate-y-1/2 left-4 flex flex-col items-center gap-4 z-10 tabletLandscape:hidden">
     {links.map((link, index) => (
       <Button
         key={index}

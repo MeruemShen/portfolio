@@ -73,7 +73,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
                 data-index={index}
                 className="relative z-10 flex items-center gap-6 px-6 justify-center"
               >
-                <div className="relative flex flex-col items-center">
+                <div className="relative flex flex-col items-center tablet:hidden">
                   <div
                     className={`flex items-center justify-center w-[117px] h-[72px] rounded-full [text-shadow:0_0_24px_#a265ff] [font-family:'Days_One',Helvetica] text-[72px] tracking-[0] leading-none transition-all duration-300 ${
                       index === currentStepIndex
