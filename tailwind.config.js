@@ -71,8 +71,17 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      screens: {
+        tabletLandscape: { max: "1024px" },
+        tablet: { max: "900px" },
+        mobile: { max: "720px" },
+      },
     },
-    container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: { "2xl": "1400px" },
+    },
   },
   plugins: [],
   darkMode: ["class"],

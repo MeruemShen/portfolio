@@ -86,13 +86,13 @@ export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="flex w-full mt-[80px] gap-6 justify-center flex-col md:flex-row">
-      <Card className="w-full md:w-[403px] md:h-[429px] bg-[#0f0f0f26] rounded-[32px] backdrop-blur-md overflow-hidden">
+      <div className="flex w-full mt-[80px] gap-6 justify-center flex-row mobile:flex-col">
+      <Card className="w-full md:w-[403px] md:h-[429px] bg-[#0f0f0f26] rounded-[32px] backdrop-blur-md overflow-hidden tablet:w-2/5 mobile:w-full">
         <CardContent className="p-0 h-full">
           <img className="w-full h-full object-cover" alt="About" src="/wireframe/about.png" />
         </CardContent>
       </Card>
-      <div className="flex flex-col gap-6 w-full md:w-auto">
+      <div className="flex flex-col gap-6 w-full md:w-auto tablet:w-3/5 mobile:w-full">
         <Card className="w-full md:w-[524px] md:h-[305px] bg-[#a265ff0d] rounded-[32px] backdrop-blur-md">
           <CardContent className="p-6">
             <h2 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] text-center tracking-[0] leading-[19px] mb-6">MON PARCOURS</h2>
