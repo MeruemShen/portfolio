@@ -40,7 +40,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
     currentStepIndex > index ? 100 : 0;
 
   return (
-    <section id="processus" className="fade-section absolute w-full h-[807px] top-[960px] left-0">
+    <section id="processus" className="fade-section absolute w-full h-[807px] top-[886px] left-0">
       <div className="relative w-full h-full">
           <img
               className="h-[786px] w-full absolute top-[26px] left-0 object-cover"
