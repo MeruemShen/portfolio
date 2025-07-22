@@ -13,7 +13,7 @@ interface ContactSectionProps {
 }
 
 export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element => (
-    <section id="contact" className="fade-section absolute w-full h-auto top-[2500px] left-0">
+    <section id="contact" className="fade-section absolute w-full h-auto top-[2426px] left-0">
         <div className="relative w-full h-full">
             {/* Background image */}
             <img

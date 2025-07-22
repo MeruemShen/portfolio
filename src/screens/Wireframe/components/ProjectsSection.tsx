@@ -36,7 +36,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
   }
 
   return (
-  <section id="work" className="fade-section absolute w-full top-[1744px] left-0 px-[26px]">
+  <section id="work" className="fade-section absolute w-full top-[1670px] left-0 px-[26px]">
     <div className="relative mb-4 h-[38px] mt-[0px]">
       {/* Texte centré en absolu */}
       <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10">
