@@ -71,7 +71,7 @@ export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => {
   }, [transition]);
 
   return (
-    <section id="apropos" className="fade-section absolute w-full top-[174px] left-0 px-8">
+    <section id="apropos" className="fade-section absolute w-full top-[100px] left-0 px-8">
       <div className="relative mb-4 h-[48px] mt-[80px]">
         <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10">
           <div><span id="me-text">CONSTRUISONS ENSEMBLE</span></div>

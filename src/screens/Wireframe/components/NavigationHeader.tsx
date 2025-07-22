@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../../../components/ui/button";
+import { Download } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/card";
 import {
   NavigationMenu,
@@ -54,8 +55,8 @@ export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderP
           </NavigationMenu>
         </CardContent>
       </Card>
-      <Button className="w-[120px] h-[50px] mr-6 bg-[#0f0f0f99] backdrop-blur-md rounded-[35px] flex items-center justify-center gap-2 hover:bg-[#a265ff] transition-colors duration-200">
-        <img className="w-[21px] h-[21px] object-cover" alt="Telecharger" src="/telecharger--1--1.png" />
+      <Button className="w-[100px] h-[42px] mr-6 bg-[#a265ff] rounded-[35px] flex items-center justify-center gap-2 hover:bg-[#924cff] transition-colors duration-200">
+        <Download className="w-5 h-5 text-white" />
         <span className="[font-family:'Poppins',Helvetica] font-medium text-white text-lg tracking-[0] leading-[normal]">CV</span>
       </Button>
     </div>
