@@ -74,7 +74,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
                 key={index}
                 ref={el => (stepRefs.current[index] = el)}
                 data-index={index}
-                className="relative z-10 flex items-center gap-6 px-6 justify-center"
+                className="relative z-10 flex items-center gap-6 px-6 justify-center w-full mobile:px-4"
               >
                 <div className="relative flex flex-col items-center tablet:hidden">
                   <div
@@ -103,20 +103,18 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
                     </div>
                   )}
                 </div>
-                <Card className="w-[696px] h-[163px] bg-[#221239] rounded-[32px] backdrop-blur-md shadow-[0px_0px_24px_#00000040]">
-                  <CardContent className="p-0 h-full relative">
-                    <div className="absolute w-5 h-[109px] top-[28px] left-[28px] rounded-[8px] border border-solid border-[#a265ff]" />
-                    <div className="absolute w-[69px] top-[76px] left-[4px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
+                <Card className="w-full max-w-[696px] bg-[#221239] rounded-[32px] backdrop-blur-md shadow-[0px_0px_24px_#00000040]">
+                  <CardContent className="relative flex flex-col justify-center pl-[63px] pr-6 py-[30px]">
+                    <div className="absolute left-[28px] top-[28px] bottom-[28px] w-5 rounded-[8px] border border-solid border-[#a265ff]" />
+                    <div className="absolute left-[4px] top-1/2 -translate-y-1/2 w-[69px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
                       {step.step}
                     </div>
-                    <div className="absolute top-[30px] left-[63px]">
-                      <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] mb-3">
-                        {step.title}
-                      </h3>
-                      <p className="w-[580px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal]">
-                        {step.description}
-                      </p>
-                    </div>
+                    <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="w-full md:max-w-[580px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal]">
+                      {step.description}
+                    </p>
                   </CardContent>
                 </Card>
               </div>
