@@ -28,7 +28,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
             <div className="relative mb-4 mt-[80px] w-full max-w-[1000px] mx-auto px-8 h-[48px] flex items-center">
                 {/* Titre + flèche alignés dans une ligne flex */}
                 <div className="flex items-center relative">
-                    <h2 className="relative -top-[18px] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] tracking-[0] leading-[39.6px] text-white z-10 text-left whitespace-nowrap mr-4">
+                    <h2 className="relative -top-[18px] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] tracking-[0] leading-[39.6px] text-white z-10 text-left whitespace-nowrap mr-4 mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
                         <div><span id="me-text">ME</span></div>
                         <div><span className="text-[#a265ff]">CONTACTER</span></div>
                     </h2>

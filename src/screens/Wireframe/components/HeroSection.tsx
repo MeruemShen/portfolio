@@ -75,8 +75,8 @@ export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => {
       id="apropos"
       className="fade-section absolute w-full top-[100px] left-0 px-8 mobile:relative mobile:top-auto mobile:mt-0 mobile:pt-[100px]"
     >
-      <div className="relative mb-[40px] pt-[150px] mobile:mb-[0px]">
-        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10">
+      <div className="relative mb-[40px] pt-[150px] mobile:pt-[0px] mobile:mb-[20px]">
+        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10 mobile:relative mobile:left-auto mobile:top-auto mobile:translate-x-0 mobile:translate-y-0 mobile:text-left mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
           <div><span id="me-text">CONSTRUISONS ENSEMBLE</span></div>
           <div>VOTRE <span className="text-[#a265ff]">EMPREINTE NUMÉRIQUE</span></div>
         </h2>
