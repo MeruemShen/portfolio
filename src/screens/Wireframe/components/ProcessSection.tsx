@@ -51,17 +51,13 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
               src="/wireframe/fond_lune.png"
           />
           <div className="relative mb-4 h-[48px] mt-[-2px] mobile:px-[26px]">
-            {/* Texte centré en absolu */}
             <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10 mobile:relative mobile:left-auto mobile:top-auto mobile:translate-x-0 mobile:translate-y-0 mobile:text-left mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
               <span>ÉTAPES DE </span>
               <span className="text-[#a265ff]">PROCESSUS</span>
             </h2>
-            {/* Trait */}
               <div className="flex justify-center items-center h-full mobile:hidden">
                 <div className="ml-4 flex-grow h-[32px] flex items-center min-w-[48px]">
-                {/* Diamond */}
                 <div className="absolute left-1/2 translate-x-[380px] top-[calc(50%-1.6px)] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
-                {/* Line */}
                 <div className="absolute left-1/2 translate-x-[390px] right-[-19px] top-[calc(50%-1.6px)] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
               </div>
             </div>
