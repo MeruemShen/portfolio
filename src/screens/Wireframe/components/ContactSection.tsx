@@ -15,16 +15,14 @@ interface ContactSectionProps {
 export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element => (
     <section
         id="contact"
-        className="fade-section absolute w-full h-[500px] top-[2426px] left-0 mobile:relative mobile:top-[100px] mobile:mt-[80px]"
+        className="fade-section absolute w-full h-[500px] top-[2426px] left-0 mobile:relative mobile:top-[80px] mobile:mt-[80px]"
     >
         <div className="relative w-full h-full">
-            {/* Background image */}
             <img
                 className="h-[369px] w-full absolute top-[26px] left-0 object-cover"
                 alt="Background"
                 src="/wireframe/fond_lune_2.png"
             />
-
             <div className="relative mb-4 mt-[80px] w-full max-w-[1000px] mx-auto px-8 h-[48px] flex items-center">
                 {/* Titre + flèche alignés dans une ligne flex */}
                 <div className="flex items-center relative">
@@ -40,9 +38,6 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                     </div>
                 </div>
             </div>
-
-
-
             <div className="relative w-full h-full flex flex-col items-center px-8 max-w-[1000px] mx-auto">
 
                 {/* Content section split 50/50 */}
