@@ -71,25 +71,33 @@ export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderP
         </button>
       </div>
 
-      {open && (
-        <div className="tabletLandscape:flex hidden absolute right-4 top-[70px] bg-[#0a0612cc] backdrop-blur-sm rounded-[12px] p-4 flex-col gap-3">
+      <div
+        className={`fixed inset-0 z-30 w-screen h-screen bg-[#170b28] transition-transform duration-300 flex-col items-center justify-center tabletLandscape:flex hidden ${open ? 'translate-x-0 flex' : '-translate-x-full pointer-events-none opacity-0'}`}
+      >
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-4 right-4 text-white text-3xl"
+        >
+          &times;
+        </button>
+        <nav className="flex flex-col gap-6 items-center">
           {navItems.map((item, index) => (
             <a
               key={index}
               href={`#${item.targetId}`}
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById(item.targetId)?.scrollIntoView({ behavior: "smooth" });
+                document.getElementById(item.targetId)?.scrollIntoView({ behavior: 'smooth' });
                 onNavItemClick?.(index);
                 setOpen(false);
               }}
-              className="text-white [font-family:'Days_One',Helvetica] hover:text-[#a265ff]"
+              className="text-white text-2xl [font-family:'Days_One',Helvetica] hover:text-[#a265ff]"
             >
               {item.name}
             </a>
           ))}
-        </div>
-      )}
+        </nav>
+      </div>
     </header>
   );
 };
