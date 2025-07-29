@@ -43,11 +43,11 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
   return (
     <section
       id="processus"
-      className="fade-section absolute w-full h-[807px] top-[886px] left-0 mobile:relative mobile:top-auto mobile:h-auto mobile:mt-[80px]"
+      className="fade-section absolute w-full h-[807px] top-[886px] left-0 mobile:relative mobile:top-auto mobile:h-auto mobile:mt-[100px]"
     >
       <div className="relative w-full h-full">
           <img
-              className="h-[786px] w-full absolute top-[26px] left-0 object-cover"
+              className="h-[786px] mobile:h-[630px] w-full absolute top-[26px] left-0 object-cover"
               alt="Background"
               src="/wireframe/fond_lune.png"
           />
@@ -65,7 +65,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
           </div>
 
 
-          <div className="absolute top-[55px] left-0 w-full flex flex-col gap-12 mobile:gap-6 items-center relative">
+          <div className="absolute top-[55px] mobile:top-[45px] left-0 w-full flex flex-col gap-12 mobile:gap-6 items-center relative">
             {steps.map((step, index) => (
               <div
                 key={index}

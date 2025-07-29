@@ -38,7 +38,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
   return (
   <section
     id="work"
-    className="fade-section absolute w-full top-[1670px] left-0 px-[26px] mobile:relative mobile:top-[70px] mobile:mt-[80px]"
+    className="fade-section absolute w-full top-[1670px] left-0 px-[26px] mobile:relative mobile:top-[60px] mobile:mt-[80px]"
   >
     <div className="relative mb-4 h-[38px] mt-[0px]">
       {/* Texte centré en absolu */}
@@ -57,7 +57,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
       </div>
     </div>
 
-    <div className="mt-[93px] grid grid-cols-1 md:grid-cols-7 gap-[19px] justify-items-center max-w-[960px] mx-auto">
+    <div className="mt-[93px] mobile:mt-[30px] grid grid-cols-1 md:grid-cols-7 gap-[19px] justify-items-center max-w-[960px] mx-auto">
       {projects.map((project, index) => {
         const row = Math.floor(index / 2)
         const isEvenRow = row % 2 === 0
