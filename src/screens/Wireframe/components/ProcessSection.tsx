@@ -5,6 +5,7 @@ interface ProcessStep {
   number: string;
   title: string;
   description: string;
+  descriptionMobile?: string;
   step: string;
 }
 
@@ -64,7 +65,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
           </div>
 
 
-          <div className="absolute top-[55px] left-0 w-full flex flex-col gap-12 items-center relative">
+          <div className="absolute top-[55px] left-0 w-full flex flex-col gap-12 mobile:gap-6 items-center relative">
             {steps.map((step, index) => (
               <div
                 key={index}
@@ -108,8 +109,11 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
                     <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] mb-3">
                       {step.title}
                     </h3>
-                    <p className="w-full md:max-w-[580px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal]">
+                    <p className="w-full md:max-w-[580px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] mobile:hidden">
                       {step.description}
+                    </p>
+                    <p className="w-full md:max-w-[580px] hidden mobile:block [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal]">
+                      {step.descriptionMobile ?? step.description}
                     </p>
                   </CardContent>
                 </Card>

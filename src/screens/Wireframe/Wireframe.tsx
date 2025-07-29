@@ -39,6 +39,8 @@ export const Wireframe = (): JSX.Element => {
       title: "ANALYSE DES BESOINS",
       description:
           "Nous d\u00e9finissons en d\u00e9tail vos attentes, vos contraintes et vos objectifs pour formaliser un cahier des charges complet. Chaque fonctionnalit\u00e9 est discut\u00e9e afin d\u2019\u00e9laborer un planning r\u00e9aliste et adapt\u00e9 \u00e0 votre budget.",
+      descriptionMobile:
+          "Identification de vos besoins pour établir un cahier des charges et un planning adapté.",
       step: "ETAPE 1",
     },
     {
@@ -46,6 +48,8 @@ export const Wireframe = (): JSX.Element => {
       title: "CONCEPTION ET DESIGN",
       description:
           "Je con\u00e7ois l\u2019architecture de votre solution et r\u00e9alise des maquettes fonctionnelles respectant votre identit\u00e9 visuelle. Une attention toute particuli\u00e8re est port\u00e9e \u00e0 l\u2019ergonomie pour offrir une exp\u00e9rience utilisateur fluide et professionnelle.",
+      descriptionMobile:
+          "Conception de l'architecture et des maquettes en accord avec votre identité visuelle et l'ergonomie.",
       step: "ETAPE 2",
     },
     {
@@ -53,6 +57,8 @@ export const Wireframe = (): JSX.Element => {
       title: "D\u00c9VELOPPEMENT ET MISE EN LIGNE",
       description:
           "Je d\u00e9veloppe votre application dans le respect des bonnes pratiques et proc\u00e8de \u00e0 des phases de tests r\u00e9guli\u00e8res. L\u2019accompagnement se poursuit jusqu\u2019\u00e0 la mise en production afin de garantir un d\u00e9ploiement s\u00fbr et performant.",
+      descriptionMobile:
+          "Développement, tests réguliers et accompagnement jusqu'à la mise en production.",
       step: "ETAPE 3",
     },
   ];
