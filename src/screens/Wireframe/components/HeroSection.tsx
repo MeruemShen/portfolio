@@ -75,10 +75,11 @@ export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => {
       id="apropos"
       className="fade-section absolute w-full top-0 left-0 px-8 mobile:relative mobile:top-auto mobile:h-auto mobile:px-4"
     >
+
       <img
-        className="fade-bottom-img absolute top-0 left-1/2 w-screen h-full -translate-x-1/2 object-cover -z-10"
-        alt="Background"
-        src="/wireframe/fond_lune.png"
+          className="fade-bottom-img absolute top-0 left-1/2 w-screen h-full -translate-x-1/2 object-cover -z-20"
+          alt="Background"
+          src="/wireframe/fond_burger_bird1.jpg"
       />
       <div className="relative h-full pt-[100px] mobile:h-auto mobile:pt-[80px]">
         <div className="relative mb-[40px] pt-[150px] mobile:pt-[0px] mobile:mb-[20px]">
