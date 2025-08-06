@@ -137,16 +137,6 @@ export const Wireframe = (): JSX.Element => {
     },
   ];
 
-  // Tech stack icons
-  const techStack = [
-    { icon: "/wireframe/html.png", alt: "HTML" },
-    { icon: "/wireframe/css.png", alt: "CSS" },
-    { icon: "/wireframe/js.png", alt: "JavaScript" },
-    { icon: "/wireframe/react.png", alt: "React" },
-    { icon: "/wireframe/symfony.png", alt: "Symfony" },
-    { icon: "/wireframe/wordpress.png", alt: "WordPress" },
-    { icon: "/wireframe/sass.png", alt: "Sass" },
-  ];
 
   // Footer links
   const footerLinks = ["ACCUEIL", "A PROPOS", "WORK", "PROCESSUS", "CONTACT"];
@@ -168,7 +158,7 @@ export const Wireframe = (): JSX.Element => {
             <SocialSidebar links={socialLinks} />
 
             {/* Hero Section */}
-            <HeroSection techStack={techStack} />
+            <HeroSection />
 
             {/* Process Section */}
             <ProcessSection steps={processSteps} />

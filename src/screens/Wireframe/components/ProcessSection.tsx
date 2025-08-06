@@ -43,7 +43,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
   return (
     <section
       id="processus"
-      className="fade-section absolute w-full h-[807px] top-[886px] left-0 mobile:relative mobile:top-auto mobile:h-auto mobile:mt-[100px]"
+      className="fade-section absolute w-full h-[807px] top-[886px] left-0 mobile:relative mobile:top-auto mobile:h-auto"
     >
       <div className="relative w-full h-full">
           <img

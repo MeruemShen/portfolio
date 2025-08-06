@@ -1,179 +1,79 @@
-import React, { useState, useEffect } from "react";
-import { Button } from "../../../components/ui/button";
-import { Card, CardContent } from "../../../components/ui/card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
 
-interface TechItem {
-  icon: string;
-  alt: string;
-}
-
-interface HeroSectionProps {
-  techStack: TechItem[];
-}
-
-export const HeroSection = ({ techStack }: HeroSectionProps): JSX.Element => {
-  const visibleCount = 6;
-  const itemWidth = 61; // icon width + gap for slide calculations
-  const [index, setIndex] = useState(visibleCount);
-  const [transition, setTransition] = useState(true);
-  const [animating, setAnimating] = useState(false);
-
-  const handlePrev = () => {
-    if (animating) return;
-    setAnimating(true);
-    setTransition(true);
-    setIndex((prev) => prev - 1);
-  };
-
-  const handleNext = () => {
-    if (animating) return;
-    setAnimating(true);
-    setTransition(true);
-    setIndex((prev) => prev + 1);
-  };
-
-  const extendedStack = [
-    ...techStack.slice(-visibleCount),
-    ...techStack,
-    ...techStack.slice(0, visibleCount),
-  ];
-
-  useEffect(() => {
-    if (animating) {
-      const t = setTimeout(() => setAnimating(false), 400);
-      return () => clearTimeout(t);
-    }
-  }, [animating]);
-
-  useEffect(() => {
-    if (index >= techStack.length + visibleCount) {
-      const t = setTimeout(() => {
-        setTransition(false);
-        setIndex(visibleCount);
-      }, 500);
-      return () => clearTimeout(t);
-    }
-    if (index < visibleCount) {
-      const t = setTimeout(() => {
-        setTransition(false);
-        setIndex(techStack.length + visibleCount - 1);
-      }, 500);
-      return () => clearTimeout(t);
-    }
-  }, [index, techStack.length]);
-
-  useEffect(() => {
-    if (!transition) {
-      const id = requestAnimationFrame(() => setTransition(true));
-      return () => cancelAnimationFrame(id);
-    }
-  }, [transition]);
+export const HeroSection = (): JSX.Element => {
 
   return (
     <section
       id="apropos"
-      className="fade-section absolute w-full top-0 left-0 px-8 mobile:relative mobile:top-auto mobile:h-auto mobile:px-4"
+      className="fade-section absolute w-full top-0 left-0 px-8 mobile:relative mobile:top-auto mobile:h-auto mobile:px-4 mobile:mb-[100px]"
     >
 
       <img
-          className="fade-bottom-img absolute top-0 left-1/2 w-screen h-full -translate-x-1/2 object-cover -z-20"
+          className="fade-bottom-img absolute top-0 left-1/2 w-screen h-full -translate-x-1/2 object-cover object-top -z-20"
           alt="Background"
-          src="/wireframe/fond_burger_bird1.jpg"
+          src="/wireframe/fond_burger_bird1.png"
       />
-      <div className="relative h-full pt-[100px] mobile:h-auto mobile:pt-[80px]">
-        <div className="relative mb-[40px] pt-[150px] mobile:pt-[0px] mobile:mb-[20px]">
-        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10 mobile:relative mobile:left-auto mobile:top-auto mobile:translate-x-0 mobile:translate-y-0 mobile:text-left mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
-          <div>
-            <span id="me-text" className="mobile:hidden">CONSTRUISONS ENSEMBLE</span>
-            <span id="me-text" className="hidden mobile:inline">CONSTRUISONS</span>
-          </div>
-          <div>VOTRE <span className="text-[#a265ff]">EMPREINTE NUMÉRIQUE</span></div>
-        </h2>
-        <div className="flex justify-center items-center h-full mobile:hidden">
-        <div className="ml-4 flex-grow h-[32px] flex items-center min-w-[48px]">
-            {/* Diamond */}
-            <div className="absolute left-1/2 translate-x-[352px] top-[calc(50%-24px)] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
-            {/* Line */}
-            <div className="absolute left-1/2 translate-x-[368px] right-[-19px] top-[calc(50%-24px)] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
-          </div>
-        </div>
-      </div>
-      <div className="flex w-full gap-6 justify-center flex-row mobile:flex-col mobile:items-center mobile:gap-4">
-        <Card className="w-full md:w-[403px] md:h-[429px] bg-[#0f0f0f26] rounded-[32px] backdrop-blur-md overflow-hidden tablet:w-2/5 mobile:w-full mobile:h-[250px]">
-          <CardContent className="p-0 h-full">
-            <img className="w-full h-full object-cover" alt="About" src="/wireframe/about.png" />
-          </CardContent>
-        </Card>
-        <div className="flex flex-col gap-6 w-full md:w-auto tablet:w-3/5 mobile:w-full">
-          <Card className="w-full md:w-[524px] md:h-[305px] bg-[#a265ff0d] rounded-[32px] backdrop-blur-md">
-            <CardContent className="p-6">
-              <h2 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] text-center tracking-[0] leading-[19px] mb-6">MON PARCOURS</h2>
-              <p className="[font-family:'Roboto',Helvetica] font-normal text-base tracking-[0] leading-[15.8px]">
-                <span className="text-white">Étudiant en </span>
-                <span className="text-[#a265ff]">Master Data &amp; Intelligence Artificielle</span>
-                <span className="text-white"> et diplômé d&apos;un </span>
-                <span className="text-[#a265ff]">BUT MMI</span>
-                <span className="text-white">, j&apos;ai développé des compétences solides en </span>
-                <span className="text-[#a265ff]">développement web</span>
-                <span className="text-white">, </span>
-                <span className="text-[#a265ff]">design d&apos;interfaces</span>
-                <span className="text-white">, et </span>
-                <span className="text-[#a265ff]">création de sites internet</span>
-                <span className="text-white">.<br /><br />Mon approche consiste à proposer des solutions </span>
-                <span className="text-[#a265ff]">sur-mesure</span>
-                <span className="text-white"> : </span>
-                <span className="text-[#a265ff]">vitrines en ligne</span>
-                <span className="text-white">, </span>
-                <span className="text-[#a265ff]">plateformes interactives</span>
-                <span className="text-white"> ou </span>
-                <span className="text-[#a265ff]">intégrations d&apos;IA</span>
-                <span className="text-white">. Je suis motivé par </span>
-                <span className="text-[#a265ff]">l&apos;innovation</span>
-                <span className="text-white"> et l&apos;envie d&apos;aider mes clients à réussir dans un monde numérique en constante évolution.</span>
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="w-full md:w-[524px] md:h-[100px] h-fit bg-[#a265ff0d] rounded-[32px] backdrop-blur-md">
-            <CardContent className="p-0 h-full flex items-center justify-center gap-6 px-4">
-              <Button
-                onClick={handlePrev}
-                disabled={animating}
-                variant="link"
-                className="w-[40px] h-[40px] rounded-[14px] p-0 text-[#a265ff] hover:text-white drop-shadow-[0_0_6px_#a265ff] hover:drop-shadow-[0_0_12px_#a265ff] transition-transform hover:scale-110 mobile:hidden"
-              >
-                <ChevronLeft className="w-8 h-8" />
-              </Button>
-              <div className="relative overflow-hidden" style={{ width: visibleCount * itemWidth }}>
-                <div
-                  className={`flex w-max gap-6 ${transition ? "transition-transform duration-500 ease-out" : ""}`}
-                  style={{ transform: `translateX(-${index * itemWidth}px)` }}
-                >
-                  {extendedStack.map((tech, idx) => (
-                    <img
-                      key={`${tech.alt}-${idx}`}
-                      className="w-[37px] h-[37px] object-contain flex-none"
-                      alt={tech.alt}
-                      src={tech.icon}
-                    />
-                  ))}
-                </div>
+      <div className="relative h-full pt-[90px] mobile:h-auto mobile:pt-[80px]">
+        <div className="relative pt-[120px] mobile:pt-[0px] mobile:mb-[20px] w-full max-w-[950px] mx-auto">
+          <div className="flex items-center relative">
+            <h2 className="relative -top-[18px] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] tracking-[0] leading-[39.6px] text-white z-10 text-left whitespace-nowrap mr-4 mobile:relative mobile:top-auto mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
+              <div>
+                <span id="me-text" className="mobile:hidden">CONSTRUISONS ENSEMBLE</span>
+                <span id="me-text" className="hidden mobile:inline">CONSTRUISONS</span>
               </div>
-              <Button
-                onClick={handleNext}
-                disabled={animating}
-                variant="link"
-                className="w-[40px] h-[40px] rounded-[14px] p-0 text-[#a265ff] hover:text-white drop-shadow-[0_0_6px_#a265ff] hover:drop-shadow-[0_0_12px_#a265ff] transition-transform hover:scale-110 mobile:hidden"
-              >
-                <ChevronRight className="w-8 h-8" />
-              </Button>
-            </CardContent>
-          </Card>
+              <div>VOTRE <span className="text-[#a265ff]">EMPREINTE NUMÉRIQUE</span></div>
+            </h2>
+
+            {/* Trait + losange (fleche) */}
+            <div className="flex-grow h-[32px] flex items-center min-w-[20000px] relative mobile:hidden">
+              <div className="absolute left-0 top-[calc(50%+2px)] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
+              <div className="absolute left-[15px] right-0 top-[calc(50%+2px)] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
+            </div>
+          </div>
+        </div>
+
+      <div className="relative flex justify-center mt-[20px] w-full max-w-[950px] mx-auto">
+        <div className="relative flex flex-col items-start text-left w-full max-w-full mobile:max-w-full">
+          <p className="text-white text-[16px] mb-[10px] max-w-[650px] mobile:max-w-full font-normal [font-family:'Poppins',sans-serif]">
+            Développeur web polyvalent, j’allie expertise technique, sens de l’efficacité, adaptabilité et maîtrise des outils modernes pour concevoir des solutions sur-mesure, robustes, évolutives et alignées avec vos objectifs.
+          </p>
+
+          <div className="flex gap-[8px] mt-[10px]">
+            <span className="text-white text-[12px] border border-[#2A4EFF] py-[6px] px-[15px] rounded-[15px] font-medium hover:shadow-[0_0_3px_#2A4EFF] [font-family:'Days_One',sans-serif]">SUR-MESURE</span>
+            <span className="text-white text-[12px] border border-[#2A4EFF] py-[6px] px-[15px] rounded-[15px] font-medium hover:shadow-[0_0_3px_#2A4EFF] [font-family:'Days_One',sans-serif]">WEB INTERFACE</span>
+            <span className="text-white text-[12px] border border-[#2A4EFF] py-[6px] px-[15px] rounded-[15px] font-medium hover:shadow-[0_0_3px_#2A4EFF] [font-family:'Days_One',sans-serif]">INFRASTRUCTURE</span>
+          </div>
+
+
+          <div className="flex gap-8 my-[50px]">
+            <div className="text-center">
+              <div className="text-[#a265ff] text-[2.5rem] [font-family:'Days_One',Helvetica]">+2<span className="text-white text-[2rem] ml-2">ans</span></div>
+              <div className="text-white text-sm uppercase [font-family:'Poppins',sans-serif]">D'expérience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-[#a265ff] text-[2.5rem] [font-family:'Days_One',Helvetica]">+10<span className="text-white text-[2rem] ml-2">Projets</span></div>
+              <div className="text-white text-sm uppercase [font-family:'Poppins',sans-serif]">Effectués ou livrés</div>
+            </div>
+          </div>
+
+          <div className="flex gap-4 mb-[100px] mobile:mb-0">
+            <a
+              href="#projects"
+              className="bg-[#2A4EFF] text-white text-[14px] rounded-[6px] py-[10px] px-[20px] hover:shadow-[0_0_10px_#2A4EFF] [font-family:'Poppins',sans-serif]"
+            >
+              DÉCOUVRIR MES PROJETS
+            </a>
+            <a
+              href="#contact"
+              className="text-white border border-[#2A4EFF] text-[14px] rounded-[6px] py-[10px] px-[20px] hover:bg-[rgba(42,78,255,0.1)] [font-family:'Poppins',sans-serif]"
+            >
+              ME CONTACTER
+            </a>
+          </div>
         </div>
       </div>
-      </div>
-  </section>
+    </div>
+    </section>
   );
 };
 
