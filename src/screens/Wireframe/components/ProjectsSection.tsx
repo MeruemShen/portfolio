@@ -38,26 +38,26 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
   return (
   <section
     id="work"
-    className="fade-section absolute w-full top-[1670px] left-0 px-[26px] mobile:relative mobile:top-[60px] mobile:mt-[80px]"
+    className="fade-section w-full px-[26px] mt-[100px] mobile:mt-[80px]"
   >
-    <div className="relative mb-4 h-[38px] mt-[0px]">
-      {/* Texte centré en absolu */}
-      <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+3.2px)] [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] text-center tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10 mobile:relative mobile:left-auto mobile:top-auto mobile:translate-x-0 mobile:translate-y-0 mobile:text-left mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
+    <div className="mb-4 h-[38px] transform -translate-y-[-15px]">
+      {/* Texte centré */}
+      <h2 className="text-center [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10 mobile:text-left mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
         <span>MES </span>
         <span className="text-[#a265ff]">PROJETS</span>
       </h2>
       {/* Trait */}
         <div className="flex justify-center items-center h-full mobile:hidden">
-        <div className="ml-[13px] flex-grow h-[26px] flex items-center min-w-[38px]">
+        <div className="ml-[13px] flex-grow h-[26px] flex items-center min-w-[38px] relative">
           {/* Diamond */}
-          <div className="absolute left-1/2 translate-x-[190px] top-[calc(50%-1.3px)] -translate-y-1/2 w-[13px] h-[13px] bg-[#fff] rotate-45 z-0"></div>
+          <div className="absolute left-1/2 translate-x-[190px] top-[-26px] -translate-y-1/2 w-[13px] h-[13px] bg-[#fff] rotate-45 z-0"></div>
           {/* Line */}
-          <div className="absolute left-1/2 translate-x-[200px] right-[-15px] top-[calc(50%-1.3px)] -translate-y-1/2 h-[3px] bg-[#fff] z-0"></div>
+          <div className="absolute left-1/2 translate-x-[200px] right-[-15px] top-[-26px] -translate-y-1/2 h-[3px] bg-[#fff] z-0"></div>
         </div>
       </div>
     </div>
 
-    <div className="mt-[93px] mobile:mt-[30px] grid grid-cols-1 md:grid-cols-7 gap-[19px] justify-items-center max-w-[960px] mx-auto">
+    <div className="mt-[93px] mb-[180px] mobile:mt-[30px] grid grid-cols-1 md:grid-cols-7 gap-[19px] mobile:gap-[30px] justify-items-center max-w-[960px] mx-auto">
       {projects.map((project, index) => {
         const row = Math.floor(index / 2)
         const isEvenRow = row % 2 === 0
@@ -75,12 +75,14 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
               <div className="w-full h-[98px] overflow-hidden p-[0.48rem]">
                 <img className="w-full h-full object-cover rounded-[24px]" alt="Project Image" src={project.image} />
               </div>
-              <div className="flex flex-1 p-4 relative">
-                <div className="w-[14px] h-[116px] absolute left-[14px] rounded-[8px] border border-solid border-[#a265ff]" />
-                <div className="absolute w-[91px] top-[67px] left-[-24px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
-                  {project.type}
+              <div className="flex flex-1 relative">
+                <div className="relative flex-shrink-0 mr-4 pl-4">
+                  <div className="w-[14px] h-[116px] rounded-[8px] border border-solid border-[#a265ff]" />
+                  <div className="absolute w-[91px] top-[51px] left-[-22px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
+                    {project.type}
+                  </div>
                 </div>
-                <div className="ml-8 relative w-[100%]">
+                <div className="relative w-[100%] p-4 pl-0">
                   <div className="flex items-center mb-[10px] relative">
                     <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] min-w-0 truncate">
                       {project.title}
