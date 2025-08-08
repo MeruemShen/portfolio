@@ -142,11 +142,11 @@ export const Wireframe = (): JSX.Element => {
   const footerLinks = ["ACCUEIL", "A PROPOS", "WORK", "PROCESSUS", "CONTACT"];
 
   return (
-      <div className="bg-white flex flex-row justify-center w-full min-h-[3356px] mobile:min-h-[3500px] overflow-x-hidden">
-        <div className="bg-white w-full min-h-[3356px] mobile:min-h-[3500px]">
-          <div className="relative w-full min-h-[3356px] mobile:min-h-[3500px]">
+      <div className="bg-white flex flex-row justify-center w-full overflow-hidden">
+        <div className="bg-white w-full overflow-hidden">
+          <div className="w-full overflow-hidden">
             {/* Background */}
-            <div className="absolute w-full h-full top-0 left-0 backdrop-blur-[25.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(25.3px)_brightness(100%)] bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
+            <div className="fixed w-full h-full top-0 left-0 backdrop-blur-[25.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(25.3px)_brightness(100%)] bg-[linear-gradient(225deg,rgba(31,18,52,1)_0%,rgba(16,5,30,1)_100%)]" />
 
             {/* Anchor for top of the page */}
             <div id="accueil" />
@@ -163,8 +163,7 @@ export const Wireframe = (): JSX.Element => {
             {/* Process Section */}
             <ProcessSection steps={processSteps} />
 
-            {/* Projects Section */}
-            <ProjectsSection projects={projects} />
+             <ProjectsSection projects={projects} />
 
             {/* Contact Section */}
             <ContactSection methods={contactMethods} />
