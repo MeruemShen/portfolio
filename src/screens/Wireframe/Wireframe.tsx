@@ -8,6 +8,7 @@ import { HeroSection } from "./components/HeroSection";
 import { ContactSection } from "./components/ContactSection";
 import { FooterSection } from "./components/FooterSection";
 import { ToolsSection } from "./components/ToolsSection";
+import { ToastProvider } from "../../components/toast";
 
 export const Wireframe = (): JSX.Element => {
   // Navigation items
@@ -27,10 +28,26 @@ export const Wireframe = (): JSX.Element => {
 
   // Social media links
   const socialLinks = [
-    { icon: "/wireframe/github.png", alt: "Element" },
-    { icon: "/wireframe/linkedin.png", alt: "Linkedin" },
-    { icon: "/wireframe/whatapps.png", alt: "Whatsapp" },
-    { icon: "/wireframe/mail.png", alt: "Enveloppe de" },
+    { 
+      icon: "/wireframe/github.png", 
+      alt: "GitHub", 
+      url: "https://github.com/MeruemShen" 
+    },
+    { 
+      icon: "/wireframe/linkedin.png", 
+      alt: "LinkedIn", 
+      url: "https://www.linkedin.com/in/dorian-bidault-589850240/" 
+    },
+    { 
+      icon: "/wireframe/whatapps.png", 
+      alt: "WhatsApp", 
+      url: "tel:0750010785" 
+    },
+    { 
+      icon: "/wireframe/mail.png", 
+      alt: "Email", 
+      url: "dorian.bidault11@gmail.com" 
+    },
   ];
 
   // Process steps
@@ -143,6 +160,7 @@ export const Wireframe = (): JSX.Element => {
   const footerLinks = ["ACCUEIL", "STACK", "PROCESSUS", "WORK", "CONTACT"];
 
   return (
+    <ToastProvider>
       <div className="bg-white flex flex-row justify-center w-full overflow-hidden">
         <div className="bg-white w-full overflow-hidden">
           <div className="w-full overflow-hidden">
@@ -177,5 +195,6 @@ export const Wireframe = (): JSX.Element => {
           </div>
         </div>
       </div>
+    </ToastProvider>
   );
 };
