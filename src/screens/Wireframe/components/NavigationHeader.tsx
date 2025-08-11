@@ -7,6 +7,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "../../../components/ui/navigation-menu";
+import { useToast } from "../../../components/toast";
 
 interface NavItem {
   name: string;
@@ -17,6 +18,7 @@ interface NavItem {
 interface SocialLink {
   icon: string;
   alt: string;
+  url?: string;
 }
 
 interface NavigationHeaderProps {
@@ -27,6 +29,27 @@ interface NavigationHeaderProps {
 
 export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }: NavigationHeaderProps): JSX.Element => {
   const [open, setOpen] = useState(false);
+  const { addToast } = useToast();
+  
+  // Function to handle email click
+  const handleEmailClick = (email: string) => {
+    // Copy email to clipboard
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        addToast("Email copié", "success", 2000);
+      })
+      .catch(err => {
+        console.error('Erreur lors de la copie :', err);
+        addToast("Erreur lors de la copie", "error", 2000);
+      });
+  };
+  
+  // Function to handle non-email links
+  const getHref = (link: SocialLink) => {
+    if (!link.url) return "#";
+    if (link.alt === "WhatsApp") return `tel:${link.url.replace("tel:", "")}`;
+    return link.url;
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full z-20 bg-white/4 backdrop-blur-md py-[5px]">
@@ -115,13 +138,25 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
         
         <div className="relative z-10 w-full p-8 flex justify-start gap-4 mb-4">
           {socialLinks.map((link, index) => (
-            <a 
-              key={index} 
-              href="#" 
-              className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
-            >
-              <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
-            </a>
+            link.alt === "Email" && link.url ? (
+              <button
+                key={index}
+                onClick={() => link.url && handleEmailClick(link.url)}
+                className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
+              >
+                <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
+              </button>
+            ) : (
+              <a 
+                key={index} 
+                href={getHref(link)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
+              >
+                <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
+              </a>
+            )
           ))}
         </div>
       </div>

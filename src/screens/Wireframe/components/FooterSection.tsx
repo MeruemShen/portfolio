@@ -1,9 +1,11 @@
 import React from "react";
 import { Button } from "../../../components/ui/button";
+import { useToast } from "../../../components/toast";
 
 interface SocialLink {
   icon: string;
   alt: string;
+  url?: string;
 }
 
 interface FooterSectionProps {
@@ -11,7 +13,39 @@ interface FooterSectionProps {
   socialLinks: SocialLink[];
 }
 
-export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps): JSX.Element => (
+export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps): JSX.Element => {
+  const { addToast } = useToast();
+  
+  // Map of footer link names to their target IDs
+  const linkTargets = {
+    "ACCUEIL": "accueil",
+    "STACK": "tools",
+    "PROCESSUS": "processus",
+    "WORK": "work",
+    "CONTACT": "contact"
+  };
+  
+  // Function to handle email click
+  const handleEmailClick = (email: string) => {
+    // Copy email to clipboard
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        addToast("Email copié", "success", 2000);
+      })
+      .catch(err => {
+        console.error('Erreur lors de la copie :', err);
+        addToast("Erreur lors de la copie", "error", 2000);
+      });
+  };
+
+  // Function to handle non-email links
+  const getHref = (link: SocialLink) => {
+    if (!link.url) return "#";
+    if (link.alt === "WhatsApp") return `tel:${link.url.replace("tel:", "")}`;
+    return link.url;
+  };
+
+  return (
     <footer className="w-full mt-[100px] bg-[#120527] backdrop-blur-md flex flex-col items-center px-[90px] py-5 mobile:mt-[80px] mobile:px-8">
       {/* GRID à 3 colonnes : logo | bande/ligne | menus */}
       <div className="w-full relative grid grid-cols-[auto_1fr_auto] items-center overflow-hidden">
@@ -46,11 +80,18 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
               </div>
               <ul className="flex flex-col gap-2">
                 {footerLinks.map((link, i) => (
-                    <li key={i}>
-                      <Button variant="link" className="p-0 h-auto [font-family:'Poppins',Helvetica] font-medium text-white text-sm hover:text-[#a265ff] transition-colors">
-                        {link}
-                      </Button>
-                    </li>
+                  <li key={i}>
+                    <a 
+                      href={`#${linkTargets[link as keyof typeof linkTargets] || ''}`}
+                      className="p-0 h-auto [font-family:'Poppins',Helvetica] font-medium text-white text-sm hover:text-[#a265ff] transition-colors"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById(linkTargets[link as keyof typeof linkTargets] || '')?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                    >
+                      {link}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -67,17 +108,33 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
               </div>
               <div className="flex flex-col gap-2 mobile:flex-row mobile:gap-2">
                 {socialLinks.map((link, i) => (
-                    <Button
-                        key={i}
-                        variant="link"
-                        className="p-0 h-auto hover:scale-110 transition-transform flex-shrink-0"
+                  link.alt === "Email" && link.url ? (
+                    <button
+                      key={i}
+                      onClick={() => link.url && handleEmailClick(link.url)}
+                      className="p-0 h-auto hover:scale-110 transition-transform flex-shrink-0 w-10 h-10 flex items-center justify-center"
                     >
                       <img
-                          className="w-8 h-8 min-w-[32px] min-h-[32px] object-contain"
-                          alt={link.alt}
-                          src={link.icon}
+                        className="w-8 h-8 min-w-[32px] min-h-[32px] object-contain"
+                        alt={link.alt}
+                        src={link.icon}
                       />
-                    </Button>
+                    </button>
+                  ) : (
+                    <a
+                      key={i}
+                      href={getHref(link)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-0 h-auto hover:scale-110 transition-transform flex-shrink-0 w-10 h-10 flex items-center justify-center"
+                    >
+                      <img
+                        className="w-8 h-8 min-w-[32px] min-h-[32px] object-contain"
+                        alt={link.alt}
+                        src={link.icon}
+                      />
+                    </a>
+                  )
                 ))}
               </div>
             </div>
@@ -86,7 +143,7 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
         </div>
       </div>
     </footer>
-
-);
+  );
+};
 
 export default FooterSection;
