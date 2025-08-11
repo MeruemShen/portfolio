@@ -35,12 +35,13 @@ export const ToolsSection = (): JSX.Element => {
 
   return (
       <section
+          id="tools"
           className="relative bg-[#120527] py-[120px]"
           aria-label="Technologies utilisées"
           aria-labelledby="tools-heading"
       >
         {/* Titre (forcé au-dessus de tout) */}
-        <div className="relative z-20 mx-auto w-full max-w-[1015px] px-8">
+        <div className="relative z-15 mx-auto w-full max-w-[1015px] px-8">
           <h3 className="text-sm uppercase tracking-[.28em] text-white/80 [font-family:'Days_One',Helvetica]">
             DES OUTILS
           </h3>
