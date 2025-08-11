@@ -71,7 +71,7 @@ export const ToolsSection = (): JSX.Element => {
                             alt={tool.name}
                             className="h-14 w-auto object-contain"
                         />
-                        <span className="text-xl font-semibold tracking-wide text-white/90">
+                        <span className="text-xl font-semibold tracking-wide text-white [font-family:'Poppins',sans-serif]">
                       {tool.name}
                     </span>
                         <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#A265FF]/15" />
