@@ -5,7 +5,7 @@ export const HeroSection = (): JSX.Element => {
   return (
     <section
       id="apropos"
-      className="fade-section w-full px-8 mb-[100px] mobile:px-4"
+      className="fade-section w-full px-8 mobile:px-4"
     >
 
       {/* Background image as CSS background */}
@@ -13,7 +13,7 @@ export const HeroSection = (): JSX.Element => {
       <div className="h-full pt-[90px] mobile:h-auto mobile:pt-[80px]">
         <div className="pt-[120px] mobile:pt-[0px] mobile:mb-[20px] w-full max-w-[950px] mx-auto">
           <div className="flex items-center relative">
-            <h2 className="[text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] tracking-[0] leading-[39.6px] text-white z-10 text-left whitespace-nowrap mr-4 mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
+            <h2 className="[text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[32px] tracking-[0] leading-[39.6px] text-white z-10 text-left whitespace-nowrap mr-4 mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
               <div>
                 <span id="me-text" className="mobile:hidden">CONSTRUISONS ENSEMBLE</span>
                 <span id="me-text" className="hidden mobile:inline">CONSTRUISONS</span>
@@ -55,7 +55,7 @@ export const HeroSection = (): JSX.Element => {
 
           <div className="flex gap-4 mb-[100px] mobile:mb-[70px]">
             <a
-              href="#projects"
+              href="#work"
               className="bg-[#2A4EFF] text-white text-[14px] rounded-[6px] py-[10px] px-[20px] hover:shadow-[0_0_10px_#2A4EFF] [font-family:'Poppins',sans-serif]"
             >
               DÉCOUVRIR MES PROJETS

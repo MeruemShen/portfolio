@@ -43,7 +43,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
   return (
     <section
       id="processus"
-      className="fade-section w-full mt-[100px] mobile:h-auto"
+      className="fade-section w-full mobile:h-auto"
     >
       <div className="w-full relative">
         {/* Background image as CSS background */}
@@ -52,7 +52,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
         {/* Content container */}
         <div className="relative z-10">
           <div className="mb-4 h-[48px] transform -translate-y-5 mobile:px-[26px]">
-            <h2 className="text-center [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[40px] tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10 mobile:text-left mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
+            <h2 className="text-center [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[32px] tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10 mobile:text-left mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
               <span>ÉTAPES DE </span>
               <span className="text-[#a265ff]">PROCESSUS</span>
             </h2>

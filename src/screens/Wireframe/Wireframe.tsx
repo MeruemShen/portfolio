@@ -7,6 +7,7 @@ import { SocialSidebar } from "./components/SocialSidebar";
 import { HeroSection } from "./components/HeroSection";
 import { ContactSection } from "./components/ContactSection";
 import { FooterSection } from "./components/FooterSection";
+import { ToolsSection } from "./components/ToolsSection";
 
 export const Wireframe = (): JSX.Element => {
   // Navigation items
@@ -159,6 +160,9 @@ export const Wireframe = (): JSX.Element => {
 
             {/* Hero Section */}
             <HeroSection />
+
+            {/* Tools Section */}
+            <ToolsSection />
 
             {/* Process Section */}
             <ProcessSection steps={processSteps} />
