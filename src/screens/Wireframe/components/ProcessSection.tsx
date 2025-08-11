@@ -43,7 +43,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
   return (
     <section
       id="processus"
-      className="fade-section w-full mobile:h-auto"
+      className="fade-section w-full mobile:h-auto scroll-mt-[120px]"
     >
       <div className="w-full relative">
         {/* Background image as CSS background */}

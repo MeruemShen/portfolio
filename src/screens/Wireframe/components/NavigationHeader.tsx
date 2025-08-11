@@ -14,12 +14,18 @@ interface NavItem {
   targetId: string;
 }
 
+interface SocialLink {
+  icon: string;
+  alt: string;
+}
+
 interface NavigationHeaderProps {
   navItems: NavItem[];
   onNavItemClick?: (index: number) => void;
+  socialLinks?: SocialLink[];
 }
 
-export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderProps): JSX.Element => {
+export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }: NavigationHeaderProps): JSX.Element => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -72,15 +78,24 @@ export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderP
       </div>
 
       <div
-        className={`fixed inset-0 z-30 w-screen h-screen bg-[#170b28] transition-transform duration-300 flex-col items-center justify-center tabletLandscape:flex hidden ${open ? 'translate-x-0 flex' : '-translate-x-full pointer-events-none opacity-0'}`}
+        className={`fixed inset-0 z-50 w-screen h-screen transition-transform duration-300 flex-col justify-between tabletLandscape:flex hidden ${open ? 'translate-x-0 flex' : '-translate-x-full pointer-events-none opacity-0'}`}
       >
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 bg-[url('/wireframe/fond_burger_bird1.png')] bg-cover bg-top"></div>
+        <div className="absolute inset-0 bg-[#170b28] bg-opacity-65"></div>
+        <div className="relative z-10 w-full p-4 flex items-center">
+          <img className="h-[64px] w-[90px] object-cover" alt="Logo removebg" src="/wireframe/logo.png" />
+          <span className="text-white text-2xl [font-family:'Days_One',Helvetica] ml-2">Deepbird</span>
+        </div>
+        
         <button
           onClick={() => setOpen(false)}
-          className="absolute top-4 right-4 text-white text-3xl"
+          className="absolute top-[32px] right-4 text-white text-4xl z-10 flex items-center justify-center h-[32px]"
         >
           &times;
         </button>
-        <nav className="flex flex-col gap-6 items-center">
+        
+        <nav className="relative z-10 flex flex-col gap-6 items-start pl-8">
           {navItems.map((item, index) => (
             <a
               key={index}
@@ -97,6 +112,18 @@ export const NavigationHeader = ({ navItems, onNavItemClick }: NavigationHeaderP
             </a>
           ))}
         </nav>
+        
+        <div className="relative z-10 w-full p-8 flex justify-start gap-4 mb-4">
+          {socialLinks.map((link, index) => (
+            <a 
+              key={index} 
+              href="#" 
+              className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
+            >
+              <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
+            </a>
+          ))}
+        </div>
       </div>
     </header>
   );

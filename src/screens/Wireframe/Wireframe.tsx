@@ -15,9 +15,9 @@ export const Wireframe = (): JSX.Element => {
   useScrollReveal();
   const navData = [
     { name: "ACCUEIL", targetId: "accueil" },
-    { name: "A PROPOS", targetId: "apropos" },
-    { name: "WORK", targetId: "work" },
+    { name: "STACK", targetId: "tools" },
     { name: "PROCESSUS", targetId: "processus" },
+    { name: "WORK", targetId: "work" },
     { name: "CONTACT", targetId: "contact" },
   ];
   const navItems = navData.map((item, index) => ({
@@ -140,7 +140,7 @@ export const Wireframe = (): JSX.Element => {
 
 
   // Footer links
-  const footerLinks = ["ACCUEIL", "A PROPOS", "WORK", "PROCESSUS", "CONTACT"];
+  const footerLinks = ["ACCUEIL", "STACK", "PROCESSUS", "WORK", "CONTACT"];
 
   return (
       <div className="bg-white flex flex-row justify-center w-full overflow-hidden">
@@ -153,7 +153,7 @@ export const Wireframe = (): JSX.Element => {
             <div id="accueil" />
 
             {/* Navigation */}
-            <NavigationHeader navItems={navItems} onNavItemClick={setActiveIndex} />
+            <NavigationHeader navItems={navItems} onNavItemClick={setActiveIndex} socialLinks={socialLinks} />
 
             {/* Social Media Sidebar */}
             <SocialSidebar links={socialLinks} />

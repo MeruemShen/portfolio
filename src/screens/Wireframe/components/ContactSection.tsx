@@ -15,7 +15,7 @@ interface ContactSectionProps {
 export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element => (
     <section
         id="contact"
-        className="fade-section w-full mt-[100px] mobile:mt-[80px]"
+        className="fade-section w-full mt-[100px] mobile:mt-[80px] pt-[120px] scroll-mt-[100px]"
     >
         <div className="w-full relative">
             {/* Background image as CSS background */}
@@ -65,10 +65,10 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                                                     rel="noopener noreferrer"
                                                     target="_blank"
                                                 >
-                                                    {method.value}
+                                                    {method.alt === "LinkedIn" ? "Lien vers LinkedIn" : method.value}
                                                 </a>
                                             ) : (
-                                                <span className="[font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] whitespace-nowrap mobile:text-[14px]">
+                                                <span className="[font-family:'Roboto',Helvetica] font-normal text-[#a265ff] text-[16px] tracking-[0] leading-[normal] whitespace-nowrap mobile:text-[14px]">
                                                   {method.value}
                                                 </span>
                                             )}
@@ -80,7 +80,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
 
                         {/* Bloc droit (image) */}
                         <div className="flex-1 text-card-foreground shadow bg-[#0f0f0f26] rounded-[15px] backdrop-blur-md overflow-hidden tablet:hidden hover:shadow-[0_0_12px_#a265ff] transition-shadow duration-300 h-[240px]">
-                            <img className="w-full h-full object-cover object-[center_-20px]" alt="About" src="/wireframe/about.png" />
+                            <img className="w-full h-full object-cover object-[center_-100px]" alt="About" src="/wireframe/about.png" />
                         </div>
                     </div>
                 </div>
