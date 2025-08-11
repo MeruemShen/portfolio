@@ -12,7 +12,7 @@ interface FooterSectionProps {
 }
 
 export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps): JSX.Element => (
-    <footer className="w-full mt-[100px] bg-[#170b28] backdrop-blur-md flex flex-col items-center px-[90px] py-5 mobile:mt-[80px] mobile:px-8">
+    <footer className="w-full mt-[100px] bg-[#120527] backdrop-blur-md flex flex-col items-center px-[90px] py-5 mobile:mt-[80px] mobile:px-8">
       {/* GRID à 3 colonnes : logo | bande/ligne | menus */}
       <div className="w-full relative grid grid-cols-[auto_1fr_auto] items-center overflow-hidden">
         {/* Colonne 1 : logo + infos (inchangé) */}
