@@ -31,7 +31,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
     return (
         <section
             id="contact"
-            className="fade-section w-full mt-[100px] mobile:mt-[80px] scroll-mt-[200px]"
+            className="fade-section w-full mt-[100px] mobile:mt-[0px] scroll-mt-[200px]"
         >
             <div className="w-full relative">
                 {/* Background image as CSS background */}
@@ -57,7 +57,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                     <div className="w-full flex flex-col items-center px-8 max-w-[1000px] mx-auto mb-[100px] mobile:mb-[60px]">
 
                         {/* Content section split 50/50 */}
-                        <div className="flex w-full gap-[51px] mt-[26px] mobile:flex-col mobile:gap-[30px]">
+                        <div className="flex w-full gap-[51px] mt-[26px] mobile:mt-[0px] mobile:flex-col mobile:gap-[30px]">
                             {/* Bloc gauche (description + cartes) */}
                             <div className="flex flex-col flex-1 items-start">
                                 <p className="w-full text-start [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] mb-[19px]">

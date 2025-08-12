@@ -47,24 +47,24 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
     >
       <div className="w-full relative">
         {/* Background image as CSS background */}
-        <div className="w-full bg-[url('/wireframe/fond_lune.png')] bg-cover bg-center h-[786px] mobile:h-[630px] absolute top-0 left-0"></div>
+        <div className="w-full bg-[url('/wireframe/fond_lune.png')] bg-cover bg-center h-[786px] tablet:h-[700px] mobile:h-[580px] absolute top-0 left-0"></div>
         
         {/* Content container */}
         <div className="relative z-10">
-          <div className="mb-4 h-[48px] transform -translate-y-5 mobile:px-[26px]">
+          <div className="mb-4 h-[48px] transform -translate-y-5 mobile:px-[26px] mobile:mb-[20px]">
             <h2 className="text-center [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[32px] tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10 mobile:text-left mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
               <span>ÉTAPES DE </span>
               <span className="text-[#a265ff]">PROCESSUS</span>
             </h2>
             <div className="flex justify-center items-center h-full mobile:hidden">
               <div className="ml-4 flex-grow h-[32px] flex items-center min-w-[48px]">
-                <div className="absolute left-1/2 translate-x-[300px] top-[20px] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
-                <div className="absolute left-1/2 translate-x-[310px] right-[-19px] top-[20px] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
+                <div className="absolute left-1/2 translate-x-[240px] top-[20px] -translate-y-1/2 w-[16px] h-[16px] bg-[#fff] rotate-45 z-0"></div>
+                <div className="absolute left-1/2 translate-x-[250px] right-[-19px] top-[20px] -translate-y-1/2 h-[4px] bg-[#fff] z-0"></div>
               </div>
             </div>
           </div>
 
-          <div className="w-full flex flex-col mb-[100px] mobile:space-y-6 -space-y-6 items-center mt-[55px] mobile:mt-[30px]">
+          <div className="w-full flex flex-col mb-[100px] tablet:space-y-[30px] tabletLandscape:space-y-[-25px] -space-y-6 items-center mt-[55px] tablet:mt-[25px] mobile:mt-[0px]">
             {steps.map((step, index) => (
               <div
                 key={index}

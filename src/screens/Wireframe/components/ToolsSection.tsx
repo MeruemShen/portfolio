@@ -36,7 +36,7 @@ export const ToolsSection = (): JSX.Element => {
   return (
       <section
           id="tools"
-          className="relative bg-[#120527] py-[120px]"
+          className="relative bg-[#120527] py-[120px] mobile:py-[100px]"
           aria-label="Technologies utilisées"
           aria-labelledby="tools-heading"
       >
