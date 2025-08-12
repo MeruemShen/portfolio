@@ -18,7 +18,7 @@ export const Wireframe = (): JSX.Element => {
     { name: "ACCUEIL", targetId: "accueil" },
     { name: "STACK", targetId: "tools" },
     { name: "PROCESSUS", targetId: "processus" },
-    { name: "WORK", targetId: "work" },
+    { name: "PROJETS", targetId: "projets" },
     { name: "CONTACT", targetId: "contact" },
   ];
   const navItems = navData.map((item, index) => ({
@@ -87,44 +87,33 @@ export const Wireframe = (): JSX.Element => {
       image: "/wireframe/lubin_banner.png",
       title: "Lubin Coaching",
       description:
-          "Plateforme de coaching sportif d\u00e9velopp\u00e9e avec Symfony et Sass.",
+          "Site vitrine pour un coach sportif d\u00e9velopp\u00e9 avec WordPress.",
       type: "COACHING",
       url: "https://www.lubincoaching.fr/",
       technologies: [
         {
-          icon: "/wireframe/symfony.png",
-          alt: "Symfony",
+          icon: "/wireframe/svg/wordpress-color-svgrepo-com.svg",
+          alt: "WordPress",
         },
-        { icon: "/wireframe/sass.png", alt: "Sass" },
-      ],
-    },
-    {
-      image: "/wireframe/dovana_banner.png",
-      title: "Dovana",
-      description:
-          "Application de gestion de cadeaux r\u00e9alis\u00e9e en React et JavaScript.",
-      type: "COACHING",
-      technologies: [
-        { icon: "/wireframe/react.png", alt: "React" },
-        { icon: "/wireframe/js.png", alt: "JavaScript" },
-        { icon: "/wireframe/sass.png", alt: "Sass" },
       ],
     },
     {
       image: "/wireframe/exostia_banner.png",
       title: "Exostia",
       description:
-          "Site vitrine inspir\u00e9 de la science-fiction enti\u00e8rement cod\u00e9 en HTML.",
-      type: "COACHING",
+          "Boutique d'un serveur Minecraft au th\u00e8me mythologique.",
+      type: "MINECRAFT",
       url: "https://www.exostia.com/",
-      technologies: [{ icon: "/wireframe/html.png", alt: "HTML" }],
+      technologies: [
+        { icon: "/wireframe/azuriom.png", alt: "Azuriom" }
+      ],
     },
     {
       image: "/wireframe/hangart_banner.png",
       title: "Hangart",
       description:
-          "Portfolio pour un artiste digital con\u00e7u en HTML, CSS et JavaScript.",
-      type: "COACHING",
+          "Prototype de site internet pour un \u00e9v\u00e9nement fictif (projet d'\u00e9cole).",
+      type: "PROTOTYPE",
       technologies: [
         { icon: "/wireframe/html.png", alt: "Html" },
         { icon: "/wireframe/css.png", alt: "Css" },
@@ -157,7 +146,7 @@ export const Wireframe = (): JSX.Element => {
 
 
   // Footer links
-  const footerLinks = ["ACCUEIL", "STACK", "PROCESSUS", "WORK", "CONTACT"];
+  const footerLinks = ["ACCUEIL", "STACK", "PROCESSUS", "PROJETS", "CONTACT"];
 
   return (
     <ToastProvider>

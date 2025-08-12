@@ -37,10 +37,10 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
 
   return (
   <section
-    id="work"
-    className="fade-section w-full px-[26px] mt-[100px] mobile:mt-[80px] scroll-mt-[100px]"
+    id="projets"
+    className="fade-section w-full px-[26px] mt-[100px] mobile:mt-[130px] scroll-mt-[100px]"
   >
-    <div className="mb-4 h-[38px] transform -translate-y-[-15px]">
+    <div className="mb-4 h-[38px] transform -translate-y-[-15px] tablet:-translate-y-[0px]">
       {/* Texte centré */}
       <h2 className="text-center [text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[32px] tracking-[0] leading-[39.6px] whitespace-nowrap text-white z-10 mobile:text-left mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
         <span>MES </span>
@@ -50,14 +50,14 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
         <div className="flex justify-center items-center h-full mobile:hidden">
         <div className="ml-[13px] flex-grow h-[26px] flex items-center min-w-[38px] relative">
           {/* Diamond */}
-          <div className="absolute left-1/2 translate-x-[190px] top-[-26px] -translate-y-1/2 w-[13px] h-[13px] bg-[#fff] rotate-45 z-0"></div>
+          <div className="absolute left-1/2 translate-x-[140px] top-[-26px] -translate-y-1/2 w-[13px] h-[13px] bg-[#fff] rotate-45 z-0"></div>
           {/* Line */}
-          <div className="absolute left-1/2 translate-x-[200px] right-[-15px] top-[-26px] -translate-y-1/2 h-[3px] bg-[#fff] z-0"></div>
+          <div className="absolute left-1/2 translate-x-[150px] right-[-15px] top-[-26px] -translate-y-1/2 h-[3px] bg-[#fff] z-0"></div>
         </div>
       </div>
     </div>
 
-    <div className="mt-[93px] mb-[180px] mobile:mt-[30px] grid grid-cols-1 md:grid-cols-7 gap-[19px] mobile:gap-[30px] justify-items-center max-w-[960px] mx-auto">
+    <div className="mt-[93px] mb-[180px] mobile:mb-[150px] mobile:mt-[40px] grid grid-cols-1 md:grid-cols-7 gap-[19px] mobile:gap-[30px] justify-items-center max-w-[960px] mx-auto">
       {projects.map((project, index) => {
         const row = Math.floor(index / 2)
         const isEvenRow = row % 2 === 0
@@ -76,9 +76,9 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
                 <img className="w-full h-full object-cover rounded-[24px]" alt="Project Image" src={project.image} />
               </div>
               <div className="flex flex-1 relative">
-                <div className="relative flex-shrink-0 mr-4 pl-4">
-                  <div className="w-[14px] h-[116px] rounded-[8px] border border-solid border-[#a265ff]" />
-                  <div className="absolute w-[91px] top-[51px] left-[-22px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
+                <div className="relative flex-shrink-0 mr-4 pl-4 pt-4 pb-6 h-full">
+                  <div className="w-[14px] h-full rounded-[8px] border border-solid border-[#a265ff]" />
+                  <div className="absolute w-[91px] top-[71px] left-[-22px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
                     {project.type}
                   </div>
                 </div>
@@ -100,7 +100,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
                   {project.technologies.length > 0 && (
                     <div className="flex gap-[10px] mt-auto">
                       {project.technologies.map((tech, techIndex) => (
-                        <img key={techIndex} className="w-5 h-5 object-cover" alt={tech.alt} src={tech.icon} />
+                        <img key={techIndex} className="w-5 h-5 object-contain" alt={tech.alt} src={tech.icon} />
                       ))}
                     </div>
                   )}

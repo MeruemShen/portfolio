@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../../../components/ui/button";
 import { useToast } from "../../../components/toast";
 
 interface SocialLink {
@@ -21,7 +20,7 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
     "ACCUEIL": "accueil",
     "STACK": "tools",
     "PROCESSUS": "processus",
-    "WORK": "work",
+    "PROJETS": "projets",
     "CONTACT": "contact"
   };
   
@@ -46,11 +45,11 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
   };
 
   return (
-    <footer className="w-full mt-[100px] bg-[#120527] backdrop-blur-md flex flex-col items-center px-[90px] py-5 mobile:mt-[80px] mobile:px-8">
+    <footer className="w-full mt-[100px] bg-[#120527] backdrop-blur-md flex flex-col items-center px-[90px] tabletLandscape:px-10 py-5 mobile:mt-[80px] mobile:px-8">
       {/* GRID à 3 colonnes : logo | bande/ligne | menus */}
-      <div className="w-full relative grid grid-cols-[auto_1fr_auto] items-center overflow-hidden">
+      <div className="w-full relative grid grid-cols-[auto_1fr_auto] items-center overflow-hidden mobile:grid-cols-1 mobile:gap-8">
         {/* Colonne 1 : logo + infos (inchangé) */}
-        <div className="flex flex-col items-start text-left mb-6 mobile:items-center mobile:text-center mobile:mb-12">
+        <div className="flex flex-col items-start text-left mb-6 mobile:mb-0">
           <img className="h-[158px] w-[158px] object-cover mb-[-2px]" alt="Logo" src="/wireframe/logo.png" />
           <h3 className="[font-family:'Days_One',Helvetica] mt-[-13px] font-normal text-white text-[32px] tracking-[0] leading-[31.7px] mb-4">DeepBird</h3>
           <p className="[font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[15px]">© 2024–2025 Deepbird. Tous droits réservés</p>
@@ -69,16 +68,17 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
         </div>
 
 
-        {/* Colonne 3 : menus + réseaux (inchangé) */}
-        <div className="flex gap-36 mobile:w-full mobile:justify-between mobile:gap-8 tabletLandscape:ml-[15vw]">
+        {/* Colonne 3 : menus + réseaux */}
+        <div className="flex gap-36 mobile:w-full mobile:flex-col mobile:gap-8 tabletLandscape:ml-[15vw] mobile:ml-0">
           {/* Navigation links */}
           <div className="flex flex-col relative">
-            <div className="flex items-center h-full">
+            <div className="flex mobile:flex-col items-center mobile:items-start h-full">
               <div className="relative mr-6 mobile:mr-4">
-                <div className="w-[22px] h-[181px] rounded-[10px] border border-solid border-[#a265ff]"></div>
-                <div className="absolute w-[143px] top-[84px] left-[-60px] -rotate-90 [font-family:'Days_One',Helvetica] text-[#a265ff] text-base text-center">NAVIGATION</div>
+                <div className="w-[22px] h-[181px] rounded-[10px] border border-solid border-[#a265ff] mobile:hidden"></div>
+                <div className="absolute w-[143px] top-[84px] left-[-60px] -rotate-90 [font-family:'Days_One',Helvetica] text-[#a265ff] text-base text-center mobile:hidden">NAVIGATION</div>
+                <div className="hidden mobile:block [font-family:'Days_One',Helvetica] text-[#a265ff] text-base text-center mb-4 border border-solid border-[#a265ff] rounded-[10px] px-4 py-2">NAVIGATION</div>
               </div>
-              <ul className="flex flex-col gap-2">
+              <ul className="flex flex-col gap-2 mobile:flex-row mobile:flex-wrap mobile:gap-4">
                 {footerLinks.map((link, i) => (
                   <li key={i}>
                     <a 
@@ -99,14 +99,17 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
 
           {/* Social */}
           <div className="flex flex-col relative">
-            <div className="flex items-center h-full">
+            <div className="flex mobile:flex-col items-center mobile:items-start h-full">
               <div className="relative mr-6 mobile:mr-4">
-                <div className="w-[22px] h-[181px] rounded-[10px] border border-solid border-[#a265ff]"></div>
-                <div className="absolute w-[178px] top-[84px] left-[-78px] -rotate-90 [font-family:'Days_One',Helvetica] text-[#a265ff] text-sm text-center">
+                <div className="w-[22px] h-[181px] rounded-[10px] border border-solid border-[#a265ff] mobile:hidden"></div>
+                <div className="absolute w-[178px] top-[84px] left-[-78px] -rotate-90 [font-family:'Days_One',Helvetica] text-[#a265ff] text-sm text-center mobile:hidden">
+                  RESEAUX SOCIAUX
+                </div>
+                <div className="hidden mobile:block [font-family:'Days_One',Helvetica] text-[#a265ff] text-base text-center mb-4 mobile:mb-5 border border-solid border-[#a265ff] rounded-[10px] px-4 py-2">
                   RESEAUX SOCIAUX
                 </div>
               </div>
-              <div className="flex flex-col gap-2 mobile:flex-row mobile:gap-2">
+              <div className="flex flex-col gap-2 mobile:flex-row mobile:flex-wrap mobile:gap-4">
                 {socialLinks.map((link, i) => (
                   link.alt === "Email" && link.url ? (
                     <button
