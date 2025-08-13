@@ -18,7 +18,7 @@ export default defineConfig({
     // Enable HMR
     hmr: {
       // Use the host from the browser's URL instead of a hardcoded port
-      host: 'portfolio.exostia.wip',
+      host: 'portfolio.deepbird.wip',
       protocol: 'wss',
     }
   }
