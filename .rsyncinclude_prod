@@ -1,0 +1,26 @@
+# Always include the dist directory (built files)
++ dist/
++ dist/**
+
+# Include public assets
++ public/
++ public/**
+
+# Include configuration files needed for production
++ vite.config.ts
++ tsconfig.json
++ tailwind.config.js
+
+# Include package.json (but not node_modules)
++ package.json
+
+# Include README and license files
++ README.md
++ LICENSE*
+
+# Include any environment example files
++ .env.example
+
+# Include specific source files if needed for server-side rendering
+# + src/
+# + src/**
