@@ -11,7 +11,7 @@ export const HeroSection = (): JSX.Element => {
       {/* Background image as CSS background */}
       <div className="fade-bottom-img w-screen h-full -z-20 fixed top-0 left-1/2 -translate-x-1/2 bg-[url('/wireframe/fond_burger_bird1.png')] bg-cover bg-top"></div>
       <div className="h-full pt-[90px] mobile:h-auto mobile:pt-[80px]">
-        <div className="pt-[120px] mobile:pt-[50px] mobile:mb-[20px] w-full max-w-[950px] mx-auto">
+        <div className="pt-[120px] mobile:pt-[50px] mobile:mb-[20px] w-full max-w-[950px] md-desktop:max-w-[1200px] mx-auto">
           <div className="flex items-center relative">
             <h2 className="[text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[32px] tracking-[0] leading-[39.6px] text-white z-10 text-left whitespace-nowrap mr-4 mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
               <div>
@@ -29,9 +29,9 @@ export const HeroSection = (): JSX.Element => {
           </div>
         </div>
 
-      <div className="relative flex justify-center mt-[20px] w-full max-w-[950px] mx-auto">
+      <div className="relative flex justify-center mt-[20px] w-full max-w-[950px] md-desktop:max-w-[1200px] mx-auto">
         <div className="relative flex flex-col items-start text-left w-full max-w-full mobile:max-w-full">
-          <p className="text-white text-[16px] mb-[10px] max-w-[650px] mobile:max-w-full font-normal [font-family:'Poppins',sans-serif]">
+          <p className="text-white text-[16px] mb-[10px] max-w-[650px] md-desktop:max-w-[800px] mobile:max-w-full font-normal [font-family:'Poppins',sans-serif]">
             <span className="mobile:hidden">Développeur web polyvalent, j'allie expertise technique, sens de l'efficacité, adaptabilité et maîtrise des outils modernes pour concevoir des solutions sur-mesure, robustes, évolutives et alignées avec vos objectifs.</span>
             <span className="hidden mobile:inline">Solutions web sur-mesure, robustes et évolutives. Expertise technique et adaptabilité pour répondre à vos objectifs.</span>
           </p>
