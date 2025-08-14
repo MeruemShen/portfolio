@@ -39,9 +39,9 @@ export const Wireframe = (): JSX.Element => {
       url: "https://www.linkedin.com/in/dorian-bidault-589850240/" 
     },
     { 
-      icon: "/wireframe/whatapps.png", 
-      alt: "WhatsApp", 
-      url: "tel:0750010785" 
+      icon: "/wireframe/svg/calendar.svg",
+      alt: "Calendrier", 
+      url: "https://calendly.com/deepbird/30min" 
     },
     { 
       icon: "/wireframe/mail.png", 
@@ -131,10 +131,10 @@ export const Wireframe = (): JSX.Element => {
       isLink: true,
     },
     {
-      icon: "/wireframe/whatapps.png",
-      alt: "Phone",
-      value: "07 50 01 07 85",
-      isLink: false,
+      icon: "/wireframe/svg/calendar.svg",
+      alt: "Calendrier",
+      value: "https://calendly.com/deepbird/30min",
+      isLink: true,
     },
     {
       icon: "/wireframe/linkedin.png",

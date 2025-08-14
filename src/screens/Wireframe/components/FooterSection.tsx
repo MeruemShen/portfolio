@@ -1,4 +1,5 @@
 import React from "react";
+import { Calendar } from "lucide-react";
 import { useToast } from "../../../components/toast";
 
 interface SocialLink {
@@ -131,11 +132,15 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
                       rel="noopener noreferrer"
                       className="p-0 h-auto hover:scale-110 transition-transform flex-shrink-0 w-10 h-10 flex items-center justify-center"
                     >
-                      <img
-                        className="w-8 h-8 min-w-[32px] min-h-[32px] object-contain"
-                        alt={link.alt}
-                        src={link.icon}
-                      />
+                      {link.alt === "Calendrier" ? (
+                        <Calendar className="w-8 h-8 text-white" />
+                      ) : (
+                        <img
+                          className="w-8 h-8 min-w-[32px] min-h-[32px] object-contain"
+                          alt={link.alt}
+                          src={link.icon}
+                        />
+                      )}
                     </a>
                   )
                 ))}
