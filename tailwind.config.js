@@ -75,8 +75,8 @@ module.exports = {
         tabletLandscape: { max: "1024px" },
         tablet: { max: "900px" },
         mobile: { max: "720px" },
-        "sm-mobile": { max: "420px" },
-        "md-mobile": { max: "399px" },
+        "md-mobile": { max: "400px" },
+        "sm-mobile": { max: "360px" },
       },
     },
     container: {
