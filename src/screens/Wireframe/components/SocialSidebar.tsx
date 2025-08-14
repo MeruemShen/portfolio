@@ -1,4 +1,5 @@
 import React from "react";
+import { Calendar } from "lucide-react";
 import { useToast } from "../../../components/toast";
 
 interface SocialLink {
@@ -53,7 +54,11 @@ export const SocialSidebar = ({ links }: SocialSidebarProps): JSX.Element => {
             rel="noopener noreferrer"
             className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md p-0 flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
           >
-            <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
+            {link.alt === "Calendrier" ? (
+              <Calendar className="w-[24px] h-[24px] text-white" />
+            ) : (
+              <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
+            )}
           </a>
         )
       ))}

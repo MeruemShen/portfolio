@@ -1,4 +1,5 @@
 import React from "react";
+import { Calendar } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/card";
 import { useToast } from "../../../components/toast";
 
@@ -72,7 +73,11 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                                         >
                                             <CardContent className="p-0 pl-4 py-4 h-full flex items-center mobile:py-3">
                                                 <div className="w-[41px] flex justify-center flex-shrink-0">
-                                                    <img className="w-[21px] h-[15px] object-contain" alt={method.alt} src={method.icon} />
+                                                    {method.alt === "Calendrier" ? (
+                                                        <Calendar className="w-[18px] h-[18px] text-white" />
+                                                    ) : (
+                                                        <img className="w-[21px] h-[15px] object-contain" alt={method.alt} src={method.icon} />
+                                                    )}
                                                 </div>
                                                 {method.isLink ? (
                                                     method.alt === "Email" ? (
@@ -89,7 +94,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                                                             rel="noopener noreferrer"
                                                             target="_blank"
                                                         >
-                                                            {method.alt === "LinkedIn" ? "Lien vers LinkedIn" : method.value}
+                                                            {method.alt === "LinkedIn" ? "Lien vers LinkedIn" : method.alt === "Calendrier" ? "Prendre un rendez-vous" : method.value}
                                                         </a>
                                                     )
                                                 ) : method.alt === "Phone" ? (
