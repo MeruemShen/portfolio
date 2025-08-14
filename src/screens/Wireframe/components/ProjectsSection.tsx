@@ -38,7 +38,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
   return (
   <section
     id="projets"
-    className="fade-section w-full px-[26px] mt-[100px] mobile:mt-[130px] scroll-mt-[100px]"
+    className="fade-section w-full px-[26px] mt-[100px] mobile:mt-[115px] scroll-mt-[100px]"
   >
     <div className="mb-4 h-[38px] transform -translate-y-[-15px] tablet:-translate-y-[0px]">
       {/* Texte centré */}
