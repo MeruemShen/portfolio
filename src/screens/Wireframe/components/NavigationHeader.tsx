@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, X, Calendar } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/card";
 import {
   NavigationMenu,
@@ -139,7 +139,7 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
               onClick={() => setClosing(true)} // NEW: déclenche la fermeture smooth
               className="absolute top-[30px] right-10 z-10 flex items-center justify-center h-[36px] w-[36px] bg-[#a265ff] rounded-md"
           >
-            <span className="text-white text-4xl relative transform translate-y-[-4.5px] hover:translate-y-[-5px] transition-transform duration-200">&times;</span>
+            <X className="w-5 h-5 text-white" aria-label="Fermer" />
           </button>
 
           <nav className="relative z-10 flex flex-col gap-6 items-start pl-8">

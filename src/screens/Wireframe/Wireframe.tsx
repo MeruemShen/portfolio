@@ -112,8 +112,9 @@ export const Wireframe = (): JSX.Element => {
       image: "/wireframe/hangart_banner.png",
       title: "Hangart",
       description:
-          "Prototype de site internet pour un \u00e9v\u00e9nement fictif (projet d'\u00e9cole).",
+          "Prototype d’événement fictif (2e année). Par sécurité, seule une maquette statique est visible.",
       type: "PROTOTYPE",
+      url: "/wireframe/hangart_prototype.png",
       technologies: [
         { icon: "/wireframe/html.png", alt: "Html" },
         { icon: "/wireframe/css.png", alt: "Css" },
