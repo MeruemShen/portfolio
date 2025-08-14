@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X, Calendar } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/card";
 import {
   NavigationMenu,
@@ -92,14 +92,27 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
             <ArrowRight className="w-5 h-5 text-white" />
           </a>
 
-          <button
-              onClick={() => (open ? setClosing(true) : setOpen(true))} // NEW: si ouvert, on passe en fermeture animée
-              className="hidden tabletLandscape:flex flex-col items-end justify-center w-8 h-8 relative"
-          >
-            <span className="block w-full h-0.5 bg-white mb-1" />
-            <span className="block w-full h-0.5 bg-white mb-1" />
-            <span className="block w-1/2 h-0.5 bg-white self-end" />
-          </button>
+          {/* Mobile actions: rendez-vous button + burger */}
+          <div className="hidden tabletLandscape:flex items-center ml-auto">
+            <a
+              href="https://calendly.com/deepbird/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Prendre un rendez-vous"
+              className="flex items-center justify-center w-10 h-10 mr-5 bg-[#a265ff] rounded-[6px] hover:bg-[rgba(162,101,255,0.25)] transition-colors duration-200"
+            >
+              <Calendar className="w-6 h-6 text-white" />
+            </a>
+
+            <button
+                onClick={() => (open ? setClosing(true) : setOpen(true))}
+                className="flex flex-col items-end justify-center w-8 h-8 relative"
+            >
+              <span className="block w-full h-0.5 bg-white mb-1" />
+              <span className="block w-full h-0.5 bg-white mb-1" />
+              <span className="block w-1/2 h-0.5 bg-white self-end" />
+            </button>
+          </div>
         </div>
 
         <div
@@ -126,7 +139,7 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
               onClick={() => setClosing(true)} // NEW: déclenche la fermeture smooth
               className="absolute top-[30px] right-10 z-10 flex items-center justify-center h-[36px] w-[36px] bg-[#a265ff] rounded-md"
           >
-            <span className="text-white text-4xl relative transform translate-y-[-4.5px] hover:translate-y-[-5px] transition-transform duration-200">&times;</span>
+            <X className="w-5 h-5 text-white" aria-label="Fermer" />
           </button>
 
           <nav className="relative z-10 flex flex-col gap-6 items-start pl-8">
@@ -165,7 +178,11 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
                         rel="noopener noreferrer"
                         className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
                     >
-                      <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
+                      {link.alt === "Calendrier" ? (
+                        <Calendar className="w-[24px] h-[24px] text-white" />
+                      ) : (
+                        <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
+                      )}
                     </a>
                 )
             ))}
