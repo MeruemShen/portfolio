@@ -47,7 +47,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
     >
       <div className="w-full relative">
         {/* Background image as CSS background */}
-        <div className="w-full bg-[url('/wireframe/fond_lune.png')] bg-cover bg-center h-[786px] tablet:h-[700px] mobile:h-[580px] absolute top-0 left-0"></div>
+        <div className="w-full bg-[url('/wireframe/fond_lune.png')] bg-cover bg-center h-[786px] tablet:h-[700px] mobile:h-[580px] sm-mobile:h-[700px] absolute top-0 left-0"></div>
         
         {/* Content container */}
         <div className="relative z-10">
