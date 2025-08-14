@@ -99,7 +99,7 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
                     </div>
                   )}
                 </div>
-                <Card className="w-full max-w-[696px] bg-[#221239] rounded-[32px] backdrop-blur-md shadow-[0px_0px_24px_#00000040]">
+                <Card className="w-full max-w-[696px] md-desktop:max-w-[800px] bg-[#221239] rounded-[32px] backdrop-blur-md shadow-[0px_0px_24px_#00000040]">
                   <CardContent className="flex flex-col justify-center pl-[63px] pr-6 py-[30px] relative">
                     <div className="absolute left-[28px] top-[28px] bottom-[28px] w-5 rounded-[8px] border border-solid border-[#a265ff]" />
                     <div className="absolute left-[4px] top-1/2 -translate-y-1/2 w-[69px] -rotate-90 [font-family:'Days_One',Helvetica] font-normal text-[#a265ff] text-[12px] text-center tracking-[0] leading-[12.7px]">
@@ -108,10 +108,10 @@ export const ProcessSection = ({ steps }: ProcessSectionProps): JSX.Element => {
                     <h3 className="[font-family:'Days_One',Helvetica] font-normal text-white text-[19px] tracking-[0] leading-[19px] mb-3">
                       {step.title}
                     </h3>
-                    <p className="w-full md:max-w-[580px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] mobile:hidden">
+                    <p className="w-full md:max-w-[580px] md-desktop:max-w-[650px] [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal] mobile:hidden">
                       {step.description}
                     </p>
-                    <p className="w-full md:max-w-[580px] hidden mobile:block [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal]">
+                    <p className="w-full md:max-w-[580px] md-desktop:max-w-[650px] hidden mobile:block [font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[16px] tracking-[0] leading-[normal]">
                       {step.descriptionMobile ?? step.description}
                     </p>
                   </CardContent>
