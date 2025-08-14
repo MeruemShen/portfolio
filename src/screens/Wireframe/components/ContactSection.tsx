@@ -40,7 +40,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                 
                 {/* Content container */}
                 <div className="relative z-10">
-                    <div className="mb-4 transform -translate-y-11 w-full max-w-[1000px] mx-auto px-8 h-[48px] flex items-center">
+                    <div className="mb-4 transform -translate-y-11 w-full max-w-[1000px] md-desktop:max-w-[1200px] mx-auto px-8 h-[48px] flex items-center">
                         {/* Titre + flèche alignés dans une ligne flex */}
                         <div className="flex items-center relative">
                             <h2 className="[text-shadow:0px_0px_24px_#000000bf] [font-family:'Days_One',Helvetica] font-normal text-[32px] tracking-[0] leading-[39.6px] text-white z-10 text-left whitespace-nowrap mr-4 mobile:text-[clamp(24px,8vw,32px)] mobile:whitespace-normal">
@@ -55,7 +55,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                             </div>
                         </div>
                     </div>
-                    <div className="w-full flex flex-col items-center px-8 max-w-[1000px] mx-auto mb-[100px] mobile:mb-[60px]">
+                    <div className="w-full flex flex-col items-center px-8 max-w-[1000px] md-desktop:max-w-[1200px] mx-auto mb-[100px] mobile:mb-[60px]">
 
                         {/* Content section split 50/50 */}
                         <div className="flex w-full gap-[51px] mt-[26px] mobile:mt-[0px] mobile:flex-col mobile:gap-[30px]">

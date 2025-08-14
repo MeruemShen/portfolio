@@ -41,7 +41,7 @@ export const ToolsSection = (): JSX.Element => {
           aria-labelledby="tools-heading"
       >
         {/* Titre (forcé au-dessus de tout) */}
-        <div className="relative z-15 mx-auto w-full max-w-[1015px] px-8">
+        <div className="relative z-15 mx-auto w-full max-w-[1015px] md-desktop:max-w-[1250px] px-8">
           <h3 className="text-sm uppercase tracking-[.28em] text-white/80 [font-family:'Days_One',Helvetica]">
             DES OUTILS
           </h3>
