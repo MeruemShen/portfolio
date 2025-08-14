@@ -43,46 +43,50 @@ export const HeroSection = (): JSX.Element => {
           </div>
 
 
-          <div className="flex gap-8 my-[50px]">
+          <div className="flex gap-8 my-[50px] md-mobile:gap-4 md-mobile:my-[35px]">
             <div className="text-center">
-              <div className="text-[#a265ff] text-[2.5rem] [font-family:'Days_One',Helvetica]">
-                {/* Animated counter */}
-                <CounterAnimation
-                    targetNumber={2}
-                    prefix="+"
-                    duration={0.7}
-                    ease={[0.22, 1, 0.36, 1]}
-                    waitForWindowLoad
-                    preloadImages={["/wireframe/fond_burger_bird1.png"]}
-                    afterImageDelayMs={500}   // ← 1.5 s après chargement image
-                />
-                {/* Ultimate fallback - hidden but will be shown if JS fails completely */}
-                <noscript>
-                  <span className="text-[#a265ff] text-[2.5rem] [font-family:'Days_One',Helvetica]">+2</span>
-                </noscript>
-                <span className="text-white text-[2rem] ml-2">ans</span>
+              <div className="md-mobile:flex md-mobile:items-end md-mobile:justify-center [font-family:'Days_One',Helvetica]">
+                <span className="text-[#a265ff] text-[2.5rem] md-mobile:leading-none md-mobile:text-[2.1rem]">
+                  {/* Animated counter */}
+                  <CounterAnimation
+                      targetNumber={2}
+                      prefix="+"
+                      duration={0.7}
+                      ease={[0.22, 1, 0.36, 1]}
+                      waitForWindowLoad
+                      preloadImages={['/wireframe/fond_burger_bird1.png']}
+                      afterImageDelayMs={500}   // ← 1.5 s après chargement image
+                  />
+                  {/* Ultimate fallback - hidden but will be shown if JS fails completely */}
+                  <noscript>
+                    <span className="text-[#a265ff] text-[2.5rem] md-mobile:text-[2.1rem] [font-family:'Days_One',Helvetica]">+2</span>
+                  </noscript>
+                </span>
+                <span className="text-white text-[2rem] ml-2 md-mobile:text-[1.6rem] md-mobile:ml-1 md-mobile:whitespace-nowrap">ans</span>
               </div>
-              <div className="text-white text-sm uppercase [font-family:'Poppins',sans-serif]">D'expérience</div>
+              <div className="text-white text-sm md-mobile:text-xs uppercase [font-family:'Poppins',sans-serif]">D'expérience</div>
             </div>
             <div className="text-center">
-              <div className="text-[#a265ff] text-[2.5rem] [font-family:'Days_One',Helvetica]">
-                {/* Animated counter */}
-                <CounterAnimation
-                    targetNumber={10}
-                    prefix="+"
-                    duration={1.0}
-                    ease={[0.22, 1, 0.36, 1]}
-                    waitForWindowLoad
-                    preloadImages={["/wireframe/fond_burger_bird1.png"]}
-                    afterImageDelayMs={500}   // ← 2 s après chargement image
-                />
-                {/* Ultimate fallback - hidden but will be shown if JS fails completely */}
-                <noscript>
-                  <span className="text-[#a265ff] text-[2.5rem] [font-family:'Days_One',Helvetica]">+10</span>
-                </noscript>
-                <span className="text-white text-[2rem] ml-[1px]">Projets</span>
+              <div className="md-mobile:flex md-mobile:items-end md-mobile:justify-center [font-family:'Days_One',Helvetica]">
+                <span className="text-[#a265ff] text-[2.5rem] md-mobile:leading-none md-mobile:text-[2.1rem]">
+                  {/* Animated counter */}
+                  <CounterAnimation
+                      targetNumber={10}
+                      prefix="+"
+                      duration={1.0}
+                      ease={[0.22, 1, 0.36, 1]}
+                      waitForWindowLoad
+                      preloadImages={['/wireframe/fond_burger_bird1.png']}
+                      afterImageDelayMs={500}   // ← 2 s après chargement image
+                  />
+                  {/* Ultimate fallback - hidden but will be shown if JS fails complètement */}
+                  <noscript>
+                    <span className="text-[#a265ff] text-[2.5rem] md-mobile:text-[2.1rem] [font-family:'Days_One',Helvetica]">+10</span>
+                  </noscript>
+                </span>
+                <span className="text-white text-[2rem] ml-[1px] md-mobile:text-[1.6rem] md-mobile:ml-1 md-mobile:whitespace-nowrap">Projets</span>
               </div>
-              <div className="text-white text-sm uppercase [font-family:'Poppins',sans-serif]">Effectués ou livrés</div>
+              <div className="text-white text-sm md-mobile:text-xs uppercase [font-family:'Poppins',sans-serif]">Effectués ou livrés</div>
             </div>
           </div>
 
