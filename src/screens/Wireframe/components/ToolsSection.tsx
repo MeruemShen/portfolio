@@ -61,7 +61,7 @@ export const ToolsSection = (): JSX.Element => {
             <div className="pointer-events-none absolute inset-y-0 right-0 z-0 w-32 bg-gradient-to-l from-[#0D0718] to-transparent" />
 
             {/* Viewport plus haut pour éviter les coupures au hover */}
-            <div ref={emblaRef} className="relative z-10 overflow-visible h-48">
+            <div ref={emblaRef} className="relative z-10 overflow-visible h-48 select-none">
               <div className="embla__container flex gap-4 px-6 will-change-transform">
                 {tools.map((tool, i) => (
                     <div key={i} className="embla__slide shrink-0">
@@ -70,9 +70,10 @@ export const ToolsSection = (): JSX.Element => {
                         <img
                             src={tool.icon}
                             alt={tool.name}
-                            className="h-14 w-auto object-contain"
+                            className="h-14 w-auto object-contain select-none"
+                            draggable={false}
                         />
-                        <span className="text-xl font-semibold tracking-wide text-white [font-family:'Poppins',sans-serif]">
+                        <span className="select-none text-xl font-semibold tracking-wide text-white [font-family:'Poppins',sans-serif]">
                       {tool.name}
                     </span>
                         <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#A265FF]/15" />
