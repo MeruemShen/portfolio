@@ -33,3 +33,30 @@ npm run build
 ## Assets
 
 Placeholder images for the wireframe screen are stored in `public/wireframe/`.
+
+
+## SEO & Performance
+
+This project includes lightweight, dependency-free utilities to improve SEO and Core Web Vitals.
+
+- Head management (client-side): use the SEOHead component to set title, lang, canonical, robots, and OG/Twitter meta.
+  Example:
+  
+  ```tsx
+  <SEOHead title="Deepbird — Portfolio et services web" description="Portfolio, projets et services web." canonical="https://portfolio.deepbird.fr/"></SEOHead>
+  ```
+
+- JSON-LD: add structured data with the JsonLd component.
+  Example:
+  
+  ```tsx
+  <JsonLd data={{ "@context": "https://schema.org", "@type": "WebSite", name: "Deepbird", url: "https://portfolio.deepbird.fr/" }} />
+  ```
+
+- SEO helpers: src/utils/seo.ts provides buildCanonical, buildTitle, and defaultSEO helpers used by SEOHead.
+
+- Routing & Errors: the app now uses react-router-dom with a Home route (/) and a NotFound (/*) page, and wraps the app with an ErrorBoundary for graceful fallback UI.
+
+- Web Vitals: minimal reporting via PerformanceObserver is started from src/main.tsx (reportWebVitals), logging LCP/CLS/FCP/INP to the console by default.
+
+Note on SSR: no SSR server is included yet, but the SEO components/utilities are SSR-friendly and can be reused in a future SSR setup.
