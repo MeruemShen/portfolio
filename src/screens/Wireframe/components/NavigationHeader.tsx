@@ -51,7 +51,7 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
   return (
       <header className="fixed top-0 left-0 w-full z-20 bg-white/4 backdrop-blur-md py-[5px]">
         <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-4">
-          <img className="h-[64px] w-[90px] object-cover" alt="Logo removebg" src="/wireframe/logo.png" />
+          <img className="h-[64px] w-[90px] object-cover" alt="Deepbird — Logo" src="/wireframe/logo.png" width={90} height={64} decoding="async" fetchPriority="high" loading="eager" />
 
           <Card className="ml-[140px] w-[780px] h-[56px] bg-[#0a0612cc] backdrop-blur-sm rounded-[35px] tabletLandscape:hidden">
             <CardContent className="p-0 h-full w-full flex items-center justify-center">
@@ -131,7 +131,12 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
           <div className="absolute inset-0 bg-[url('/wireframe/fond_burger_bird1.png')] bg-cover bg-top"></div>
           <div className="absolute inset-0 bg-[#170b28] bg-opacity-65"></div>
           <div className="relative z-10 w-full p-4 flex items-center">
-            <img className="h-[64px] w-[90px] object-cover" alt="Logo removebg" src="/wireframe/logo.png" />
+            <img
+              className="h-[64px] w-[90px] object-cover"
+              alt="Logo removebg"
+              src="/wireframe/logo.png"
+              loading="lazy"
+            />
             <span className="text-white text-2xl [font-family:'Days_One',Helvetica] ml-2">Deepbird</span>
           </div>
 
@@ -168,7 +173,12 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
                         onClick={() => link.url && handleEmailClick(link.url)}
                         className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
                     >
-                      <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
+                      <img
+                        className="w-[24px] h-[24px] object-cover mb-1"
+                        alt={link.alt}
+                        src={link.icon}
+                        loading="lazy"
+                      />
                     </button>
                 ) : (
                     <a
@@ -181,7 +191,12 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
                       {link.alt === "Calendrier" ? (
                         <Calendar className="w-[24px] h-[24px] text-white" />
                       ) : (
-                        <img className="w-[24px] h-[24px] object-cover mb-1" alt={link.alt} src={link.icon} />
+                        <img
+                          className="w-[24px] h-[24px] object-cover mb-1"
+                          alt={link.alt}
+                          src={link.icon}
+                          loading="lazy"
+                        />
                       )}
                     </a>
                 )

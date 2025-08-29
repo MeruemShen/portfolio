@@ -51,7 +51,15 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
       <div className="w-full relative grid grid-cols-[auto_1fr_auto] items-center overflow-hidden mobile:grid-cols-1 mobile:gap-8">
         {/* Colonne 1 : logo + infos (inchangé) */}
         <div className="flex flex-col items-start text-left mb-6 mobile:mb-0">
-          <img className="h-[158px] w-[158px] object-cover mb-[-2px]" alt="Logo" src="/wireframe/logo.png" />
+          <img
+            className="h-[158px] w-[158px] object-cover mb-[-2px]"
+            alt="Deepbird — Logo"
+            src="/wireframe/logo.png"
+            width={158}
+            height={158}
+            decoding="async"
+            loading="lazy"
+          />
           <h3 className="[font-family:'Days_One',Helvetica] mt-[-13px] font-normal text-white text-[32px] tracking-[0] leading-[31.7px] mb-4">DeepBird</h3>
           <p className="[font-family:'Roboto',Helvetica] font-normal text-[#ffffffbf] text-[15px]">© 2024–2025 Deepbird. Tous droits réservés</p>
         </div>
@@ -122,6 +130,7 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
                         className="w-8 h-8 min-w-[32px] min-h-[32px] object-contain"
                         alt={link.alt}
                         src={link.icon}
+                        loading="lazy"
                       />
                     </button>
                   ) : (
@@ -139,6 +148,7 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
                           className="w-8 h-8 min-w-[32px] min-h-[32px] object-contain"
                           alt={link.alt}
                           src={link.icon}
+                          loading="lazy"
                         />
                       )}
                     </a>

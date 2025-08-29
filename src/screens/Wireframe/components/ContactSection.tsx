@@ -76,7 +76,12 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                                                     {method.alt === "Calendrier" ? (
                                                         <Calendar className="w-[18px] h-[18px] text-white" />
                                                     ) : (
-                                                        <img className="w-[21px] h-[15px] object-contain" alt={method.alt} src={method.icon} />
+                                                        <img
+                                                            className="w-[21px] h-[15px] object-contain"
+                                                            alt={method.alt}
+                                                            src={method.icon}
+                                                            loading="lazy"
+                                                        />
                                                     )}
                                                 </div>
                                                 {method.isLink ? (
@@ -117,7 +122,12 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
 
                             {/* Bloc droit (image) */}
                             <div className="flex-1 text-card-foreground shadow bg-[#0f0f0f26] rounded-[15px] backdrop-blur-md overflow-hidden tablet:hidden hover:shadow-[0_0_12px_#a265ff] transition-shadow duration-300 h-[240px]">
-                                <img className="w-full h-full object-cover object-[center_-100px]" alt="About" src="/wireframe/about.png" />
+                                <img
+                                    className="w-full h-full object-cover object-[center_-100px]"
+                                    alt="About"
+                                    src="/wireframe/about.png"
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
                     </div>

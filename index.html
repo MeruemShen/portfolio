@@ -5,9 +5,13 @@
     <meta name="google" content="notranslate" />
     <title>Deepbird — Portfolio et services web</title>
     <link rel="icon" href="/wireframe/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/wireframe/logo.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Deepbird — Portfolio, projets, et services en développement web. Découvrez nos réalisations, notre processus et contactez-nous." />
     <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0f172a" />
     <link rel="canonical" href="https://portfolio.deepbird.fr/" />
 
@@ -17,13 +21,17 @@
     <meta property="og:title" content="Deepbird — Portfolio et services web" />
     <meta property="og:description" content="Deepbird — Portfolio, projets, et services en développement web." />
     <meta property="og:url" content="https://portfolio.deepbird.fr/" />
-    <meta property="og:image" content="/wireframe/favicon.ico" />
-    <meta property="og:image:type" content="image/x-icon" />
+    <meta property="og:image" content="https://portfolio.deepbird.fr/wireframe/about.png" />
+    <meta property="og:image:alt" content="Aperçu visuel Deepbird" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Deepbird — Portfolio et services web" />
     <meta name="twitter:description" content="Deepbird — Portfolio, projets, et services en développement web." />
-    <meta name="twitter:image" content="/wireframe/favicon.ico" />
+    <meta name="twitter:image" content="https://portfolio.deepbird.fr/wireframe/about.png" />
+    <meta name="twitter:image:alt" content="Aperçu visuel Deepbird" />
 
     <script type="application/ld+json">
     {
@@ -31,19 +39,53 @@
       "@type": "Organization",
       "name": "Deepbird",
       "url": "https://portfolio.deepbird.fr/",
-      "logo": "/wireframe/favicon.ico",
-      "sameAs": []
+      "logo": "https://portfolio.deepbird.fr/wireframe/favicon.ico",
+      "sameAs": [
+        "https://github.com/MeruemShen",
+        "https://www.linkedin.com/in/dorian-bidault-589850240/"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "mailto:dorian.bidault11@gmail.com",
+          "url": "https://calendly.com/deepbird/30min",
+          "availableLanguage": ["fr-FR"]
+        }
+      ]
     }
     </script>
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KXTY3L4BV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5KXTY3L4BV');
+    </script>
+
+    <!-- Preconnects for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="fr" href="https://portfolio.deepbird.fr/" />
+    <link rel="alternate" hreflang="fr-FR" href="https://portfolio.deepbird.fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://portfolio.deepbird.fr/" />
+
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Days+One:400|Poppins:500|Roboto:400");
+      @import url("https://fonts.googleapis.com/css2?family=Days+One:wght@400&family=Poppins:wght@500&family=Roboto:wght@400&display=swap");
     </style>
     <link href="tailwind.css" rel="stylesheet" />
     <link href="animations.css" rel="stylesheet" />
   </head>
   <body>
     <div id="app"></div>
+    <noscript>
+      <p>Deepbird — Développeur web freelance. Découvrez le portfolio, les services, et contactez‑nous à l’adresse <a href="mailto:dorian.bidault11@gmail.com">dorian.bidault11@gmail.com</a> ou prenez rendez‑vous sur <a href="https://calendly.com/deepbird/30min">Calendly</a>.</p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

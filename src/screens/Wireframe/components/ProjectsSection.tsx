@@ -73,7 +73,12 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
           >
             <CardContent className="p-0 flex flex-col h-full">
               <div className="w-full h-[98px] overflow-hidden p-[0.48rem]">
-                <img className="w-full h-full object-cover rounded-[24px]" alt="Project Image" src={project.image} />
+                <img
+                  className="w-full h-full object-cover rounded-[24px]"
+                  alt={`${project.title} — Aperçu du projet`}
+                  src={project.image}
+                  loading="lazy"
+                />
               </div>
               <div className="flex flex-1 relative">
                 <div className="relative flex-shrink-0 mr-4 pl-4 pt-4 pb-6 h-full">
@@ -100,7 +105,13 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
                   {project.technologies.length > 0 && (
                     <div className="flex gap-[10px] mt-auto">
                       {project.technologies.map((tech, techIndex) => (
-                        <img key={techIndex} className="w-5 h-5 object-contain" alt={tech.alt} src={tech.icon} />
+                        <img
+                          key={techIndex}
+                          className="w-5 h-5 object-contain"
+                          alt={tech.alt}
+                          src={tech.icon}
+                          loading="lazy"
+                        />
                       ))}
                     </div>
                   )}
