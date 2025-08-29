@@ -12,6 +12,12 @@ export const HomePage: React.FC = () => {
       "@type": "WebSite",
       name: "Deepbird",
       url: canonical,
+      inLanguage: "fr-FR",
+      publisher: {
+        "@type": "Organization",
+        name: "Deepbird",
+        url: canonical
+      }
     }
   ];
 
@@ -19,6 +25,7 @@ export const HomePage: React.FC = () => {
     <>
       <SEOHead title={DEFAULT_TITLE} description={DEFAULT_DESCRIPTION} canonical={canonical} />
       <JsonLd data={jsonLd} />
+      <h1 className="sr-only">Développeur Web Freelance – Portfolio Deepbird</h1>
       <Wireframe />
     </>
   );
