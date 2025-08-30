@@ -131,6 +131,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                                     src="/wireframe/webp/about.webp"
                                     loading="lazy"
                                     decoding="async"
+                                    fetchPriority="low"
                                 />
                             </div>
                         </div>

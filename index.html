@@ -76,6 +76,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Preload LCP image (logo) for earlier fetch start -->
+    <link rel="preload" as="image" href="/wireframe/webp/logo.webp" type="image/webp" />
+
     <!-- Hreflang -->
     <link rel="alternate" hreflang="fr" href="https://portfolio.deepbird.fr/" />
     <link rel="alternate" hreflang="fr-FR" href="https://portfolio.deepbird.fr/" />
@@ -89,10 +92,28 @@
     <noscript><link rel="stylesheet" href="animations.css"></noscript>
   </head>
   <body>
+    <!-- LCP inline skeleton: ensures logo is discoverable from initial HTML -->
+    <div id="lcp-skeleton" style="position:fixed;top:0;left:0;width:100%;z-index:5;display:flex;justify-content:center;background:transparent;pointer-events:none;padding:5px 0;">
+      <img src="/wireframe/webp/logo.webp" alt="Deepbird — Logo" width="90" height="64" fetchpriority="high" loading="eager" style="width:90px;height:64px;object-fit:cover;" />
+    </div>
     <div id="app"></div>
     <noscript>
       <p>Deepbird — Développeur web freelance. Découvrez le portfolio, les services, et contactez‑nous à l’adresse <a href="mailto:dorian.bidault11@gmail.com">dorian.bidault11@gmail.com</a> ou prenez rendez‑vous sur <a href="https://calendly.com/deepbird/30min">Calendly</a>.</p>
     </noscript>
+    <script>
+      (function(){
+        var remove=function(){var sk=document.getElementById('lcp-skeleton');if(sk&&sk.parentNode){sk.parentNode.removeChild(sk);}};
+        var app=document.getElementById('app');
+        if(app&&'MutationObserver' in window){
+          try{
+            var obs=new MutationObserver(function(m,observer){if(app.childNodes&&app.childNodes.length>0){observer.disconnect();remove();}});
+            obs.observe(app,{childList:true});
+          }catch(e){window.addEventListener('load',remove);} 
+        } else {
+          window.addEventListener('load',remove);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
