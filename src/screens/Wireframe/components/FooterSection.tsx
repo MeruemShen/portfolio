@@ -125,12 +125,16 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
                       key={i}
                       onClick={() => link.url && handleEmailClick(link.url)}
                       className="p-0 h-auto hover:scale-110 transition-transform flex-shrink-0 w-10 h-10 flex items-center justify-center"
+                      aria-label="Copier l'email"
                     >
                       <img
                         className="w-8 h-8 min-w-[32px] min-h-[32px] object-contain"
                         alt={link.alt}
                         src={link.icon}
                         loading="lazy"
+                        decoding="async"
+                        width={32}
+                        height={32}
                       />
                     </button>
                   ) : (
@@ -139,6 +143,7 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
                       href={getHref(link)}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={link.alt}
                       className="p-0 h-auto hover:scale-110 transition-transform flex-shrink-0 w-10 h-10 flex items-center justify-center"
                     >
                       {link.alt === "Calendrier" ? (
@@ -149,6 +154,9 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
                           alt={link.alt}
                           src={link.icon}
                           loading="lazy"
+                          decoding="async"
+                          width={32}
+                          height={32}
                         />
                       )}
                     </a>
