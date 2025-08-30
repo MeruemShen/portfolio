@@ -1,4 +1,5 @@
 // "use client"
+import React, { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
@@ -20,9 +21,15 @@ const tools = [
 ];
 
 export const ToolsSection = (): JSX.Element => {
+  const [plugins, setPlugins] = useState<any[]>([]);
   const [emblaRef] = useEmblaCarousel(
       { loop: true, align: "start", dragFree: true },
-      [
+      plugins
+  );
+
+  useEffect(() => {
+    const start = () => {
+      setPlugins([
         AutoScroll({
           speed: 1.15,
           startDelay: 0,
@@ -30,8 +37,18 @@ export const ToolsSection = (): JSX.Element => {
           stopOnMouseEnter: false, // ne stoppe plus au hover
           playOnInit: true,
         }),
-      ]
-  );
+      ]);
+    };
+    try {
+      if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+        (window as any).requestIdleCallback(start, { timeout: 3000 });
+      } else {
+        setTimeout(start, 1500);
+      }
+    } catch {
+      setTimeout(start, 1500);
+    }
+  }, []);
 
   return (
       <section

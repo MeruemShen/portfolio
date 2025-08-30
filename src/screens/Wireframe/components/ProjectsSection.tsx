@@ -79,6 +79,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
                   src={project.image}
                   loading="lazy"
                   decoding="async"
+                  fetchPriority="low"
                 />
               </div>
               <div className="flex flex-1 relative">
