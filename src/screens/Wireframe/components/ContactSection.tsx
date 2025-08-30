@@ -36,7 +36,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
         >
             <div className="w-full relative">
                 {/* Background image as CSS background */}
-                <div className="w-full bg-[url('/wireframe/fond_lune_2.png')] bg-cover bg-center h-[500px] mobile:h-[400px] absolute top-0 left-0"></div>
+                <div className="w-full bg-[url('/wireframe/webp/fond_lune_2.webp')] bg-cover bg-center h-[500px] mobile:h-[400px] absolute top-0 left-0"></div>
                 
                 {/* Content container */}
                 <div className="relative z-10">
@@ -128,7 +128,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                                 <img
                                     className="w-full h-full object-cover object-[center_-100px]"
                                     alt="About"
-                                    src="/wireframe/about.png"
+                                    src="/wireframe/webp/about.webp"
                                     loading="lazy"
                                     decoding="async"
                                 />
