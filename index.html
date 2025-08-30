@@ -61,25 +61,32 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5KXTY3L4BV');
+      const initGA = () => {
+        gtag('js', new Date());
+        gtag('config', 'G-5KXTY3L4BV');
+      };
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(initGA, { timeout: 3000 });
+      } else {
+        setTimeout(initGA, 1500);
+      }
     </script>
 
     <!-- Preconnects for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
 
     <!-- Hreflang -->
     <link rel="alternate" hreflang="fr" href="https://portfolio.deepbird.fr/" />
     <link rel="alternate" hreflang="fr-FR" href="https://portfolio.deepbird.fr/" />
     <link rel="alternate" hreflang="x-default" href="https://portfolio.deepbird.fr/" />
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Days+One:wght@400&family=Poppins:wght@500&family=Roboto:wght@400&display=swap");
-    </style>
-    <link href="tailwind.css" rel="stylesheet" />
-    <link href="animations.css" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Days+One:wght@400&family=Poppins:wght@500&family=Roboto:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Days+One:wght@400&family=Poppins:wght@500&family=Roboto:wght@400&display=swap"></noscript>
+    <link rel="preload" as="style" href="tailwind.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="tailwind.css"></noscript>
+    <link rel="preload" as="style" href="animations.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="animations.css"></noscript>
   </head>
   <body>
     <div id="app"></div>

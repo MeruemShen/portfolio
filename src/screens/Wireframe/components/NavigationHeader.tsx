@@ -51,7 +51,7 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
   return (
       <header className="fixed top-0 left-0 w-full z-20 bg-white/4 backdrop-blur-md py-[5px]">
         <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-4">
-          <img className="h-[64px] w-[90px] object-cover" alt="Deepbird — Logo" src="/wireframe/logo.png" width={90} height={64} decoding="async" fetchPriority="high" loading="eager" />
+          <img className="h-[64px] w-[90px] object-cover" alt="Deepbird — Logo" src="/wireframe/logo.png" width={90} height={64} fetchPriority="high" loading="eager" />
 
           <Card className="ml-[140px] w-[780px] h-[56px] bg-[#0a0612cc] backdrop-blur-sm rounded-[35px] tabletLandscape:hidden">
             <CardContent className="p-0 h-full w-full flex items-center justify-center">
@@ -107,6 +107,7 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
             <button
                 onClick={() => (open ? setClosing(true) : setOpen(true))}
                 className="flex flex-col items-end justify-center w-8 h-8 relative"
+                aria-label="Ouvrir le menu"
             >
               <span className="block w-full h-0.5 bg-white mb-1" />
               <span className="block w-full h-0.5 bg-white mb-1" />
@@ -133,9 +134,12 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
           <div className="relative z-10 w-full p-4 flex items-center">
             <img
               className="h-[64px] w-[90px] object-cover"
-              alt="Logo removebg"
+              alt="Logo Deepbird"
               src="/wireframe/logo.png"
+              width={90}
+              height={64}
               loading="lazy"
+              decoding="async"
             />
             <span className="text-white text-2xl [font-family:'Days_One',Helvetica] ml-2">Deepbird</span>
           </div>
@@ -143,8 +147,9 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
           <button
               onClick={() => setClosing(true)} // NEW: déclenche la fermeture smooth
               className="absolute top-[30px] right-10 z-10 flex items-center justify-center h-[36px] w-[36px] bg-[#a265ff] rounded-md"
+              aria-label="Fermer le menu"
           >
-            <X className="w-5 h-5 text-white" aria-label="Fermer" />
+            <X className="w-5 h-5 text-white" />
           </button>
 
           <nav className="relative z-10 flex flex-col gap-6 items-start pl-8">
@@ -178,6 +183,9 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
                         alt={link.alt}
                         src={link.icon}
                         loading="lazy"
+                        decoding="async"
+                        width={24}
+                        height={24}
                       />
                     </button>
                 ) : (
@@ -186,6 +194,7 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
                         href={getHref(link)}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={link.alt}
                         className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
                     >
                       {link.alt === "Calendrier" ? (
@@ -196,6 +205,9 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
                           alt={link.alt}
                           src={link.icon}
                           loading="lazy"
+                          decoding="async"
+                          width={24}
+                          height={24}
                         />
                       )}
                     </a>

@@ -78,6 +78,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
                   alt={`${project.title} — Aperçu du projet`}
                   src={project.image}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="flex flex-1 relative">
@@ -111,6 +112,9 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): JSX.Element
                           alt={tech.alt}
                           src={tech.icon}
                           loading="lazy"
+                          decoding="async"
+                          width={20}
+                          height={20}
                         />
                       ))}
                     </div>

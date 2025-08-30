@@ -81,6 +81,9 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                                                             alt={method.alt}
                                                             src={method.icon}
                                                             loading="lazy"
+                                                            decoding="async"
+                                                            width={21}
+                                                            height={15}
                                                         />
                                                     )}
                                                 </div>
@@ -127,6 +130,7 @@ export const ContactSection = ({ methods }: ContactSectionProps): JSX.Element =>
                                     alt="About"
                                     src="/wireframe/about.png"
                                     loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                         </div>

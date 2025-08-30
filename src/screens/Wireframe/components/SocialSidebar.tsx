@@ -43,12 +43,16 @@ export const SocialSidebar = ({ links }: SocialSidebarProps): JSX.Element => {
             key={index}
             onClick={() => link.url && handleEmailClick(link.url)}
             className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md p-0 flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
+            aria-label="Copier l'email"
           >
             <img
               className="w-[24px] h-[24px] object-cover mb-1"
               alt={link.alt}
               src={link.icon}
               loading="lazy"
+              decoding="async"
+              width={24}
+              height={24}
             />
           </button>
         ) : (
@@ -57,6 +61,7 @@ export const SocialSidebar = ({ links }: SocialSidebarProps): JSX.Element => {
             href={getHref(link)}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={link.alt}
             className="w-[50px] h-[50px] bg-[#0f0f0f99] rounded-[20px] backdrop-blur-md p-0 flex items-center justify-center hover:bg-transparent hover:scale-110 transition"
           >
             {link.alt === "Calendrier" ? (

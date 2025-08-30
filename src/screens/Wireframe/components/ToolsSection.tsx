@@ -73,6 +73,7 @@ export const ToolsSection = (): JSX.Element => {
                             className="h-14 w-auto object-contain select-none"
                             draggable={false}
                             loading="lazy"
+                            decoding="async"
                         />
                         <span className="select-none text-xl font-semibold tracking-wide text-white [font-family:'Poppins',sans-serif]">
                       {tool.name}
