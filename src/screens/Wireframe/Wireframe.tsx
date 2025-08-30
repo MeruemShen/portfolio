@@ -29,12 +29,12 @@ export const Wireframe = (): JSX.Element => {
   // Social media links
   const socialLinks = [
     { 
-      icon: "/wireframe/github.png", 
+      icon: "/wireframe/webp/github.webp", 
       alt: "GitHub", 
       url: "https://github.com/MeruemShen" 
     },
     { 
-      icon: "/wireframe/linkedin.png", 
+      icon: "/wireframe/webp/linkedin.webp", 
       alt: "LinkedIn", 
       url: "https://www.linkedin.com/in/dorian-bidault-589850240/" 
     },
@@ -44,7 +44,7 @@ export const Wireframe = (): JSX.Element => {
       url: "https://calendly.com/deepbird/30min" 
     },
     { 
-      icon: "/wireframe/mail.png", 
+      icon: "/wireframe/webp/mail.webp", 
       alt: "Email", 
       url: "dorian.bidault11@gmail.com" 
     },
@@ -84,7 +84,7 @@ export const Wireframe = (): JSX.Element => {
   // Projects data
   const projects = [
     {
-      image: "/wireframe/lubin_banner.png",
+      image: "/wireframe/webp/lubin_banner.webp",
       title: "Lubin Coaching",
       description:
           "Site vitrine pour un coach sportif d\u00e9velopp\u00e9 avec WordPress.",
@@ -98,27 +98,27 @@ export const Wireframe = (): JSX.Element => {
       ],
     },
     {
-      image: "/wireframe/exostia_banner.png",
+      image: "/wireframe/webp/exostia_banner.webp",
       title: "Exostia",
       description:
           "Boutique d'un serveur Minecraft au th\u00e8me mythologique.",
       type: "MINECRAFT",
       url: "https://www.exostia.com/",
       technologies: [
-        { icon: "/wireframe/azuriom.png", alt: "Azuriom" }
+        { icon: "/wireframe/webp/azuriom.webp", alt: "Azuriom" }
       ],
     },
     {
-      image: "/wireframe/hangart_banner.png",
+      image: "/wireframe/webp/hangart_banner.webp",
       title: "Hangart",
       description:
           "Prototype d’événement fictif (2e année). Par sécurité, seule une maquette statique est visible.",
       type: "PROTOTYPE",
-      url: "/wireframe/hangart_prototype.png",
+      url: "/wireframe/webp/hangart_prototype.webp",
       technologies: [
-        { icon: "/wireframe/html.png", alt: "Html" },
-        { icon: "/wireframe/css.png", alt: "Css" },
-        { icon: "/wireframe/js.png", alt: "Js" },
+        { icon: "/wireframe/webp/html.webp", alt: "Html" },
+        { icon: "/wireframe/webp/css.webp", alt: "Css" },
+        { icon: "/wireframe/webp/js.webp", alt: "Js" },
       ],
     },
   ];
@@ -126,7 +126,7 @@ export const Wireframe = (): JSX.Element => {
   // Contact methods
   const contactMethods = [
     {
-      icon: "/wireframe/mail.png",
+      icon: "/wireframe/webp/mail.webp",
       alt: "Email",
       value: "dorian.bidault11@gmail.com",
       isLink: true,
@@ -138,7 +138,7 @@ export const Wireframe = (): JSX.Element => {
       isLink: true,
     },
     {
-      icon: "/wireframe/linkedin.png",
+      icon: "/wireframe/webp/linkedin.webp",
       alt: "LinkedIn",
       value: "https://www.linkedin.com/in/dorian-bidault-589850240/",
       isLink: true,

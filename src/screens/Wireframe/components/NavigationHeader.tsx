@@ -51,7 +51,7 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
   return (
       <header className="fixed top-0 left-0 w-full z-20 bg-white/4 backdrop-blur-md py-[5px]">
         <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-4">
-          <img className="h-[64px] w-[90px] object-cover" alt="Deepbird — Logo" src="/wireframe/logo.png" width={90} height={64} fetchPriority="high" loading="eager" />
+          <img className="h-[64px] w-[90px] object-cover" alt="Deepbird — Logo" src="/wireframe/webp/logo.webp" width={90} height={64} fetchPriority="high" loading="eager" />
 
           <Card className="ml-[140px] w-[780px] h-[56px] bg-[#0a0612cc] backdrop-blur-sm rounded-[35px] tabletLandscape:hidden">
             <CardContent className="p-0 h-full w-full flex items-center justify-center">
@@ -129,13 +129,13 @@ export const NavigationHeader = ({ navItems, onNavItemClick, socialLinks = [] }:
             }`}
         >
           {/* Background image with overlay */}
-          <div className="absolute inset-0 bg-[url('/wireframe/fond_burger_bird1.png')] bg-cover bg-top"></div>
+          <div className="absolute inset-0 bg-[url('/wireframe/webp/fond_burger_bird1.webp')] bg-cover bg-top"></div>
           <div className="absolute inset-0 bg-[#170b28] bg-opacity-65"></div>
           <div className="relative z-10 w-full p-4 flex items-center">
             <img
               className="h-[64px] w-[90px] object-cover"
               alt="Logo Deepbird"
-              src="/wireframe/logo.png"
+              src="/wireframe/webp/logo.webp"
               width={90}
               height={64}
               loading="lazy"

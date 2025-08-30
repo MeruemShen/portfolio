@@ -54,7 +54,7 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
           <img
             className="h-[158px] w-[158px] object-cover mb-[-2px]"
             alt="Deepbird — Logo"
-            src="/wireframe/logo.png"
+            src="/wireframe/webp/logo.webp"
             width={158}
             height={158}
             decoding="async"
@@ -67,7 +67,7 @@ export const FooterSection = ({ footerLinks, socialLinks }: FooterSectionProps):
         {/* Colonne 2 : décor (fond + ligne) — s’arrête AVANT la colonne 3 */}
         <div className="relative h-[180px] tabletLandscape:hidden">
           {/* fond */}
-          <div className="absolute top-[42px] left-[-93.5px] right-0 h-[100px] bg-[url('/wireframe/fond_lune_footer.png')] bg-cover bg-center"></div>
+          <div className="absolute top-[42px] left-[-93.5px] right-0 h-[100px] bg-[url('/wireframe/webp/fond_lune_footer.webp')] bg-cover bg-center"></div>
 
           {/* ligne + losange */}
           <div className="absolute top-[34px] left-[-100px] right-0 flex items-center pointer-events-none">

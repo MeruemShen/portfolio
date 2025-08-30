@@ -9,7 +9,7 @@ export const HeroSection = (): JSX.Element => {
     >
 
       {/* Background image as CSS background */}
-      <div className="fade-bottom-img w-screen h-full -z-20 fixed top-0 left-1/2 -translate-x-1/2 bg-[url('/wireframe/fond_burger_bird1.png')] bg-cover bg-top"></div>
+      <div className="fade-bottom-img w-screen h-full -z-20 fixed top-0 left-1/2 -translate-x-1/2 bg-[url('/wireframe/webp/fond_burger_bird1.webp')] bg-cover bg-top"></div>
       <div className="h-full pt-[90px] mobile:h-auto mobile:pt-[80px]">
         <div className="pt-[120px] mobile:pt-[50px] mobile:mb-[20px] w-full max-w-[950px] md-desktop:max-w-[1200px] mx-auto">
           <div className="flex items-center relative">
@@ -54,7 +54,7 @@ export const HeroSection = (): JSX.Element => {
                       duration={0.7}
                       ease={[0.22, 1, 0.36, 1]}
                       waitForWindowLoad
-                      preloadImages={['/wireframe/fond_burger_bird1.png']}
+                      preloadImages={['/wireframe/webp/fond_burger_bird1.webp']}
                       afterImageDelayMs={500}   // ← 1.5 s après chargement image
                   />
                   {/* Ultimate fallback - hidden but will be shown if JS fails completely */}
@@ -76,7 +76,7 @@ export const HeroSection = (): JSX.Element => {
                       duration={1.0}
                       ease={[0.22, 1, 0.36, 1]}
                       waitForWindowLoad
-                      preloadImages={['/wireframe/fond_burger_bird1.png']}
+                      preloadImages={['/wireframe/webp/fond_burger_bird1.webp']}
                       afterImageDelayMs={500}   // ← 2 s après chargement image
                   />
                   {/* Ultimate fallback - hidden but will be shown if JS fails complètement */}

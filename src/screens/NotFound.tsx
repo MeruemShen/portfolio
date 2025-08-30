@@ -10,7 +10,7 @@ const NotFound: React.FC = () => {
       <SEOHead title="Page introuvable | Deepbird" description="La page demandée est introuvable." canonical={canonical} robots="noindex, nofollow" />
 
       {/* Background image and overlay to match site DA */}
-      <div className="absolute inset-0 bg-[url('/wireframe/fond_burger_bird1.png')] bg-cover bg-top" aria-hidden="true"></div>
+      <div className="absolute inset-0 bg-[url('/wireframe/webp/fond_burger_bird1.webp')] bg-cover bg-top" aria-hidden="true"></div>
       <div className="absolute inset-0 bg-[#120527] bg-opacity-80" aria-hidden="true"></div>
 
       {/* Content */}
