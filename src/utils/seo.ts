@@ -51,7 +51,7 @@ export function defaultSEO(overrides: SEOConfig = {}): Required<SEOConfig> {
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:url", content: canonical },
-    { property: "og:image", content: `${SITE_URL}/wireframe/webp/about.webp` },
+    { property: "og:image", content: `${SITE_URL}/wireframe/webp/fond_burger_bird1.webp` },
     { property: "og:image:alt", content: "Aperçu visuel Deepbird" },
     { property: "og:image:type", content: "image/webp" },
     { property: "og:image:width", content: "1200" },
@@ -59,7 +59,7 @@ export function defaultSEO(overrides: SEOConfig = {}): Required<SEOConfig> {
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
-    { name: "twitter:image", content: `${SITE_URL}/wireframe/webp/about.webp` },
+    { name: "twitter:image", content: `${SITE_URL}/wireframe/webp/fond_burger_bird1.webp` },
     { name: "twitter:image:alt", content: "Aperçu visuel Deepbird" },
     ...(overrides.meta ?? []),
   ];
