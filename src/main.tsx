@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
 import HomePage from "./screens/HomePage";
 import NotFound from "./screens/NotFound";
+import Senturium from "./screens/senturium/Senturium";
 import { reportWebVitals } from "./utils/webVitals";
 
 const container = document.getElementById("app");
@@ -15,6 +16,7 @@ if (container) {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/senturium" element={<Senturium />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
