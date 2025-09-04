@@ -121,6 +121,15 @@ export const Wireframe = (): JSX.Element => {
         { icon: "/wireframe/webp/js.webp", alt: "Js" },
       ],
     },
+    {
+      image: "/wireframe/senturium_banner.png",
+      title: "Senturium",
+      description:
+          "Prototype de boutique artisanale — maquette interactive accessible sur le site.",
+      type: "PROTOTYPE",
+      url: "/senturium",
+      technologies: [],
+    },
   ];
 
   // Contact methods

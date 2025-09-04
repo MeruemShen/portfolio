@@ -6,7 +6,7 @@ const COLORS = {
   forest: "#1F3D2B",
   sage: "#9BB59C",
   cream: "#F8F4EC",
-  clay: "#C2714F",
+  clay: "#B58A2C",
   gold: "#B58A2C",
   ink: "#1A1A1A",
 };
