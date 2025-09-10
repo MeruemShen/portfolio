@@ -5,6 +5,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import HomePage from "./screens/HomePage";
 import NotFound from "./screens/NotFound";
 import Senturium from "./screens/senturium/Senturium";
+import Chapuis from "./screens/W2/Chapuis";
 import { reportWebVitals } from "./utils/webVitals";
 
 const container = document.getElementById("app");
@@ -17,6 +18,7 @@ if (container) {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/senturium" element={<Senturium />} />
+            <Route path="/chapuis" element={<Chapuis />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
