@@ -1,0 +1,51 @@
+/* Erwan Menut-only scrollbar theme */
+html.erwan-theme,
+body.erwan-theme {
+  --er-track: rgba(0, 0, 0, 1); /* subtle light track on dark bg */
+  --er-thumb: #e9561e; /* orange accent */
+  --er-thumb-hover: #ff6a33; /* lighter orange on hover */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--er-thumb) var(--er-track); /* Firefox */
+}
+
+/* Root/page scrollbar (WebKit/Blink) */
+html.erwan-theme::-webkit-scrollbar,
+body.erwan-theme::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+html.erwan-theme::-webkit-scrollbar-track,
+body.erwan-theme::-webkit-scrollbar-track {
+  background: var(--er-track);
+}
+html.erwan-theme::-webkit-scrollbar-thumb,
+body.erwan-theme::-webkit-scrollbar-thumb {
+  background-color: var(--er-thumb);
+  border-radius: 9999px;
+  border: 3px solid var(--er-track);
+}
+html.erwan-theme::-webkit-scrollbar-thumb:hover,
+body.erwan-theme::-webkit-scrollbar-thumb:hover {
+  background-color: var(--er-thumb-hover);
+}
+
+/* Any inner scrollable area marked explicitly */
+.erwan-theme .erwan-scroll {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--er-thumb) var(--er-track); /* Firefox */
+}
+.erwan-theme .erwan-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.erwan-theme .erwan-scroll::-webkit-scrollbar-track {
+  background: var(--er-track);
+}
+.erwan-theme .erwan-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--er-thumb);
+  border-radius: 9999px;
+  border: 2px solid var(--er-track);
+}
+.erwan-theme .erwan-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--er-thumb-hover);
+}

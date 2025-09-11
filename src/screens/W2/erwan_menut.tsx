@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useAnimation, AnimatePresence } from "framer-motion";
+import "./erwan-scrollbar.css";
 
 /**
  * Refonte – Erwan Visual (TypeScript, React + Tailwind)
@@ -117,7 +118,7 @@ function Nav() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 flex h-screen w-20 flex-col items-center justify-between border-r border-white/10 bg-black/40 backdrop-blur px-2 py-6">
+    <nav className="fixed top-0 left-0 z-50 hidden h-screen w-20 flex-col items-center justify-between border-r border-white/10 bg-black/40 backdrop-blur px-2 py-6 md:flex">
       <a href="#top" className="text-white font-bold rotate-[-90deg] tracking-widest text-xs">ERWAN</a>
       <div className="flex flex-col gap-6">
         {links.map((l) => {
@@ -142,7 +143,7 @@ type HeaderProps = { onOpenMenu: () => void };
 function Header({ onOpenMenu }: HeaderProps) {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur">
-      <div className="flex h-16 items-center justify-between pl-28 pr-12">
+      <div className="flex h-16 items-center justify-between pl-6 pr-6 md:pl-28 md:pr-12">
         <a href="#top" className="inline-flex items-center">
           <img src="/wireframe/erwan_menut.png" alt="Logo Erwan Menut" className="h-8 w-auto" />
           <span className="sr-only">Accueil</span>
@@ -253,7 +254,7 @@ function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const words = ["Erwan", "Visual"]; // requested: use ERWAN VISUAL
   return (
-    <section ref={ref as any} id="top" className="relative flex min-h-screen flex-col justify-center pl-28 pr-12 pb-24">
+    <section ref={ref as any} id="top" className="relative flex min-h-screen flex-col justify-center pl-6 md:pl-28 pr-6 md:pr-12 pb-24">
       {/* Background showreel via YouTube embed (uses VITE_ERWAN_YT_ID) */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-none">
         {YT_ID ? (
@@ -355,8 +356,8 @@ function Work() {
   }, []);
 
   return (
-    <section id="work" className="relative flex min-h-screen flex-col justify-center pl-28">
-      <div className="w-[calc(100vw-7rem)] pr-6">
+    <section id="work" className="relative flex min-h-screen flex-col justify-center pl-6 md:pl-28">
+      <div className="box-border w-full pr-6 md:w-[calc(100vw-7rem)]">
         <h2 className="mb-10 text-[7vw] font-bold uppercase leading-none">Projets récents</h2>
         <div className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black to-transparent" />
@@ -434,8 +435,8 @@ function Work() {
 // ===== CASE STUDY (placeholder) =====
 function CaseStudySticky() {
   return (
-    <section id="cases" className="relative py-24 pl-28">
-      <div className="mx-auto w-[min(1200px,calc(100vw-7rem))] pr-12">
+    <section id="cases" className="relative py-24 pl-6 md:pl-28">
+      <div className="mx-auto box-border w-full max-w-[1200px] pr-6 md:w-[min(1200px,calc(100vw-7rem))] md:pr-12">
         <h2 className="text-[7vw] font-bold uppercase leading-none">Étude de cas</h2>
         <div className="mt-10 grid grid-cols-1 gap-10">
           <div className="grid gap-4 md:grid-cols-2">
@@ -467,8 +468,8 @@ function Services() {
     { t: "Montage & étalonnage", d: "DaVinci Resolve, After Effects, colorimétrie et habillage" },
   ];
   return (
-    <section id="services" className="relative py-24 pl-28">
-      <div className="mx-auto w-[min(1200px,calc(100vw-7rem))] pr-12">
+    <section id="services" className="relative py-24 pl-6 md:pl-28">
+      <div className="mx-auto box-border w-full max-w-[1200px] pr-6 md:w-[min(1200px,calc(100vw-7rem))] md:pr-12">
         <h2 className="text-[7vw] font-bold uppercase leading-none">Prestations</h2>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {data.map((s, i) => (
@@ -496,8 +497,8 @@ function Services() {
 function Capabilities() {
   const caps = ["Réalisation", "Direction photo", "Montage", "Étalonnage", "Prise de son", "Motion"];
   return (
-    <section id="capabilities" className="relative py-24 pl-28">
-      <div className="mx-auto w-[min(1200px,calc(100vw-7rem))] pr-12">
+    <section id="capabilities" className="relative py-24 pl-6 md:pl-28">
+      <div className="mx-auto box-border w-full max-w-[1200px] pr-6 md:w-[min(1200px,calc(100vw-7rem))] md:pr-12">
         <h2 className="text-[7vw] font-bold uppercase leading-none">Compétences</h2>
         <div className="mt-8 flex flex-wrap gap-3">
           {caps.map((c) => (
@@ -543,8 +544,8 @@ function Clients() {
   }, []);
 
   return (
-    <section id="clients" className="relative flex min-h-screen flex-col justify-center pl-28">
-      <div className="w-[calc(100vw-7rem)] pr-6">
+    <section id="clients" className="relative flex min-h-screen flex-col justify-center pl-6 md:pl-28">
+      <div className="box-border w-full pr-6 md:w-[calc(100vw-7rem)]">
         <h2 className="mb-10 text-[7vw] font-bold uppercase leading-none">Clients & Diffusion</h2>
         <div className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black to-transparent" />
@@ -585,8 +586,8 @@ function Clients() {
 
 function Editorial() {
   return (
-    <section id="editorial" className="relative py-24 pl-28">
-      <div className="mx-auto w-[min(1200px,calc(100vw-7rem))] pr-12">
+    <section id="editorial" className="relative py-24 pl-6 md:pl-28">
+      <div className="mx-auto box-border w-full max-w-[1200px] pr-6 md:w-[min(1200px,calc(100vw-7rem))] md:pr-12">
         <h2 className="text-[7vw] font-bold uppercase leading-none">Réalisations</h2>
         <div className="mt-8 grid grid-cols-6 gap-4">
           {[1,2,3,4,5].map((i) => (
@@ -600,8 +601,8 @@ function Editorial() {
 
 function About() {
   return (
-    <section id="about" className="relative py-24 pl-28">
-      <div className="mx-auto grid w-[min(1200px,calc(100vw-7rem))] pr-12 gap-12 md:grid-cols-2">
+    <section id="about" className="relative py-24 pl-6 md:pl-28">
+      <div className="mx-auto grid box-border w-full max-w-[1200px] pr-6 md:w-[min(1200px,calc(100vw-7rem))] md:pr-12 gap-12 md:grid-cols-2">
         <div>
           <h2 className="text-[7vw] font-bold uppercase leading-none">À propos</h2>
           <p className="mt-6 text-lg text-white/80">J’associe narration, mouvement et technique pour réaliser des films immersifs qui captivent et servent vos objectifs.</p>
@@ -630,8 +631,8 @@ function Testimonials() {
     { q: "Au‑delà des attentes, avec une précision cinématique.", a: "CEO, Startup Y" },
   ];
   return (
-    <section id="testimonials" data-items={items.length} className="relative py-24 pl-28">
-      <div className="mx-auto w-[min(1200px,calc(100vw-7rem))] pr-12">
+    <section id="testimonials" data-items={items.length} className="relative py-24 pl-6 md:pl-28">
+      <div className="mx-auto box-border w-full max-w-[1200px] pr-6 md:w-[min(1200px,calc(100vw-7rem))] md:pr-12">
         <h2 className="text-[7vw] font-bold uppercase leading-none">Témoignages</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {items.map((t, i) => (<article key={i} className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-xl"><p className="text-xl leading-snug">“{t.q}”</p><p className="mt-4 text-sm text-white/60">{t.a}</p></article>))}
@@ -642,14 +643,57 @@ function Testimonials() {
 }
 
 function Contact() {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const nom = ((fd.get("nom") as string) || "").trim();
+    const email = ((fd.get("email") as string) || "").trim();
+    const tel = ((fd.get("tel") as string) || "").trim();
+    const message = ((fd.get("message") as string) || "").trim();
+    const subject = encodeURIComponent(`Contact – ${nom || "Nouveau message"}`);
+    const body = encodeURIComponent(`Nom: ${nom}\nEmail: ${email}\nTéléphone: ${tel}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:hello@erwanvisual.fr?subject=${subject}&body=${body}`;
+  };
+
   return (
-    <section id="contact" className="relative py-24 pl-28">
-      <div className="mx-auto w-[min(1200px,calc(100vw-7rem))] pr-12 rounded-[32px] border border-white/15 bg-gradient-to-br from-white/10 to-white/5 p-10">
-        <h2 className="text-[7vw] font-bold uppercase leading-none">Contact</h2>
-        <p className="mt-4 max-w-2xl text-white/80">Parlez‑moi de votre projet, de votre audience et de vos objectifs. Je reviens vers vous avec un plan clair, planning et budget.</p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a className="rounded-full border border-white/20 px-6 py-3 hover:border-[var(--accent)]" href="mailto:hello@erwanvisual.fr" style={{ ["--accent" as any]: ACCENT }}>Écrivez‑moi</a>
-          <a className="rounded-full border border-white/20 px-6 py-3 hover:border-[var(--accent)]" href="#" style={{ ["--accent" as any]: ACCENT }}>Réserver un appel</a>
+    <section id="contact" className="relative py-24 px-6 md:pl-28 scroll-mt-24">
+      <div className="mx-auto box-border w-full max-w-[1200px] pr-6 md:w-[min(1200px,calc(100vw-7rem))] md:pr-12 rounded-[32px] border border-white/15 bg-gradient-to-br from-white/10 to-white/5 p-6 sm:p-8 md:p-10">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-12">
+          <div>
+            <h2 className="text-[7vw] font-bold uppercase leading-none">Contact</h2>
+            <p className="mt-4 max-w-2xl text-white/80">Parlez‑moi de votre projet (clip, mariage, pub, court‑métrage). Je reviens vers vous avec un plan clair, un planning et un budget.</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <a className="w-full sm:w-auto text-center rounded-full border border-white/20 px-6 py-3 hover:border-[var(--accent)] hover:bg-white/5 transition-colors" href="mailto:hello@erwanvisual.fr" aria-label="Écrire un email" style={{ ["--accent" as any]: ACCENT }}>Écrivez‑moi</a>
+              <a className="w-full sm:w-auto text-center rounded-full border border-white/20 px-6 py-3 hover:border-[var(--accent)] hover:bg-white/5 transition-colors" href="#" aria-label="Réserver un appel" style={{ ["--accent" as any]: ACCENT }}>Réserver un appel</a>
+            </div>
+            <div className="mt-6 text-sm text-white/60">
+              <div>Email : <a href="mailto:hello@erwanvisual.fr" className="underline hover:text-white">hello@erwanvisual.fr</a></div>
+              <div className="mt-1">Basé en Bretagne — disponible partout en France</div>
+            </div>
+          </div>
+          <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-white/10 bg-black/30 p-4 sm:p-6 space-y-4">
+            <div>
+              <label htmlFor="nom" className="mb-1 block text-sm text-white/80">Nom *</label>
+              <input id="nom" name="nom" required autoComplete="name" className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder-white/40 outline-none focus:border-[var(--accent)]" placeholder="Votre nom" style={{ ["--accent" as any]: ACCENT }} />
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label htmlFor="email" className="mb-1 block text-sm text-white/80">Email *</label>
+                <input id="email" name="email" type="email" required autoComplete="email" className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder-white/40 outline-none focus:border-[var(--accent)]" placeholder="vous@exemple.com" style={{ ["--accent" as any]: ACCENT }} />
+              </div>
+              <div>
+                <label htmlFor="tel" className="mb-1 block text-sm text-white/80">Téléphone</label>
+                <input id="tel" name="tel" type="tel" autoComplete="tel" className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder-white/40 outline-none focus:border-[var(--accent)]" placeholder="Optionnel" style={{ ["--accent" as any]: ACCENT }} />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="message" className="mb-1 block text-sm text-white/80">Message *</label>
+              <textarea id="message" name="message" required rows={5} className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-white placeholder-white/40 outline-none focus:border-[var(--accent)]" placeholder="Parlez‑moi de votre projet : contexte, objectifs, délais..." style={{ ["--accent" as any]: ACCENT }} />
+            </div>
+            <button type="submit" className="w-full rounded-full border border-white/20 px-6 py-3 font-semibold hover:border-[var(--accent)] hover:bg-white/5 transition-colors" aria-label="Envoyer le message" style={{ ["--accent" as any]: ACCENT }}>
+              Envoyer
+            </button>
+          </form>
         </div>
       </div>
     </section>
@@ -659,7 +703,7 @@ function Contact() {
 function Footer() {
   return (
     <footer className="relative border-t border-white/10 py-10 text-sm text-white/60">
-      <div className="mx-auto flex w-[min(1200px,calc(100vw-7rem))] pr-12 flex-col items-center justify-between gap-6 sm:flex-row">
+      <div className="mx-auto flex box-border w-full max-w-[1200px] pr-6 md:w-[min(1200px,calc(100vw-7rem))] md:pr-12 flex-col items-center justify-between gap-6 sm:flex-row">
         <div>© {new Date().getFullYear()} Erwan Visual — All rights reserved.</div>
         <div className="flex items-center gap-5">
           <a href="#" className="hover:text-white">Dribbble</a>
@@ -696,6 +740,15 @@ export default function ErwanMenut() {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
+  // Apply Erwan-themed scrollbar only while this page is mounted
+  useEffect(() => {
+    document.documentElement.classList.add("erwan-theme");
+    document.body.classList.add("erwan-theme");
+    return () => {
+      document.documentElement.classList.remove("erwan-theme");
+      document.body.classList.remove("erwan-theme");
+    };
+  }, []);
 
   return (
     <div className="relative bg-black text-white antialiased overflow-x-hidden">
