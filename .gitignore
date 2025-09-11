@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+*.mp4
+*.mp4
+public/wireframe/*.mp4
