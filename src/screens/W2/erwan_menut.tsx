@@ -9,6 +9,8 @@ import { motion, useScroll, useTransform, useAnimation, AnimatePresence } from "
  */
 
 const ACCENT = "#e9561e" as const;
+// YouTube background video ID (set in .env as VITE_ERWAN_YT_ID)
+const YT_ID = "vhJX5_Y8ovk";
 
 // ===== Small util: drag-to-scroll for overflow containers =====
 function useDragScroll<T extends HTMLElement>(ref: React.RefObject<T>) {
@@ -252,17 +254,20 @@ function Hero() {
   const words = ["Erwan", "Visual"]; // requested: use ERWAN VISUAL
   return (
     <section ref={ref as any} id="top" className="relative flex min-h-screen flex-col justify-center pl-28 pr-12 pb-24">
-      {/* Background showreel video positioned behind the title */}
+      {/* Background showreel via YouTube embed (uses VITE_ERWAN_YT_ID) */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-none">
-        <video
-          className="h-full w-full object-cover opacity-60"
-          src="/wireframe/FHD_SHOWREEL-SITE-V2.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        />
+        {YT_ID ? (
+          <div className="absolute inset-0">
+            <iframe
+              className="absolute top-1/2 left-1/2 h-[56.25vw] w-[177.78vh] min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+              src={`https://www.youtube.com/embed/${YT_ID}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&loop=1&playlist=${YT_ID}`}
+              title="Showreel background"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              allowFullScreen={false}
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+        ) : null}
         {/* gradient overlay to keep text legible */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       </div>
