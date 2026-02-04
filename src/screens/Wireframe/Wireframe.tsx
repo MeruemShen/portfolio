@@ -83,20 +83,20 @@ export const Wireframe = (): JSX.Element => {
 
   // Projects data
   const projects = [
-    {
-      image: "/wireframe/webp/lubin_banner.webp",
-      title: "Lubin Coaching",
-      description:
-          "Site vitrine pour un coach sportif d\u00e9velopp\u00e9 avec WordPress.",
-      type: "COACHING",
-      url: "https://www.lubincoaching.fr/",
-      technologies: [
-        {
-          icon: "/wireframe/svg/wordpress-color-svgrepo-com.svg",
-          alt: "WordPress",
-        },
-      ],
-    },
+    // {
+    //   image: "/wireframe/webp/lubin_banner.webp",
+    //   title: "Lubin Coaching",
+    //   description:
+    //       "Site vitrine pour un coach sportif d\u00e9velopp\u00e9 avec WordPress.",
+    //   type: "COACHING",
+    //   url: "https://www.lubincoaching.fr/",
+    //   technologies: [
+    //     {
+    //       icon: "/wireframe/svg/wordpress-color-svgrepo-com.svg",
+    //       alt: "WordPress",
+    //     },
+    //   ],
+    // },
     {
       image: "/wireframe/webp/exostia_banner.webp",
       title: "Exostia",
